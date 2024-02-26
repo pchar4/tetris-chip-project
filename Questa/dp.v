@@ -5,56 +5,50 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, start, d1_in, d2_in, d_out, done);
+module dp (clka, clkb, restart, start, move, d1_in, d2_in, d_out, done);
 //-----------Input Ports---------------
-input clka, clkb, restart, start;
-input [3:0] d1_in;
-input [3:0] d2_in; 
+input clka, clkb, restart;
+inout [1:0] move;
+input reg [31:0] board_in;
 //-----------Output Ports---------------
 output [3:0] d_out;
 output done;
-output [31:0] board_status;
+output [31:0] board_out;
 //------------Internal Variables--------
-reg  [3:0] temp_1;
-reg  [3:0] temp_2;
-reg  [3:0] temp_result;
-reg  [3:0] d_out;
-reg  done;
-
+reg  [3:0] clear; // which row to clear
 reg  [1:0] piece_selection;
-reg [31:0] board_in board_out; // these are probably not needed, but just included in case
+reg [31:0] temp_board;
 
+parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100;
 
-//---------Modules for it to call-------
-rng myrng(new_piece, piece_selection);
-fall falling_action(board_in, board_out);
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
 
 always @ (negedge clka)
-begin
-if (restart == 1'b1) begin
-   temp_1 = 4'b0000;
-   temp_2 = 4'b0000;
-   temp_result = 4'b0000;
-   end else if (start == 1'b1) begin
-   temp_1 = d1_in;
-   temp_2 = d2_in;
-   temp_result = temp_1 + temp_2;
+begin // control signal logic
+   if (state == GEN) begin
+      rng myrng(clka, piece_selection); // fix
+      temp_board <= board_in | piece_selection; // actually place the piece in the correct place later, currently placing it at an end of the board
+   end 
+   else if (state == MOVE) begin
+      fall falling_action(board_in, move, temp_board);
+   end 
+   else if (state == LAND) begin
+      line_detector line_filled(board_in, clear); // might run into issues with this
+   end
+   else if (state == CLEAR) begin
+      row_clear clear_row(board_in, clear, temp_board); // module somewhat implemented   
    end
 end
 
-always @ (negedge clkb)
+always @ (negedge clkb) // separating to clkb to give more time for combinational logic?
 begin
 if (restart == 1'b1) begin
-   d_out  = 4'b0000;
-   done   = 1'b0;
-   end else if (start == 1'b1) begin
-   d_out = temp_result;
-   done  = 1'b1;
-   end else begin
-   done  = 1'b0;
-   end
+   board_out <= 32'b0;
+end
+else begin
+   board_out <= temp_board;
+end
 end
 
 endmodule //End Of Module dp  datapath
