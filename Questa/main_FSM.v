@@ -6,12 +6,12 @@
 // 		 start signal to data path dp.
 // 		 Waits then for done signal from the datapath.
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, load, state, start, done);
+module main_FSM (clka, clkb, restart, touched, new_piece, which_row, state);
 //-------------Input Ports-----------------------------
 // touched for line touched, new piece for signalling we need a new piece
 // which row for telling us which row is an issue
 // restart to start a new game, and done to indicate game over
-input wire   clka, clkb, touched, new_piece, restart, done;
+input wire   clka, clkb, touched, new_piece, restart;
 input wire [3:0] which_row;
 //-------------Output Ports----------------------------
 output reg state[1:0]; //TODO: find out if we need more outputs
