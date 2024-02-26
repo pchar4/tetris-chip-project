@@ -13,6 +13,7 @@ input [3:0] d2_in;
 //-----------Output Ports---------------
 output [3:0] d_out;
 output done;
+output [31:0] board_status;
 //------------Internal Variables--------
 reg  [3:0] temp_1;
 reg  [3:0] temp_2;
@@ -20,6 +21,13 @@ reg  [3:0] temp_result;
 reg  [3:0] d_out;
 reg  done;
 
+reg  [1:0] piece_selection;
+reg [31:0] board_in board_out; // these are probably not needed, but just included in case
+
+
+//---------Modules for it to call-------
+rng myrng(new_piece, piece_selection);
+fall falling_action(board_in, board_out);
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
 
