@@ -33,7 +33,7 @@ in_touched = 0;
 in_new_piece = 0;
 in_start = 0;
 in_game_over = 0;
-in_which_row = 0;
+in_which_row = 4'b1011;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -109,7 +109,7 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 12
-in_start = 1;
+in_restart = 1;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -117,14 +117,27 @@ in_clka = 0; in_clkb = 1; #10
 
 
 // Cycle 13
+in_restart = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 14
+in_start = 1;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 15
 in_start = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-
-// Cycle 14
+// Cycle 16
 in_which_row = 4'b1111;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -132,20 +145,32 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 15
+// Cycle 17
+in_touched = 1;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 16
+// Cycle 18
+in_touched = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
+// Cycle 19
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
 
+// Cycle 20
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
 $dumpfile ("fsm_tb.vcd"); 
 $dumpvars; 
 
