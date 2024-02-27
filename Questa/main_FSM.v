@@ -15,6 +15,10 @@ input wire   clka, clkb, touched, new_piece, restart;
 input wire [3:0] which_row;
 //-------------Output Ports----------------------------
 output reg state[2:0]; //TODO: find out if we need more outputs
+output reg start_gen;  // for each state create a var for clkb, which allows processing data
+output reg start_move;
+output reg start_land;
+output reg start_clear;
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100;
@@ -68,21 +72,47 @@ end
 always @ (negedge clkb)
 begin : OUTPUT_LOGIC
   case(next_state)
-  IDLE: begin
+  NEWBOARD: begin
           state <= next_state;
-          start <= 1'b0;
+		  start_gen = 0;
+		  start_move = 0;
+		  start_land = 0;
+		  start_clear = 0;
         end
-  START_LOAD: begin
+  GEN: begin
           state <= next_state;
-          start <= 1'b1;
+		  start_gen = 1;
+		  start_move = 0;
+		  start_land = 0;
+		  start_clear = 0;	
         end
-  WAIT: begin
+  MOVE: begin
           state <= next_state;
-          start <= 1'b0;
+		  start_gen = 0;
+		  start_move = 1;
+		  start_land = 0;
+		  start_clear = 0;	
           end
+  LAND: begin	
+		  state <= next_state;
+		  start_gen = 0;
+		  start_move = 0;
+		  start_land = 1;
+		  start_clear = 0;
+		  end
+  CLEAR: begin	
+		  state <= next_state;
+		  start_gen = 0;
+		  start_move = 0;
+		  start_land = 0;
+		  start_clear = 1;
+		  end	  
  default: begin
           state <= next_state;
-          start <= 1'b0;
+		  start_gen = 0;
+		  start_move = 0;
+		  start_land = 0;
+		  start_clear = 0;
          end
   endcase
 end // End Of Block OUTPUT_LOGIC
