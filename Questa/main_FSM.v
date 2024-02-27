@@ -6,7 +6,7 @@
 // 		 start signal to data path dp.
 // 		 Waits then for done signal from the datapath.
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, touched, new_piece, which_row, state);
+module main_FSM (clka, clkb, restart, touched, new_piece, which_row, state, start_gen, start_move, start_land, start_clear);
 //-------------Input Ports-----------------------------
 // touched for line touched, new piece for signalling we need a new piece
 // which row for telling us which row is an issue
