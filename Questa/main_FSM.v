@@ -14,7 +14,7 @@ module main_FSM (clka, clkb, restart, touched, new_piece, which_row, state);
 input wire   clka, clkb, touched, new_piece, restart;
 input wire [3:0] which_row;
 //-------------Output Ports----------------------------
-output reg state[1:0]; //TODO: find out if we need more outputs
+output reg state[2:0]; //TODO: find out if we need more outputs
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100;
@@ -35,6 +35,7 @@ function [SIZE-1:0] fsm_function;
 
 case(state)
 // feels like it makes sense to have a board_start_state that only gets hit on reset
+// or we can make it game cover state, when press "start" button go to GEN state
   NEWBOARD: begin
     fsm_function = GEN;
   end
