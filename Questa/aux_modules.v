@@ -1,14 +1,14 @@
-// Module to handle random number generation
-module rng (
-    input wire clk,
-    output reg [2:0] piece_selection
-);
-    // XOR feedback based on a tap sequence for a 3-bit LFSR
-    piece_selection[2] <= piece_selection[2] ^ piece_selection[0];
-    piece_selection[1] <= piece_selection[2];
-    piece_selection[0] <= piece_selection[1];
+// // Module to handle random number generation
+// module rng (
+//     input wire clk,
+//     output reg [2:0] piece_selection
+// );
+//     // XOR feedback based on a tap sequence for a 3-bit LFSR
+//     piece_selection[2] <= piece_selection[2] ^ piece_selection[0];
+//     piece_selection[1] <= piece_selection[2];
+//     piece_selection[0] <= piece_selection[1];
 
-endmodule
+// endmodule
 
 // Module for the falling action of a piece on the board
 module fall (

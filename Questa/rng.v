@@ -1,11 +1,9 @@
 //-----------------------------------------------------
-// Design Name : dp
-// File Name   : dp.v
-// Function    : Gives us what the next piece should be
+// Design Name : rng
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, random);
+module rng (clka, clkb, restart, random);
 //-----------Input Ports---------------
 input wire clka, clkb, restart;
 //-----------Output Ports---------------
