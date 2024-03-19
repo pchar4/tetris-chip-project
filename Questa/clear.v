@@ -1,4 +1,4 @@
-module clear_redraw(clka, clkb, board_in, board_out, curr_piece, error)
+module clear_redraw(clka, clkb, board_in, board_out, curr_piece, error);
 //-----------Input Ports---------------
 input clka, clkb;
 input [31:0] board_in;
@@ -16,7 +16,7 @@ task gen_new;
 	input [31:0]  board_in;
     inout [31:0] board_out;
     output error;
-    begin
+    
         case(curr_piece)
             // single rect
             2'b00 : begin
@@ -50,13 +50,13 @@ task gen_new;
                         board_out[1] = 1;
                      end
         endcase
-    end
-    endtask
+    
+endtask
 
 
-    if(board_in[31:28] = 4'b1111;)
+    if(board_in[31:28] == 4'b1111)
     begin
-		if(board_in[27:24] = 4'b1111)
+		if(board_in[27:24] == 4'b1111)
 		begin
 		board_out[31:28] = board_in[23:20];
 		board_out[27:24] = board_in[19:16];
@@ -81,9 +81,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[27:24] = 4'b1111)
+    else if(board_in[27:24] == 4'b1111)
 	begin
-		if(board_in[23:20] = 4'b1111)
+		if(board_in[23:20] == 4'b1111)
 		begin
 		board_out[27:24] = board_in[19:16];
 		board_out[23:20] = board_in[15:12];
@@ -106,9 +106,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[23:20] = 4'b1111)
+    else if(board_in[23:20] == 4'b1111)
 	begin
-		if(board_in[19:16] = 4'b1111)
+		if(board_in[19:16] == 4'b1111)
 		begin
 		board_out[23:20] = board_in[15:12];
 		board_out[19:16] = board_in[11: 8];
@@ -129,9 +129,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[19:16] = 4'b1111)
+    else if(board_in[19:16] == 4'b1111)
 	begin
-		if(board_in[15:12] = 4'b1111)
+		if(board_in[15:12] == 4'b1111)
 		begin
 		board_out[19:16] = board_in[11: 8];
 		board_out[15:12] = board_in[ 7: 4];
@@ -150,9 +150,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[15:12] = 4'b1111)
+    else if(board_in[15:12] == 4'b1111)
 	begin
-		if(board_in[11: 8] = 4'b1111)
+		if(board_in[11: 8] == 4'b1111)
 		begin
 		board_out[15:12] = board_in[ 7: 4];
 		board_out[11: 8] = board_in[ 3: 0];
@@ -169,9 +169,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[11: 8] = 4'b1111)
+    else if(board_in[11: 8] == 4'b1111)
 	begin
-		if(board_in[ 7: 4] = 4'b1111)
+		if(board_in[ 7: 4] == 4'b1111)
 		begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
@@ -186,9 +186,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[ 7: 4] = 4'b1111)
+    else if(board_in[ 7: 4] == 4'b1111)
 	begin
-		if(board_in[ 3: 0] = 4'b1111)
+		if(board_in[ 3: 0] == 4'b1111)
 		begin
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
@@ -201,9 +201,9 @@ task gen_new;
 		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
-    else if(board_in[ 3: 0] = 4'b1111)
+    else if(board_in[ 3: 0] == 4'b1111)
 	begin
-		board_out[ 3: 0] = 4'b0000;
+		board_out[ 3: 0] == 4'b0000;
 		// gen_new(curr_piece, board_in, board_out, error);
 	end
 	else // don't need to clear line(s)

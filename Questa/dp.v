@@ -28,7 +28,10 @@ parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD 
 always @ (negedge clka)
 begin // control signal logic
    if (state == GEN) begin
-      rng myrng(clka, clkb, restart, piece_selection);
+      rng myrng(.clka(clka), 
+      .clkb(clkb), 
+      .restart(restart), 
+      .random(piece_selection));
       clear_redraw myredraw(
          .clka(clka), 
          .clkb(clkb), 

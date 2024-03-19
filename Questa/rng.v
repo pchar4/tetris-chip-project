@@ -3,17 +3,17 @@
 //-----------------------------------------------------
 //
 //
-module rng (clka, clkb, restart, random);
+module rng(clka, clkb, restart, random);
 //-----------Input Ports---------------
 input wire clka, clkb, restart;
 //-----------Output Ports---------------
-output [1:0] random;
+output reg [1:0] random;
 
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
 
 initial begin
-   random = 0;
+   random = 2'b0;
 end
 
 // Cycle through user values at clk frequency and then pick one
