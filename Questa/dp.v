@@ -27,8 +27,8 @@ parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD 
 always @ (negedge clka)
 begin // control signal logic
    if (state == GEN) begin
-      rng myrng(clka, piece_selection); // fix
-      temp_board <= board_in | piece_selection; // actually place the piece in the correct place later, currently placing it at an end of the board
+      rng myrng(clka, clkb, restart, piece_selection);
+      // actually place the piece in the correct place later, currently placing it at an end of the board
    end 
    else if (state == MOVE) begin
       fall falling_action(board_in, move, temp_board);
