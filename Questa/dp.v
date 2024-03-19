@@ -26,8 +26,8 @@ assign right = (move == 1);
 assign rotate = (move == 2);
 wire  [1:0] piece_selection, temp_piece;
 assign curr_piece_out = (state == GEN) ? piece_selection : temp_piece;
-wire [31:0] temp_board;
-assign board_out = temp_board;
+wire [31:0] temp_board_1, temp_board_2;
+assign board_out = (state == MOVE) ? temp_board_1 : temp_board_2;
 
 
 rng myrng(.clka(clka), 
@@ -38,10 +38,11 @@ clear_redraw myredraw(
          .clka(clka), 
          .clkb(clkb), 
          .restart(restart),
+         .state(state),
          .board_in(board_in), 
-         .board_out(temp_board),
-         .curr_piece(curr_piece_in), 
-         .error(error));
+         .board_out(temp_board_1),
+         .curr_piece(piece_selection), // change #1 from debugging
+         .error(error_out));
 move_piece mymove (.clka(clka),
                .clkb(clkb),
                .restart(restart),
@@ -55,7 +56,7 @@ move_piece mymove (.clka(clka),
                .rotate(rotate), 
                .new_location(location_out), 
                .new_rotation(rotation_out), 
-               .new_board_state(temp_board), 
+               .new_board_state(temp_board_2), 
                .touched(touched));
 // //-------------Code Starts Here---------
 // always @ (negedge clka)

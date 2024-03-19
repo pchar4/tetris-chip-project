@@ -28,7 +28,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
@@ -40,7 +39,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[27:24] == 4'b1111)
@@ -54,7 +52,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
@@ -65,7 +62,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[23:20] == 4'b1111)
@@ -78,7 +74,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
@@ -88,7 +83,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[19:16] == 4'b1111)
@@ -100,7 +94,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
@@ -109,7 +102,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[15:12] == 4'b1111)
@@ -120,7 +112,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
@@ -128,7 +119,6 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[11: 8] == 4'b1111)
@@ -138,14 +128,12 @@ always @(negedge clka) begin
 		temp_board[11: 8] = board_in[ 3: 0];
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
 		temp_board[11: 8] = board_in[ 7: 4];
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[ 7: 4] == 4'b1111)
@@ -154,19 +142,16 @@ always @(negedge clka) begin
 		begin
 		temp_board[ 7: 4] = 4'b0000;
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
 		temp_board[ 7: 4] = board_in[ 3: 0];
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[ 3: 0] == 4'b1111)
 	begin
 		temp_board[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, temp_board, error);
 	end
 	else // don't need to clear line(s)
 	begin
@@ -175,18 +160,19 @@ always @(negedge clka) begin
 
 	if (state == 0) begin // state == 0 is GEN phase
 		case(curr_piece)
-            // single rect
+            // single rect []
             2'b00 : begin
                         temp_error = board_in[1]; 
                         temp_board[1] = 1;
                     end
-            // 2 rects
+            // 2 rects - will be horizontal [][]
             2'b01 : begin
                         temp_error = board_in[1] | board_in[2]; 
                         temp_board[1] = 1;
                         temp_board[2] = 1;
                     end
-            // 4 rects, square
+            // 4 rects, square  [][]
+			//                  [][]
             2'b10 : begin
                         temp_error = board_in[1] | board_in[2] | board_in[5] | board_in[6]; 
                         temp_board[1] = 1;
@@ -194,7 +180,8 @@ always @(negedge clka) begin
                         temp_board[5] = 1;
                         temp_board[6] = 1;
                     end
-            // 3 rects, L shape
+            // 3 rects, L shape  []
+			//                   [][]
             2'b11 : begin
                         temp_error = board_in[1] | board_in[5] | board_in[6]; 
                         temp_board[1] = 1;

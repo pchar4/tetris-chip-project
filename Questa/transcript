@@ -13,13 +13,11 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -debugDB -voptargs=""+acc"" top_module_tb 
-# Start time: 05:43:03 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 14:30:56 on Mar 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Warning: dp.v(37): (vopt-2685) [TFMPC] - Too few port connections for 'myredraw'.  Expected 8, found 7.
-# ** Warning: dp.v(37): (vopt-2718) [TFMPC] - Missing connection for port 'state'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.top_module_tb(fast)
 # Loading work.top_module(fast)
 # Loading work.dp(fast)
@@ -33,6 +31,5 @@ run -all
 # ** Note: $stop    : testbench_top.v(80)
 #    Time: 320 ns  Iteration: 0  Instance: /top_module_tb
 # Break in Module top_module_tb at testbench_top.v line 80
-exit
-# End time: 05:45:58 on Mar 19,2024, Elapsed time: 0:02:55
-# Errors: 0, Warnings: 3
+# End time: 14:40:22 on Mar 19,2024, Elapsed time: 0:09:26
+# Errors: 0, Warnings: 1
