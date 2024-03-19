@@ -6,18 +6,17 @@
 // 		 start signal to data path dp.
 // 		 Waits then for done signal from the datapath.
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, new_piece, which_row, state, start_gen, start_move, start_land, start_clear, start, game_over);
+module main_FSM (clka, clkb, restart, new_piece, which_row, error, state, start_gen, start_move, start_land, start, game_over);
 //-------------Input Ports-----------------------------
 // touched for line touched, new piece for signalling we need a new piece
 // which row for telling us which row is an issue
 // restart to start a new game, and done to indicate game over
-input wire   clka, clkb, new_piece, restart, start, game_over, which_row;
+input wire   clka, clkb, new_piece, restart, start, game_over, which_row, error;
 //-------------Output Ports----------------------------
 output state[2:0]; //TODO: find out if we need more outputs
 output reg start_gen;  // for each state create a var for clkb, which allows processing data
 output reg start_move;
 output reg start_land;
-output reg start_clear;
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
@@ -46,19 +45,16 @@ case(state)
     fsm_function = game_over ? GAMEOVER: MOVE;
   end 
   MOVE: begin
-    fsm_function = touched ? LAND: MOVE;
+    fsm_function = touched ? LAND: MOVE; // grab this from movement code
   end
   LAND: begin
     // which row is not 1 bit, definition needs to be changed at some point
-    fsm_function = which_row ? CLEAR : GEN;
-  end
-  CLEAR: begin
-    fsm_function = GEN;
+    fsm_function = error ? GAMEOVER : GEN;
   end
   GAMEOVER: begin
     fsm_function = restart ? NEWBOARD : GAMEOVER;
   end
-  default: fsm_function = NEWBOARD; // --> can't reasonably say which one is default state
+  default: fsm_function = NEWBOARD;
   endcase
 endfunction
 //----------Seq Logic-----------------------------
@@ -79,49 +75,36 @@ begin : OUTPUT_LOGIC
 		  start_gen = 0;
 		  start_move = 0;
 		  start_land = 0;
-		  start_clear = 0;
         end
   NEWBOARD: begin
       state <= next_state;
 		  start_gen = 0;
 		  start_move = 0;
 		  start_land = 0;
-		  start_clear = 0;
         end
   GEN: begin
       state <= next_state;
 		  start_gen = 1;
 		  start_move = 0;
 		  start_land = 0;
-		  start_clear = 0;	
         end
   MOVE: begin
       state <= next_state;
 		  start_gen = 0;
 		  start_move = 1;
 		  start_land = 0;
-		  start_clear = 0;	
           end
   LAND: begin	
 		  state <= next_state;
 		  start_gen = 0;
 		  start_move = 0;
 		  start_land = 1;
-		  start_clear = 0;
-		  end
-  CLEAR: begin	
-		  state <= next_state;
-		  start_gen = 0;
-		  start_move = 0;
-		  start_land = 0;
-		  start_clear = 1;
-		  end	  
+		  end  
  default: begin
       state <= next_state;
 		  start_gen = 0;
 		  start_move = 0;
 		  start_land = 0;
-		  start_clear = 0;
          end
   endcase
 end // End Of Block OUTPUT_LOGIC

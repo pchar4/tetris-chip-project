@@ -1,4 +1,4 @@
-module clear_redraw(clka, clkb, board_in, board_out, rotation, curr_piece, which_row, error)
+module clear_redraw(clka, clkb, board_in, board_out, curr_piece, which_row, error)
 //-----------Input Ports---------------
 input clka, clkb;
 input [31:0] board_in;
@@ -68,7 +68,7 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
@@ -80,7 +80,7 @@ begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[27:24] = 4'b1111)
@@ -94,7 +94,7 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
@@ -105,7 +105,7 @@ begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[23:20] = 4'b1111)
@@ -118,7 +118,7 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
@@ -128,7 +128,7 @@ begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[19:16] = 4'b1111)
@@ -140,7 +140,7 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
@@ -149,7 +149,7 @@ begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[15:12] = 4'b1111)
@@ -160,7 +160,7 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
@@ -168,7 +168,7 @@ begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[11: 8] = 4'b1111)
@@ -178,14 +178,14 @@ begin
 		board_out[11: 8] = board_in[ 3: 0];
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
 		board_out[11: 8] = board_in[ 7: 4];
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[ 7: 4] = 4'b1111)
@@ -194,19 +194,19 @@ begin
 		begin
 		board_out[ 7: 4] = 4'b0000;
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 		else
 		begin
 		board_out[ 7: 4] = board_in[ 3: 0];
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 		end
 	end
     else if(board_in[ 3: 0] = 4'b1111)
 	begin
 		board_out[ 3: 0] = 4'b0000;
-		gen_new(curr_piece, board_in, board_out, error);
+		// gen_new(curr_piece, board_in, board_out, error);
 	end
 end
 else // don't need to clear line(s)
