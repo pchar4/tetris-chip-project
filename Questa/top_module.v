@@ -15,28 +15,42 @@
 //               The dp makes the output latch value visible through
 //               this top module.
 //-----------------------------------------------------
-module top_module (in_clka, in_clkb, in_restart, in_load, out_start, out_state_main, in_d1_in, in_d2_in, out_d_out, out_done);
+module top_module (in_clka, in_clkb, in_restart, in_move, board_out);
+
 //-------------Input Ports-----------------------------
-input   in_clka, in_clkb, in_restart, in_load, in_d1_in, in_d2_in;
+input wire  in_clka, in_clkb, in_restart;
+input wire [1:0] in_move;
 //-------------Output Ports----------------------------
-output out_start;
-output [1:0] out_state_main; 
-output [3:0] out_d_out;
-output out_done;
-//-------------Input ports Data Type-------------------
-wire   in_clka, in_clkb, in_restart, in_load;
-wire   [3:0] in_d1_in;
-wire   [3:0] in_d2_in;
-//-------------Output Ports Data Type------------------
-wire   out_start;
-wire   [1:0] out_state_main;
-wire   [3:0] out_d_out;
-wire   out_done;
-
+output wire [31:0] board_out;
+//----------Internal Wires---------------------------
+wire touched, error;
+wire [1:0] rotation, curr_piece;
+wire [3:0] state;
+wire [4:0] location;
+wire [31:0] board;
 //----------Code startes Here------------------------
-
-
-
+assign board_out = board;
+dp dp_tetris(.clka(in_clka), 
+            .clkb(in_clkb), 
+            .restart(in_restart), 
+            .move(in_move), 
+            .state(state)
+            .location_in(location), 
+            .board_in(board), 
+            .rotation_in(rotation), 
+            .curr_piece_in(curr_piece), 
+            .curr_piece_out(curr_piece), 
+            .location_out(location), 
+            .rotation_out(rotation), 
+            .touched(touched), 
+            .board_out(board), 
+            .error_out(error));
+main_FSM fsm_tetris(.clka(in_clka), 
+                    .clkb(in_clkb), 
+                    .restart(in_restart), 
+                    .placed(touched), 
+                    .game_over(error),
+                    .state(state));
 
 
 endmodule // End of Module top_module

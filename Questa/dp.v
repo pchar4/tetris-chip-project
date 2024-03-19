@@ -5,19 +5,20 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, move, location_in, board_in, rotation_in, location_out, rotation_out, touched, board_out, error_out);
+module dp (clka, clkb, restart, move, state, location_in, board_in, rotation_in, curr_piece_in, curr_piece_out, location_out, rotation_out, touched, board_out, error_out);
 //-----------Input Ports---------------
 input clka, clkb, restart;
-inout [1:0] move; // 0 == left, 1 == right, 2 == rotate
-input reg [31:0] board_in;
+input [1:0] curr_piece_in, rotation_in, move; // 0 == left, 1 == right, 2 == rotate
+input wire [31:0] board_in;
 input wire [3:0] state;
+input wire [4:0] location_in;
 //-----------Output Ports---------------
-output touched;
-output reg [1:0] rotation_out;
+output reg touched, error_out;
+output reg [1:0] rotation_out, curr_piece_out;
 output reg [4:0] location_out;
-output [31:0] board_out;
+output reg [31:0] board_out;
 //------------Internal Variables--------
-reg  which_row, error, left, right; // which row to clear - probably don't need
+reg  left, right, rotate;
 reg  [1:0] piece_selection;
 reg [31:0] temp_board;
 
@@ -82,9 +83,11 @@ end
 always @ (negedge clkb) // separating to clkb to give more time for combinational logic?
 begin
 if (restart == 1'b1) begin
-   board_out = 32'b0;
+   board_out = 0;
+   temp_board = 0;
    location_out = 0;
    rotation_out = 0;
+   curr_piece_out = 0;
    touched = 0;
 end
 else begin

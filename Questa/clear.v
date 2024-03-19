@@ -5,7 +5,7 @@ input [31:0] board_in;
 input [1:0]curr_piece;
 //-----------Output Ports---------------
 output [31:0] board_out;
-inout error;
+output error;
 //------------Internal Variables--------
 reg  [3:0] clear; // which row to clear
 reg  [1:0] piece_selection;
