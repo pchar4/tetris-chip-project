@@ -6,31 +6,39 @@
 //-----------------------------------------------------
 //
 //
-module move_piece (clka, clkb, start, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, done);
+module move_piece (clka, clkb, start, curr_board_state, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, new_board_state, done);
 //-----------Input Ports---------------
 input clka, clkb, start, left, right, rotate;
 input [4:0] curr_piece_location;
 input [1:0] curr_piece_rotation;
 input [1:0] curr_piece_type;
+input [31:0] curr_board_state;
 //-----------Output Ports---------------
-output new_rotation, done;
-output [4:0] new_location;
+output reg done;
+output reg [1:0] new_rotation;
+output reg [4:0] new_location;
+output reg [31:0] new_board_state;
+
 //------------Internal Variables--------
 reg  [4:0] location_temp;
+reg  [4:0] old_location;
 reg  [1:0] rotation_temp;
-
-parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100;
-
+reg  [1:0] old_rotation;
+reg  [31:0] temp_board;
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
 
-always @ (negedge clka)
-begin // user input logic
+always @ (negedge clka) begin
+if(start == 1'b1) begin// user input logic
+   old_location = curr_piece_location;
+   old_rotation = curr_piece_rotation;
    if (left == 1'b1) begin
       if(curr_piece_location % 4 == 0) begin
 	location_temp = curr_piece_location;
       end
-      else begin
+      else if (curr_piece_location % 4 == 1 && curr_piece_type == 2'b11 && curr_piece_rotation == 2'b11) begin
+        location_temp = curr_piece_location;
+      end else begin
 	location_temp = curr_piece_location -1;
       end
    end 
@@ -38,24 +46,109 @@ begin // user input logic
       if(curr_piece_location % 4 == 3) begin
 	location_temp = curr_piece_location;
       end
-      else begin
+      else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b01 && (curr_piece_rotation == 2'b01 || curr_piece_rotation == 2'b11)) begin
+	location_temp = curr_piece_location;
+      end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b10) begin
+	location_temp = curr_piece_location;
+      end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b11 && curr_piece_rotation != 2'b10) begin
+	location_temp = curr_piece_location;
+      end else begin
 	location_temp = curr_piece_location +1;
       end
    end 
    else if (rotate == 1'b1) begin
       if(curr_piece_rotation == 2'b11) begin
-	rotation_temp = 1'b00;
+	rotation_temp = 2'b00;
       end
-      else begin
+      else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b10) begin
+	location_temp = curr_piece_location - 1;
+	rotation_temp = curr_piece_rotation +1;
+      end else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b01) begin
+	location_temp = curr_piece_location +1;
+	rotation_temp = curr_piece_rotation +1;
+      end else begin
 	rotation_temp = curr_piece_rotation +1;
       end
    end
+  else begin
+	location_temp = curr_piece_location;
+	rotation_temp = curr_piece_rotation;
+  end
+end
 end
 
 always @ (negedge clkb)
 begin
+if (start == 1'b1) begin
+done <= 1'b1;
 new_location = location_temp +4; // to move down a row
 new_rotation = rotation_temp;
+new_board_state = curr_board_state;
+new_board_state[old_location] = 1'b0;
+new_board_state[new_location] = 1'b1;
+case (curr_piece_type)
+2'b00 : begin
+// Don't need to do anything in this case
+end
+2'b01 : begin
+  // Set the old values to 0 depending on the rotation
+  if (old_rotation == 2'b01 || old_rotation == 2'b11) begin
+    new_board_state[old_location+1] = 1'b0;
+  end
+  else begin
+    new_board_state[old_location-4] = 1'b0;
+  end
+  // Set the new values to 1 depending on the rotation
+  if (new_rotation == 2'b01 || new_rotation == 2'b11) begin
+    new_board_state[new_location+1] = 1'b1;
+  end
+  else begin
+    new_board_state[new_location-4] = 1'b1;
+  end
+end
+2'b10 : begin
+  // set the old values to 0
+  new_board_state[old_location+1] = 1'b0;
+  new_board_state[old_location-4] = 1'b0;
+  new_board_state[old_location-3] = 1'b0;
+  // set the new values to 1
+  new_board_state[new_location+1] = 1'b1;
+  new_board_state[new_location-4] = 1'b1;
+  new_board_state[new_location-3] = 1'b1;
+end
+
+2'b11 : begin
+  // set the old values to 0 depending on rotation
+  if (old_rotation == 2'b00) begin
+    new_board_state[old_location+1] = 1'b0;
+    new_board_state[old_location-4] = 1'b0;
+  end else if (old_rotation == 2'b01) begin
+    new_board_state[old_location-4] = 1'b0;
+    new_board_state[old_location-3] = 1'b0;
+  end else if (old_rotation == 2'b10) begin
+    new_board_state[old_location-5] = 1'b0;
+    new_board_state[old_location-4] = 1'b0;
+  end else if (old_rotation == 2'b11) begin
+    new_board_state[old_location+1] = 1'b0;
+    new_board_state[old_location-3] = 1'b0;
+  end
+  // set the new values to 1 depending on rotation
+  if (new_rotation == 2'b00) begin
+    new_board_state[new_location+1] = 1'b1;
+    new_board_state[new_location-4] = 1'b1;
+  end else if (new_rotation == 2'b01) begin
+    new_board_state[new_location-4] = 1'b1;
+    new_board_state[new_location-3] = 1'b1;
+  end else if (new_rotation == 2'b10) begin
+    new_board_state[new_location-5] = 1'b1;
+    new_board_state[new_location-4] = 1'b1;
+  end else if (new_rotation == 2'b11) begin
+    new_board_state[new_location+1] = 1'b1;
+    new_board_state[new_location-3] = 1'b1;
+  end
+end
+endcase
+end
 end
 
 endmodule //End Of Module move_piece
