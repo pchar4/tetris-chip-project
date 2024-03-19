@@ -3,13 +3,13 @@
 module move_tb();
 
 reg in_clka, in_clkb, in_start, in_left, in_right, in_rotate;
-wire out_done;
+wire out_done, out_touched;
 reg [31:0] in_curr_board_state;
 reg  [1:0] in_curr_piece_type;
 reg  [4:0] in_curr_piece_location;
 reg  [1:0] in_curr_piece_rotation;
-wire  [1:0] out_new_location;
-wire  [4:0] out_new_rotation;
+wire  [4:0] out_new_location;
+wire  [1:0] out_new_rotation;
 wire [31:0] out_new_board_state;
 
 // creating an FSM
@@ -27,7 +27,8 @@ move_piece move_piece1 (
     .new_location (out_new_location),
     .new_rotation (out_new_rotation),
     .new_board_state (out_new_board_state),
-    .done (out_done)
+    .done (out_done),
+    .touched (out_touched)
 );
 
 initial
@@ -88,6 +89,26 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_start = 1;
+in_curr_board_state = 32'b11010000010001000000000000000000;
+in_curr_piece_type = 2'b01;
+in_curr_piece_location = 5'b10110;
+in_curr_piece_rotation = 2'b00;
+in_left = 0;
+in_right = 1;
+in_rotate = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
