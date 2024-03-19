@@ -1,0 +1,51 @@
+###################################################################
+
+# Created by write_sdc on Tue Mar 19 04:36:21 2024
+
+###################################################################
+set sdc_version 2.1
+
+set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+set_driving_cell -lib_cell INVX1 [get_ports in_clka]
+set_driving_cell -lib_cell INVX1 [get_ports in_clkb]
+set_driving_cell -lib_cell INVX1 [get_ports in_restart]
+set_driving_cell -lib_cell INVX1 [get_ports {in_move[1]}]
+set_driving_cell -lib_cell INVX1 [get_ports {in_move[0]}]
+create_clock -name vclk  -period 50  -waveform {0 25}
+set_input_delay -clock vclk  1  [get_ports in_clka]
+set_input_delay -clock vclk  1  [get_ports in_clkb]
+set_input_delay -clock vclk  1  [get_ports in_restart]
+set_input_delay -clock vclk  1  [get_ports {in_move[1]}]
+set_input_delay -clock vclk  1  [get_ports {in_move[0]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[31]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[30]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[29]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[28]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[27]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[26]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[25]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[24]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[23]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[22]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[21]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[20]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[19]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[18]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[17]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[16]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[15]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[14]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[13]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[12]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[11]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[10]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[9]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[8]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[7]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[6]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[5]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[4]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[3]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[2]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[1]}]
+set_output_delay -clock vclk  1  [get_ports {board_out[0]}]

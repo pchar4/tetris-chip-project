@@ -13,7 +13,7 @@ module main_FSM (clka, clkb, restart, placed, game_over, state);
 // restart to start a new game, and done to indicate game over
 input wire   clka, clkb, restart, game_over, placed;
 //-------------Output Ports----------------------------
-output state[3:0]; //TODO: find out if we need more outputs
+output state[2:0]; //TODO: find out if we need more outputs
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101; // despite clear being a state we are not using it
@@ -45,7 +45,7 @@ case(state)
   end
   LAND: begin
     // which row is not 1 bit, definition needs to be changed at some point
-    fsm_function = error ? GAMEOVER : GEN;
+    fsm_function = game_over ? GAMEOVER : GEN;
   end
   GAMEOVER: begin
     fsm_function = restart ? NEWBOARD : GAMEOVER;
