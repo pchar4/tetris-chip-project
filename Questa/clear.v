@@ -1,6 +1,6 @@
-module clear_redraw(clka, clkb, board_in, board_out, curr_piece, error);
+module clear_redraw(clka, clkb, restart, board_in, board_out, curr_piece, error);
 //-----------Input Ports---------------
-input clka, clkb;
+input clka, clkb, restart;
 input [31:0] board_in;
 input [1:0]curr_piece;
 //-----------Output Ports---------------
@@ -209,8 +209,14 @@ always @(negedge clka) begin
 end
 
 always @(negedge clkb) begin
-	board_out <= temp_board;
-	error <= temp_error;
+	if (restart) begin
+		board_out <= 0;
+		temp_board <= 0;
+		error <= 0;
+	end else begin
+		board_out <= temp_board;
+		error <= temp_error;
+	end
 end
     
 

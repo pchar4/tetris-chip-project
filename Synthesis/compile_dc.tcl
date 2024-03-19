@@ -12,10 +12,10 @@
 #/* Edit this part only of the file.                                     */
 #/* Add all verilog files, separated by spaces after keyword "list"      */
 
-set my_verilog_files [list main_FSM.v]
+set my_verilog_files [list clear.v dp.v main_FSM.v move_piece.v rng.v top_module.v]
 
 #/* Top-level Module Name update                            */
-set my_toplevel main_FSM
+set my_toplevel top_module
 
 #/* The name of the clock pin. If no clock-pin     */
 #/* exists, pick anything                          */
