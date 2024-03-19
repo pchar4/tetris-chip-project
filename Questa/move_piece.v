@@ -6,13 +6,14 @@
 //-----------------------------------------------------
 //
 //
-module move_piece (clka, clkb, restart, curr_board_state, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, new_board_state, touched);
+module move_piece (clka, clkb, restart, state, curr_board_state, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, new_board_state, touched);
 //-----------Input Ports---------------
 input clka, clkb, restart, left, right, rotate;
 input [4:0] curr_piece_location;
 input [1:0] curr_piece_rotation;
 input [1:0] curr_piece_type;
 input [31:0] curr_board_state;
+input [2:0] state;
 //-----------Output Ports---------------
 output reg touched;
 output reg [1:0] new_rotation;

@@ -1,8 +1,9 @@
-module clear_redraw(clka, clkb, restart, board_in, board_out, curr_piece, error);
+module clear_redraw(clka, clkb, restart, state, board_in, board_out, curr_piece, error);
 //-----------Input Ports---------------
 input clka, clkb, restart;
 input [31:0] board_in;
-input [1:0]curr_piece;
+input [1:0] curr_piece;
+input [2:0] state;
 //-----------Output Ports---------------
 output reg [31:0] board_out;
 output reg error;
@@ -172,8 +173,8 @@ always @(negedge clka) begin
 		temp_board = board_in;
 	end
 
-
-	case(curr_piece)
+	if (state == 0) begin // state == 0 is GEN phase
+		case(curr_piece)
             // single rect
             2'b00 : begin
                         temp_error = board_in[1]; 
@@ -205,7 +206,9 @@ always @(negedge clka) begin
                         temp_error = board_in[1]; 
                         temp_board[1] = 1;
                      end
-        endcase
+        endcase	
+	end
+	
 end
 
 always @(negedge clkb) begin
