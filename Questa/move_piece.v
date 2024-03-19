@@ -6,15 +6,15 @@
 //-----------------------------------------------------
 //
 //
-module move_piece (clka, clkb, start, curr_board_state, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, new_board_state, done, touched);
+module move_piece (clka, clkb, curr_board_state, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, new_board_state, touched);
 //-----------Input Ports---------------
-input clka, clkb, start, left, right, rotate;
+input clka, clkb, left, right, rotate;
 input [4:0] curr_piece_location;
 input [1:0] curr_piece_rotation;
 input [1:0] curr_piece_type;
 input [31:0] curr_board_state;
 //-----------Output Ports---------------
-output reg done, touched;
+output reg touched;
 output reg [1:0] new_rotation;
 output reg [4:0] new_location;
 output reg [31:0] new_board_state;
@@ -28,62 +28,61 @@ reg  [1:0] old_rotation;
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
 
 always @ (negedge clka) begin
-if(start == 1'b1) begin// user input logic
-   old_location = curr_piece_location;
-   old_rotation = curr_piece_rotation;
-   if (left == 1'b1) begin
-      if(curr_piece_location % 4 == 0) begin
-	location_temp = curr_piece_location;
-      end
-      else if (curr_piece_location % 4 == 1 && curr_piece_type == 2'b11 && curr_piece_rotation == 2'b11) begin
-        location_temp = curr_piece_location;
-      end else begin
-	location_temp = curr_piece_location -1;
-      end
-      rotation_temp = curr_piece_rotation;
-   end 
-   else if (right == 1'b1) begin
-      if(curr_piece_location % 4 == 3) begin
-	location_temp = curr_piece_location;
-      end
-      else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b01 && (curr_piece_rotation == 2'b01 || curr_piece_rotation == 2'b11)) begin
-	location_temp = curr_piece_location;
-      end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b10) begin
-	location_temp = curr_piece_location;
-      end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b11 && curr_piece_rotation != 2'b10) begin
-	location_temp = curr_piece_location;
-      end else begin
-	location_temp = curr_piece_location +1;
-      end
-      rotation_temp = curr_piece_rotation;
-   end 
-   else if (rotate == 1'b1) begin
-      if(curr_piece_rotation == 2'b11) begin
-	rotation_temp = 2'b00;
-	location_temp = curr_piece_location;
-      end
-      else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b10) begin
-	location_temp = curr_piece_location - 1;
-	rotation_temp = curr_piece_rotation +1;
-      end else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b01) begin
-	location_temp = curr_piece_location +1;
-	rotation_temp = curr_piece_rotation +1;
-      end else begin
-	rotation_temp = curr_piece_rotation +1;
-	location_temp = curr_piece_location;
-      end
-   end
-  else begin
-	location_temp = curr_piece_location;
-	rotation_temp = curr_piece_rotation;
+// user input logic
+  old_location = curr_piece_location;
+  old_rotation = curr_piece_rotation;
+  if (left == 1'b1) begin
+    if(curr_piece_location % 4 == 0) begin
+location_temp = curr_piece_location;
+    end
+    else if (curr_piece_location % 4 == 1 && curr_piece_type == 2'b11 && curr_piece_rotation == 2'b11) begin
+      location_temp = curr_piece_location;
+    end else begin
+location_temp = curr_piece_location -1;
+    end
+    rotation_temp = curr_piece_rotation;
+  end 
+  else if (right == 1'b1) begin
+    if(curr_piece_location % 4 == 3) begin
+location_temp = curr_piece_location;
+    end
+    else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b01 && (curr_piece_rotation == 2'b01 || curr_piece_rotation == 2'b11)) begin
+location_temp = curr_piece_location;
+    end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b10) begin
+location_temp = curr_piece_location;
+    end else if(curr_piece_location % 4 == 2 && curr_piece_type == 2'b11 && curr_piece_rotation != 2'b10) begin
+location_temp = curr_piece_location;
+    end else begin
+location_temp = curr_piece_location +1;
+    end
+    rotation_temp = curr_piece_rotation;
+  end 
+  else if (rotate == 1'b1) begin
+    if(curr_piece_rotation == 2'b11) begin
+rotation_temp = 2'b00;
+location_temp = curr_piece_location;
+    end
+    else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b10) begin
+location_temp = curr_piece_location - 1;
+rotation_temp = curr_piece_rotation +1;
+    end else if (curr_piece_type == 2'b11 && curr_piece_rotation == 2'b01) begin
+location_temp = curr_piece_location +1;
+rotation_temp = curr_piece_rotation +1;
+    end else begin
+rotation_temp = curr_piece_rotation +1;
+location_temp = curr_piece_location;
+    end
   end
+else begin
+location_temp = curr_piece_location;
+rotation_temp = curr_piece_rotation;
 end
 end
 
 always @ (negedge clkb)
 begin
-if (start == 1'b1) begin
-done <= 1'b1;
+
+// done <= 1'b1;
 new_location = location_temp +4; // to move down a row
 new_rotation = rotation_temp;
 new_board_state = curr_board_state;
@@ -180,7 +179,6 @@ end
   end
 end
 endcase
-end
 end
 
 endmodule //End Of Module move_piece

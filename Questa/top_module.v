@@ -36,24 +36,7 @@ wire   out_done;
 //----------Code startes Here------------------------
 
 
-main_FSM main (.clka (in_clka),
-           .clkb (in_clkb),
-           .restart (in_restart),
-           .load (in_load),
-           .state (out_state_main),
-           .start (out_start),
-           .done (out_done)
-          );
 
-dp dp_add  (.clka (in_clka),
-           .clkb (in_clkb),
-           .restart (in_restart),
-           .start (out_start),
-	   .d1_in (in_d1_in),
-	   .d2_in (in_d2_in),
-	   .d_out (out_d_out),
-           .done  (out_done)
-          );
 
 
 endmodule // End of Module top_module

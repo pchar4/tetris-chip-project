@@ -1,9 +1,8 @@
-module clear_redraw(clka, clkb, board_in, board_out, curr_piece, which_row, error)
+module clear_redraw(clka, clkb, board_in, board_out, curr_piece, error)
 //-----------Input Ports---------------
 input clka, clkb;
 input [31:0] board_in;
 input [1:0]curr_piece;
-input which_row;
 //-----------Output Ports---------------
 output [31:0] board_out;
 inout error;
@@ -54,8 +53,7 @@ task gen_new;
     end
     endtask
 
-if (which_row) // need to clear line(s)
-begin
+
     if(board_in[31:28] = 4'b1111;)
     begin
 		if(board_in[27:24] = 4'b1111)
@@ -208,9 +206,10 @@ begin
 		board_out[ 3: 0] = 4'b0000;
 		// gen_new(curr_piece, board_in, board_out, error);
 	end
-end
-else // don't need to clear line(s)
-begin
-    gen_new(curr_piece, board_in, board_out, error);
-end
+	else // don't need to clear line(s)
+	begin
+		gen_new(curr_piece, board_in, board_out, error);
+	end
+
+
 endmodule

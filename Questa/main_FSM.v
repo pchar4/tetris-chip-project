@@ -13,13 +13,13 @@ module main_FSM (clka, clkb, restart, new_piece, which_row, error, state, start_
 // restart to start a new game, and done to indicate game over
 input wire   clka, clkb, new_piece, restart, start, game_over, which_row, error;
 //-------------Output Ports----------------------------
-output state[2:0]; //TODO: find out if we need more outputs
+output state[3:0]; //TODO: find out if we need more outputs
 output reg start_gen;  // for each state create a var for clkb, which allows processing data
 output reg start_move;
 output reg start_land;
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
-parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
+parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101; // despite clear being a state we are not using it
 //-------------Internal Variables---------------------------
 reg   [SIZE-1:0]          state;    	// Initial FSM state reg and then after
 					// processing new output FSM state reg
