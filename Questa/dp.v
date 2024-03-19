@@ -5,13 +5,12 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, start, move, d1_in, d2_in, d_out, done);
+module dp (clka, clkb, restart, move, board_in, done, board_out);
 //-----------Input Ports---------------
 input clka, clkb, restart;
 inout [1:0] move;
 input reg [31:0] board_in;
 //-----------Output Ports---------------
-output [3:0] d_out;
 output done;
 output [31:0] board_out;
 //------------Internal Variables--------
@@ -31,7 +30,7 @@ begin // control signal logic
       // actually place the piece in the correct place later, currently placing it at an end of the board
    end 
    else if (state == MOVE) begin
-      fall falling_action(board_in, move, temp_board);
+      move_piece move(clka, clkb, start, curr_piece_type, curr_piece_location, curr_piece_rotation, left, right, rotate, new_location, new_rotation, done); //TODO: UPDATE HEADER!!!!!
    end 
    else if (state == LAND) begin
       line_detector line_filled(board_in, clear); // might run into issues with this
