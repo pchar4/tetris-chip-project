@@ -4,212 +4,215 @@ input clka, clkb;
 input [31:0] board_in;
 input [1:0]curr_piece;
 //-----------Output Ports---------------
-output [31:0] board_out;
-output error;
+output reg [31:0] board_out;
+output reg error;
 //------------Internal Variables--------
 reg  [3:0] clear; // which row to clear
 reg  [1:0] piece_selection;
 reg [31:0] temp_board;
-
-task gen_new;
-    input [1:0] curr_piece;
-	input [31:0]  board_in;
-    inout [31:0] board_out;
-    output error;
-    
-        case(curr_piece)
-            // single rect
-            2'b00 : begin
-                        error = board_in[1]; 
-                        board_out[1] = 1;
-                    end
-            // 2 rects
-            2'b01 : begin
-                        error = board_in[1] | board_in[2]; 
-                        board_out[1] = 1;
-                        board_out[2] = 1;
-                    end
-            // 4 rects, square
-            2'b10 : begin
-                        error = board_in[1] | board_in[2] | board_in[5] | board_in[6]; 
-                        board_out[1] = 1;
-                        board_out[2] = 1;
-                        board_out[5] = 1;
-                        board_out[6] = 1;
-                    end
-            // 3 rects, L shape
-            2'b11 : begin
-                        error = board_in[1] | board_in[5] | board_in[6]; 
-                        board_out[1] = 1;
-                        board_out[5] = 1;
-                        board_out[6] = 1;
-                    end
-            // Default case
-            default: begin
-                        error = board_in[1]; 
-                        board_out[1] = 1;
-                     end
-        endcase
-    
-endtask
+reg temp_error;
 
 
-    if(board_in[31:28] == 4'b1111)
+
+always @(negedge clka) begin
+	if(board_in[31:28] == 4'b1111)
     begin
 		if(board_in[27:24] == 4'b1111)
 		begin
-		board_out[31:28] = board_in[23:20];
-		board_out[27:24] = board_in[19:16];
-		board_out[23:20] = board_in[15:12];
-		board_out[19:16] = board_in[11: 8];
-		board_out[15:12] = board_in[ 7: 4];
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[31:28] = board_in[23:20];
+		temp_board[27:24] = board_in[19:16];
+		temp_board[23:20] = board_in[15:12];
+		temp_board[19:16] = board_in[11: 8];
+		temp_board[15:12] = board_in[ 7: 4];
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[31:28] = board_in[27:24];
-		board_out[27:24] = board_in[23:20];
-		board_out[23:20] = board_in[19:16];
-		board_out[19:16] = board_in[15:12];
-		board_out[15:12] = board_in[11: 8];
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[31:28] = board_in[27:24];
+		temp_board[27:24] = board_in[23:20];
+		temp_board[23:20] = board_in[19:16];
+		temp_board[19:16] = board_in[15:12];
+		temp_board[15:12] = board_in[11: 8];
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[27:24] == 4'b1111)
 	begin
 		if(board_in[23:20] == 4'b1111)
 		begin
-		board_out[27:24] = board_in[19:16];
-		board_out[23:20] = board_in[15:12];
-		board_out[19:16] = board_in[11: 8];
-		board_out[15:12] = board_in[ 7: 4];
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[27:24] = board_in[19:16];
+		temp_board[23:20] = board_in[15:12];
+		temp_board[19:16] = board_in[11: 8];
+		temp_board[15:12] = board_in[ 7: 4];
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[27:24] = board_in[23:20];
-		board_out[23:20] = board_in[19:16];
-		board_out[19:16] = board_in[15:12];
-		board_out[15:12] = board_in[11: 8];
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[27:24] = board_in[23:20];
+		temp_board[23:20] = board_in[19:16];
+		temp_board[19:16] = board_in[15:12];
+		temp_board[15:12] = board_in[11: 8];
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[23:20] == 4'b1111)
 	begin
 		if(board_in[19:16] == 4'b1111)
 		begin
-		board_out[23:20] = board_in[15:12];
-		board_out[19:16] = board_in[11: 8];
-		board_out[15:12] = board_in[ 7: 4];
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[23:20] = board_in[15:12];
+		temp_board[19:16] = board_in[11: 8];
+		temp_board[15:12] = board_in[ 7: 4];
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[23:20] = board_in[19:16];
-		board_out[19:16] = board_in[15:12];
-		board_out[15:12] = board_in[11: 8];
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[23:20] = board_in[19:16];
+		temp_board[19:16] = board_in[15:12];
+		temp_board[15:12] = board_in[11: 8];
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[19:16] == 4'b1111)
 	begin
 		if(board_in[15:12] == 4'b1111)
 		begin
-		board_out[19:16] = board_in[11: 8];
-		board_out[15:12] = board_in[ 7: 4];
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[19:16] = board_in[11: 8];
+		temp_board[15:12] = board_in[ 7: 4];
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[19:16] = board_in[15:12];
-		board_out[15:12] = board_in[11: 8];
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[19:16] = board_in[15:12];
+		temp_board[15:12] = board_in[11: 8];
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[15:12] == 4'b1111)
 	begin
 		if(board_in[11: 8] == 4'b1111)
 		begin
-		board_out[15:12] = board_in[ 7: 4];
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[15:12] = board_in[ 7: 4];
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[15:12] = board_in[11: 8];
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[15:12] = board_in[11: 8];
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[11: 8] == 4'b1111)
 	begin
 		if(board_in[ 7: 4] == 4'b1111)
 		begin
-		board_out[11: 8] = board_in[ 3: 0];
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[11: 8] = board_in[ 3: 0];
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[11: 8] = board_in[ 7: 4];
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[11: 8] = board_in[ 7: 4];
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[ 7: 4] == 4'b1111)
 	begin
 		if(board_in[ 3: 0] == 4'b1111)
 		begin
-		board_out[ 7: 4] = 4'b0000;
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[ 7: 4] = 4'b0000;
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else
 		begin
-		board_out[ 7: 4] = board_in[ 3: 0];
-		board_out[ 3: 0] = 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[ 7: 4] = board_in[ 3: 0];
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 		end
 	end
     else if(board_in[ 3: 0] == 4'b1111)
 	begin
-		board_out[ 3: 0] == 4'b0000;
-		// gen_new(curr_piece, board_in, board_out, error);
+		temp_board[ 3: 0] = 4'b0000;
+		// gen_new(curr_piece, board_in, temp_board, error);
 	end
 	else // don't need to clear line(s)
 	begin
-		gen_new(curr_piece, board_in, board_out, error);
+		temp_board = board_in;
 	end
+
+
+	case(curr_piece)
+            // single rect
+            2'b00 : begin
+                        temp_error = board_in[1]; 
+                        temp_board[1] = 1;
+                    end
+            // 2 rects
+            2'b01 : begin
+                        temp_error = board_in[1] | board_in[2]; 
+                        temp_board[1] = 1;
+                        temp_board[2] = 1;
+                    end
+            // 4 rects, square
+            2'b10 : begin
+                        temp_error = board_in[1] | board_in[2] | board_in[5] | board_in[6]; 
+                        temp_board[1] = 1;
+                        temp_board[2] = 1;
+                        temp_board[5] = 1;
+                        temp_board[6] = 1;
+                    end
+            // 3 rects, L shape
+            2'b11 : begin
+                        temp_error = board_in[1] | board_in[5] | board_in[6]; 
+                        temp_board[1] = 1;
+                        temp_board[5] = 1;
+                        temp_board[6] = 1;
+                    end
+            // Default case
+            default: begin
+                        temp_error = board_in[1]; 
+                        temp_board[1] = 1;
+                     end
+        endcase
+end
+
+always @(negedge clkb) begin
+	board_out <= temp_board;
+	error <= temp_error;
+end
+    
 
 
 endmodule

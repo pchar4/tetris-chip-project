@@ -45,7 +45,7 @@ case(state)
   end
   LAND: begin
     // which row is not 1 bit, definition needs to be changed at some point
-    fsm_function = error ? GAMEOVER : GEN;
+    fsm_function = game_over ? GAMEOVER : GEN;
   end
   GAMEOVER: begin
     fsm_function = restart ? NEWBOARD : GAMEOVER;

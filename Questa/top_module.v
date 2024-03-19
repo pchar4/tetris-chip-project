@@ -23,18 +23,18 @@ input wire [1:0] in_move;
 //-------------Output Ports----------------------------
 output wire [31:0] board_out;
 //----------Internal Wires---------------------------
-wire touched, error;
-wire [1:0] rotation, curr_piece;
+reg touched, error;
+reg [1:0] rotation, curr_piece;
 wire [3:0] state;
-wire [4:0] location;
-wire [31:0] board;
+reg [4:0] location;
+reg [31:0] board;
 //----------Code startes Here------------------------
 assign board_out = board;
 dp dp_tetris(.clka(in_clka), 
             .clkb(in_clkb), 
             .restart(in_restart), 
             .move(in_move), 
-            .state(state)
+            .state(state),
             .location_in(location), 
             .board_in(board), 
             .rotation_in(rotation), 

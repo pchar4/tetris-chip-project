@@ -8,7 +8,7 @@
 module dp (clka, clkb, restart, move, state, location_in, board_in, rotation_in, curr_piece_in, curr_piece_out, location_out, rotation_out, touched, board_out, error_out);
 //-----------Input Ports---------------
 input clka, clkb, restart;
-input [1:0] curr_piece_in, rotation_in, move; // 0 == left, 1 == right, 2 == rotate
+input wire [1:0] curr_piece_in, rotation_in, move; // 0 == left, 1 == right, 2 == rotate
 input wire [31:0] board_in;
 input wire [3:0] state;
 input wire [4:0] location_in;
@@ -23,58 +23,51 @@ reg  [1:0] piece_selection;
 reg [31:0] temp_board;
 
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
-
-//-------------Code Starts Here---------
-always @ (negedge clka)
-begin // control signal logic
-   if (state == GEN) begin
-      rng myrng(.clka(clka), 
+rng myrng(.clka(clka), 
       .clkb(clkb), 
       .restart(restart), 
       .random(piece_selection));
-      clear_redraw myredraw(
+clear_redraw myredraw(
          .clka(clka), 
          .clkb(clkb), 
          .board_in(board_in), 
          .board_out(temp_board),
-         .curr_piece(piece_selection), 
-         .error(error)); // error tells us that it is game over.
-      
-      location_out = (piece_selection < 2) ? 1 : 5;
+         .curr_piece(curr_piece_in), 
+         .error(error));
+move_piece mymove (.clka(clka),
+               .clkb(clkb),
+               .curr_board_state(board_in), 
+               .curr_piece_type(curr_piece_in),
+               .curr_piece_location(location_in),
+               .curr_piece_rotation(rotation_in),
+               .left(left),
+               .right(right), 
+               .rotate(rotate), 
+               .new_location(location_out), 
+               .new_rotation(rotation_out), 
+               .new_board_state(temp_board), 
+               .touched(touched));
+//-------------Code Starts Here---------
+always @ (negedge clka)
+begin // control signal logic
+   if (state == GEN) begin      
+      location_out = (piece_selection < 2) ? 5'b00001 : 5'b00101;
       rotation_out = 0;
       touched = 0;
-
+      curr_piece_out = piece_selection;
    end 
    else if (state == MOVE) begin
       left = (move == 0) ? 1'b1 : 1'b0;
       right = (move == 1) ? 1'b1 : 1'b0;
       rotate = (move == 2) ? 1'b1 : 1'b0;
-      move_piece move (.clka(clka),
-                        .clkb(clkb),
-                        .curr_board_state(board_in), 
-                        .curr_piece_type(curr_piece),
-                        .curr_piece_location(location_in),
-                        .curr_piece_rotation(rotation_in),
-                        .left(left),
-                        .right(right), 
-                        .rotate(rotate), 
-                        .new_location(location_out), 
-                        .new_rotation(rotation_out), 
-                        .new_board_state(temp_board), 
-                        .touched(touched));
+      curr_piece_out = curr_piece_in;
    end
    else if (state == LAND) begin
-      clear_redraw myredraw(
-         .clka(clka), 
-         .clkb(clkb), 
-         .board_in(board_in), 
-         .board_out(temp_board),
-         .curr_piece(curr_piece), // WHERE DOES THIS COME FROM!! 
-         .error(error)); // handles if game is over
+      curr_piece_out = piece_selection;
    end
    else if (state == NEWBOARD) begin
       temp_board = 32'b0;
-      location_out = 0;
+      location_out = 5'b0;
       rotation_out = 0;
       touched = 0;
    end
