@@ -37,7 +37,7 @@ clear_redraw myredraw(
          .board_in(board_in), 
          .board_out(temp_board),
          .curr_piece(curr_piece_in), 
-         .error(error));
+         .error(error_out));
 move_piece mymove (.clka(clka),
                .clkb(clkb),
                .restart(restart),
