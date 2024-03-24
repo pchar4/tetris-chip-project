@@ -41,7 +41,8 @@ case(state)
     fsm_function = game_over ? GAMEOVER: MOVE;
   end 
   MOVE: begin
-    fsm_function = placed ? LAND: MOVE; // grab this from movement code
+    fsm_function = placed ? LAND: MOVE;
+    fsm_function = game_over ? GAMEOVER : fsm_function; // grab this from movement code
   end
   LAND: begin
     // which row is not 1 bit, definition needs to be changed at some point

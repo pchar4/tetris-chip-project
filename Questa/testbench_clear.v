@@ -12,6 +12,7 @@ module top_clear_tb();
 reg  in_clka, in_clkb, in_restart;
 reg  [31:0] in_board_in;
 reg  [1:0] in_curr_piece;
+reg  [2:0] state;
 // Outputs from top_module
 wire [31:0] out_board_out;
 wire out_error;
@@ -19,6 +20,7 @@ wire out_error;
 clear_redraw Myclear(.clka(in_clka), 
                 .clkb(in_clkb), 
                 .restart(in_restart), 
+                .state(state),
                 .board_in(in_board_in), 
                 .board_out(out_board_out),
                 .curr_piece(in_curr_piece), 
@@ -45,12 +47,14 @@ in_clka = 0; in_clkb = 1; #10
 
 // Cycle 3
 in_restart = 0;
+state = 1;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 4
+state = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -61,6 +65,20 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
 
 
 

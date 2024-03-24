@@ -29,19 +29,19 @@
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 Initializing...
-Current time:       Tue Mar 19 04:36:14 2024
-Hostname:           zorite.clear.rice.edu
+Current time:       Sun Mar 24 13:08:47 2024
+Hostname:           borax.clear.rice.edu
 CPU Model:          Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
-CPU Details:        Cores = 40 : Sockets = 2 : Cache Size = 25600 KB : Freq = 3.31 GHz
-OS:                 Linux 4.18.0-513.18.1.el8_9.x86_64
-RAM:                125 GB (Free  23 GB)
-Swap:                19 GB (Free  19 GB)
+CPU Details:        Cores = 40 : Sockets = 2 : Cache Size = 25600 KB : Freq = 3.40 GHz
+OS:                 Linux 4.18.0-513.9.1.el8_9.x86_64
+RAM:                125 GB (Free  44 GB)
+Swap:                19 GB (Free  10 GB)
 Work Filesystem:    /storage-home/p/pac9 mounted to clearstor.clear.rice.edu:/clear-home/pac9
 Tmp Filesystem:     /tmp mounted to /dev/mapper/vg0-tmp
-Work Disk:          5038 GB (Free 1537 GB)
+Work Disk:          5038 GB (Free 1703 GB)
 Tmp Disk:             5 GB (Free   5 GB)
 
-CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Disk Free: 5 GB
+CPU Load: 2%, Ram Free: 44 GB, Swap Free: 10 GB, Work Disk Free: 1703 GB, Tmp Disk Free: 5 GB
 #/**************************************************/
 #/* Compile Script for Synopsys                    */
 #/*                                                */
@@ -97,7 +97,6 @@ analyze -f verilog $my_verilog_files
 Running PRESTO HDLC
 Compiling source file ./clear.v
 Compiling source file ./dp.v
-Warning:  ./dp.v:40: the undeclared symbol 'error' assumed to have the default net type, which is 'wire'. (VER-936)
 Compiling source file ./main_FSM.v
 Compiling source file ./move_piece.v
 Compiling source file ./rng.v
@@ -127,16 +126,16 @@ Statistics for case statements in always block at line 28 in file
 |            34            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 66 in file
+Statistics for case statements in always block at line 67 in file
 	'./main_FSM.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            68            |    auto/auto     |
+|            69            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine main_FSM line 57 in file
+	in routine main_FSM line 58 in file
 		'./main_FSM.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -145,7 +144,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine main_FSM line 66 in file
+	in routine main_FSM line 67 in file
 		'./main_FSM.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -179,47 +178,38 @@ Error:  ./rng.v:29: Net 'random[1]' or a directly connected net is driven by mor
 Error:  ./rng.v:29: Net 'random[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 2 errors. ***
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -232,7 +222,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -241,38 +231,38 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Information: Building the design 'move_piece'. (HDL-193)
 
-Statistics for case statements in always block at line 82 in file
+Statistics for case statements in always block at line 83 in file
 	'./move_piece.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            96            |    auto/auto     |
+|            97            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine move_piece line 30 in file
+	in routine move_piece line 31 in file
 		'./move_piece.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -284,7 +274,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine move_piece line 82 in file
+	in routine move_piece line 83 in file
 		'./move_piece.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -334,47 +324,38 @@ Error:  ./rng.v:29: Net 'random[1]' or a directly connected net is driven by mor
 Error:  ./rng.v:29: Net 'random[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 2 errors. ***
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -387,7 +368,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -396,25 +377,25 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Warning: Unable to resolve reference 'rng' in 'dp'. (LINK-5)
 Warning: Unable to resolve reference 'clear_redraw' in 'dp'. (LINK-5)
@@ -446,47 +427,38 @@ Error:  ./rng.v:29: Net 'random[1]' or a directly connected net is driven by mor
 Error:  ./rng.v:29: Net 'random[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 2 errors. ***
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -499,7 +471,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -508,25 +480,25 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Warning: Unable to resolve reference 'rng' in 'dp'. (LINK-5)
 Warning: Unable to resolve reference 'clear_redraw' in 'dp'. (LINK-5)
@@ -563,7 +535,7 @@ Warning: Design 'top_module' has '2' unresolved references. For more detailed in
 1
 compile -ungroup_all -map_effort medium
 Warning: Design 'top_module' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
-CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Disk Free: 5 GB
+CPU Load: 2%, Ram Free: 44 GB, Swap Free: 10 GB, Work Disk Free: 1703 GB, Tmp Disk Free: 5 GB
 Information: Checking out the license 'DesignWare'. (SEC-104)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -582,7 +554,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 5200                                   |
+| Leaf Cell Count                                         | 5216                                   |
 | Number of User Hierarchies                              | 3                                      |
 | Sequential Cell Count                                   | 60                                     |
 | Macro Count                                             | 0                                      |
@@ -590,13 +562,13 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 2064                                   |
+| Number of Dont Touch Cells                              | 2070                                   |
 | Number of Dont Touch Nets                               | 0                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
 ====================================================================================================
 
-Information: There are 124 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 122 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -632,47 +604,38 @@ Error:  ./rng.v:29: Net 'random[1]' or a directly connected net is driven by mor
 Error:  ./rng.v:29: Net 'random[0]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 2 errors. ***
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -685,7 +648,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -694,25 +657,25 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Warning: Unable to resolve reference 'rng' in 'dp'. (LINK-5)
 Warning: Unable to resolve reference 'clear_redraw' in 'dp'. (LINK-5)
@@ -725,13 +688,6 @@ Information: Ungrouping hierarchy dp_tetris/mymove. (OPT-772)
 
   Beginning Implementation Selection
   ----------------------------------
-Information: The register 'fsm_tetris/state_reg[1]' will be removed. (OPT-1207)
-Information: The register 'fsm_tetris/next_state_reg[1]' will be removed. (OPT-1207)
-Information: The register 'fsm_tetris/state_reg[2]' will be removed. (OPT-1207)
-Information: The register 'fsm_tetris/next_state_reg[2]' will be removed. (OPT-1207)
-Information: The register 'dp_tetris/mymove/touched_reg' will be removed. (OPT-1207)
-Information: The register 'fsm_tetris/state_reg[0]' will be removed. (OPT-1207)
-Information: The register 'fsm_tetris/next_state_reg[0]' will be removed. (OPT-1207)
   Processing 'DW01_dec_width5_DW01_dec_0'
   Processing 'DW01_inc_width5_DW01_inc_1'
   Processing 'DW01_add_width5_DW01_add_0'
@@ -745,19 +701,19 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:04  342117.0      0.00       0.0     158.1                          
-    0:00:04  342117.0      0.00       0.0     158.1                          
-    0:00:04  342117.0      0.00       0.0     158.1                          
-    0:00:04  342117.0      0.00       0.0     158.1                          
-    0:00:04  342117.0      0.00       0.0     158.1                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
+    0:00:04  450549.0      0.00       0.0     185.8                          
+    0:00:04  450549.0      0.00       0.0     185.8                          
+    0:00:04  450549.0      0.00       0.0     185.8                          
+    0:00:04  450549.0      0.00       0.0     185.8                          
+    0:00:04  450549.0      0.00       0.0     185.8                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
 
 
 
@@ -768,9 +724,9 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  330525.0      0.00       0.0     154.9                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
 
 
   Beginning Design Rule Fixing  (max_capacitance)
@@ -780,8 +736,8 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:04  330525.0      0.00       0.0     154.9                          
-    0:00:04  331605.0      0.00       0.0       0.0                          
+    0:00:04  429525.0      0.00       0.0     182.5                          
+    0:00:04  430605.0      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -791,21 +747,21 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:04  331605.0      0.00       0.0       0.0                          
-    0:00:04  331605.0      0.00       0.0       0.0                          
-    0:00:04  327933.0      0.00       0.0       0.0                          
-    0:00:04  326565.0      0.00       0.0       0.0                          
-    0:00:04  326133.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
-    0:00:04  325917.0      0.00       0.0       0.0                          
+    0:00:04  430605.0      0.00       0.0       0.0                          
+    0:00:04  430605.0      0.00       0.0       0.0                          
+    0:00:05  425781.0      0.00       0.0       0.0                          
+    0:00:05  422685.0      0.00       0.0       0.0                          
+    0:00:05  422037.0      0.00       0.0       0.0                          
+    0:00:05  421677.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
+    0:00:05  421533.0      0.00       0.0       0.0                          
 Loading db file '/clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -814,7 +770,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Disk Free: 5 GB
+CPU Load: 2%, Ram Free: 44 GB, Swap Free: 10 GB, Work Disk Free: 1703 GB, Tmp Disk Free: 5 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -837,47 +793,38 @@ Unmapped MV Cells
 1
 compile -incremental_mapping -map_effort medium
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -890,7 +837,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -899,25 +846,25 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Information: Building the design 'rng'. (HDL-193)
 Warning:  ./rng.v:15: The statements in initial blocks are ignored. (VER-281)
@@ -946,7 +893,7 @@ Error:  ./rng.v:29: Net 'random[0]' or a directly connected net is driven by mor
 *** Presto compilation terminated with 2 errors. ***
 Warning: Unable to resolve reference 'clear_redraw' in 'top_module'. (LINK-5)
 Warning: Unable to resolve reference 'rng' in 'top_module'. (LINK-5)
-CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Disk Free: 5 GB
+CPU Load: 2%, Ram Free: 44 GB, Swap Free: 10 GB, Work Disk Free: 1703 GB, Tmp Disk Free: 5 GB
 ====================================================================================================
 | Flow Information                                                                                 |
 ----------------------------------------------------------------------------------------------------
@@ -955,9 +902,9 @@ CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Di
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 1236                                   |
+| Leaf Cell Count                                         | 1595                                   |
 | Number of User Hierarchies                              | 0                                      |
-| Sequential Cell Count                                   | 53                                     |
+| Sequential Cell Count                                   | 60                                     |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
@@ -965,58 +912,49 @@ CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Di
 | Number of Clocks                                        | 1                                      |
 | Number of Dont Touch Cells                              | 0                                      |
 | Number of Dont Touch Nets                               | 0                                      |
-| Number of Size Only Cells                               | 32                                     |
+| Number of Size Only Cells                               | 35                                     |
 | Design with UPF Data                                    | false                                  |
 ====================================================================================================
 
-Information: There are 35 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 38 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
   Beginning Pass 1 Mapping  (Incremental)
   ------------------------
 Information: Building the design 'clear_redraw'. (HDL-193)
-Warning:  ./clear.v:205: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-
-Statistics for case statements in always block at line 17 in file
-	'./clear.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           176            |    auto/auto     |
-===============================================
-Warning:  ./clear.v:211: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ./clear.v:211: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ./clear.v:217: Net temp_board[0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
 
 Inferred memory devices in process
 	in routine clear_redraw line 17 in file
@@ -1029,7 +967,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine clear_redraw line 211 in file
+	in routine clear_redraw line 217 in file
 		'./clear.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -1038,25 +976,25 @@ Inferred memory devices in process
 |      error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    board_out_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
-Error:  ./clear.v:211: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
-Error:  ./clear.v:211: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[31]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[30]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[29]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[28]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[27]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[26]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[25]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[24]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[23]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[22]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[21]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[20]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[19]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[18]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[17]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[16]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[15]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[14]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
+Error:  ./clear.v:217: Net 'temp_board[13]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)
 *** Presto compilation terminated with 19 errors. ***
 Information: Building the design 'rng'. (HDL-193)
 Warning:  ./rng.v:15: The statements in initial blocks are ignored. (VER-281)
@@ -1103,9 +1041,9 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:00  325917.0      0.00       0.0       0.0                          
-    0:00:00  325917.0      0.00       0.0       0.0                          
-    0:00:00  325917.0      0.00       0.0       0.0                          
+    0:00:00  421533.0      0.00       0.0       0.0                          
+    0:00:00  421533.0      0.00       0.0       0.0                          
+    0:00:00  421533.0      0.00       0.0       0.0                          
 Loading db file '/clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -1114,7 +1052,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-CPU Load: 3%, Ram Free: 23 GB, Swap Free: 19 GB, Work Disk Free: 1537 GB, Tmp Disk Free: 5 GB
+CPU Load: 2%, Ram Free: 44 GB, Swap Free: 10 GB, Work Disk Free: 1703 GB, Tmp Disk Free: 5 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -1141,7 +1079,7 @@ Warning: Design 'top_module' has '2' unresolved references. For more detailed in
 ****************************************
 check_design summary:
 Version:     U-2022.12-SP7
-Date:        Tue Mar 19 04:36:21 2024
+Date:        Sun Mar 24 13:08:54 2024
 ****************************************
 
                    Name                                            Total
@@ -1149,45 +1087,48 @@ Date:        Tue Mar 19 04:36:21 2024
 Inputs/Outputs                                                      3
     Multiply driven inputs (LINT-6)                                 3
 
-Tristate                                                           32
-    A tristate bus has a non tri-state driver (LINT-34)            32
+Tristate                                                           35
+    A tristate bus has a non tri-state driver (LINT-34)            35
 --------------------------------------------------------------------------------
 
 Warning: In design 'top_module', input port 'in_clka' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'top_module', input port 'in_clkb' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
 Warning: In design 'top_module', input port 'in_restart' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
-Warning: In design 'top_module', three-state bus 'board_out[0]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[0]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[1]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[1]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[2]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[2]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[3]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[3]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[4]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[4]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[5]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[5]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[6]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[6]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[7]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[7]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[8]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[8]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[9]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[9]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[10]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[10]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[11]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[11]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[12]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[12]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[13]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[13]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[14]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[14]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[15]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[15]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[16]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[16]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[17]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[17]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[18]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[18]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[19]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[19]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[20]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[20]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[21]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[21]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[22]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[22]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[23]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[23]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[24]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[24]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[25]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[25]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[26]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[26]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[27]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[27]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[28]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[28]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[29]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[29]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[30]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[30]/Q'. (LINT-34)
-Warning: In design 'top_module', three-state bus 'board_out[31]' has non three-state driver 'dp_tetris/mymove/new_board_state_reg[31]/Q'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'state[0]' has non three-state driver 'fsm_tetris/state_reg[0]/Q'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'state[1]' has non three-state driver 'fsm_tetris/state_reg[1]/Q'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'state[2]' has non three-state driver 'fsm_tetris/state_reg[2]/Q'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[0]' has non three-state driver 'dp_tetris/U6/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[1]' has non three-state driver 'dp_tetris/U7/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[2]' has non three-state driver 'dp_tetris/U8/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[3]' has non three-state driver 'dp_tetris/U9/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[4]' has non three-state driver 'dp_tetris/U10/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[5]' has non three-state driver 'dp_tetris/U11/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[6]' has non three-state driver 'dp_tetris/U12/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[7]' has non three-state driver 'dp_tetris/U13/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[8]' has non three-state driver 'dp_tetris/U14/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[9]' has non three-state driver 'dp_tetris/U15/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[10]' has non three-state driver 'dp_tetris/U16/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[11]' has non three-state driver 'dp_tetris/U17/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[12]' has non three-state driver 'dp_tetris/U18/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[13]' has non three-state driver 'dp_tetris/U19/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[14]' has non three-state driver 'dp_tetris/U20/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[15]' has non three-state driver 'dp_tetris/U21/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[16]' has non three-state driver 'dp_tetris/U22/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[17]' has non three-state driver 'dp_tetris/U23/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[18]' has non three-state driver 'dp_tetris/U24/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[19]' has non three-state driver 'dp_tetris/U25/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[20]' has non three-state driver 'dp_tetris/U26/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[21]' has non three-state driver 'dp_tetris/U27/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[22]' has non three-state driver 'dp_tetris/U28/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[23]' has non three-state driver 'dp_tetris/U29/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[24]' has non three-state driver 'dp_tetris/U30/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[25]' has non three-state driver 'dp_tetris/U31/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[26]' has non three-state driver 'dp_tetris/U32/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[27]' has non three-state driver 'dp_tetris/U33/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[28]' has non three-state driver 'dp_tetris/U34/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[29]' has non three-state driver 'dp_tetris/U35/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[30]' has non three-state driver 'dp_tetris/U36/Y'. (LINT-34)
+Warning: In design 'top_module', three-state bus 'board_out[31]' has non three-state driver 'dp_tetris/U37/Y'. (LINT-34)
 1
 report_constraint -all_violators
 Warning: Design 'top_module' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
@@ -1198,7 +1139,7 @@ Report : constraint
         -all_violators
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:21 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 This design has no violated constraints.
@@ -1222,7 +1163,7 @@ Warning: Design 'top_module' has '2' unresolved references. For more detailed in
 Report : cell
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:21 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 Attributes:
@@ -1237,8 +1178,8 @@ Attributes:
 Cell                      Reference       Library             Area  Attributes
 --------------------------------------------------------------------------------
 U1                        AND2X2          osu05_stdcells  288.000000
-U2                        OR2X2           osu05_stdcells  288.000000
-U3                        AND2X2          osu05_stdcells  288.000000
+U2                        AND2X2          osu05_stdcells  288.000000
+U3                        OR2X2           osu05_stdcells  288.000000
 U4                        AND2X2          osu05_stdcells  288.000000
 U5                        AND2X2          osu05_stdcells  288.000000
 U6                        AND2X2          osu05_stdcells  288.000000
@@ -1248,84 +1189,84 @@ U9                        AND2X2          osu05_stdcells  288.000000
 U10                       AND2X2          osu05_stdcells  288.000000
 U11                       AND2X2          osu05_stdcells  288.000000
 U12                       AND2X2          osu05_stdcells  288.000000
-U13                       AND2X2          osu05_stdcells  288.000000
+U13                       XNOR2X1         osu05_stdcells  504.000000
 U14                       AND2X2          osu05_stdcells  288.000000
-U15                       AND2X2          osu05_stdcells  288.000000
-U16                       AND2X2          osu05_stdcells  288.000000
-U17                       AND2X2          osu05_stdcells  288.000000
-U18                       AND2X2          osu05_stdcells  288.000000
-U19                       AND2X2          osu05_stdcells  288.000000
-U20                       AND2X2          osu05_stdcells  288.000000
-U21                       XNOR2X1         osu05_stdcells  504.000000
-U22                       XNOR2X1         osu05_stdcells  504.000000
-U23                       INVX1           osu05_stdcells  144.000000
+U15                       XNOR2X1         osu05_stdcells  504.000000
+U16                       INVX1           osu05_stdcells  144.000000
+U17                       INVX2           osu05_stdcells  144.000000
+U18                       INVX1           osu05_stdcells  144.000000
+U19                       INVX2           osu05_stdcells  144.000000
+U20                       INVX1           osu05_stdcells  144.000000
+U21                       INVX8           osu05_stdcells  360.000000
+U22                       INVX2           osu05_stdcells  144.000000
+U23                       INVX2           osu05_stdcells  144.000000
 U24                       INVX2           osu05_stdcells  144.000000
-U25                       INVX1           osu05_stdcells  144.000000
+U25                       BUFX2           osu05_stdcells  216.000000
 U26                       INVX2           osu05_stdcells  144.000000
-U27                       INVX1           osu05_stdcells  144.000000
-U28                       INVX8           osu05_stdcells  360.000000
-U29                       INVX2           osu05_stdcells  144.000000
+U27                       INVX2           osu05_stdcells  144.000000
+U28                       BUFX2           osu05_stdcells  216.000000
+U29                       BUFX2           osu05_stdcells  216.000000
 U30                       BUFX2           osu05_stdcells  216.000000
-U31                       INVX2           osu05_stdcells  144.000000
-U32                       INVX2           osu05_stdcells  144.000000
-U33                       INVX2           osu05_stdcells  144.000000
-U34                       INVX2           osu05_stdcells  144.000000
+U31                       BUFX2           osu05_stdcells  216.000000
+U32                       BUFX2           osu05_stdcells  216.000000
+U33                       BUFX2           osu05_stdcells  216.000000
+U34                       BUFX2           osu05_stdcells  216.000000
 U35                       INVX2           osu05_stdcells  144.000000
 U36                       INVX2           osu05_stdcells  144.000000
 U37                       INVX2           osu05_stdcells  144.000000
 U38                       INVX2           osu05_stdcells  144.000000
 U39                       INVX2           osu05_stdcells  144.000000
-U40                       AND2X2          osu05_stdcells  288.000000
-U41                       AND2X2          osu05_stdcells  288.000000
+U40                       INVX2           osu05_stdcells  144.000000
+U41                       INVX2           osu05_stdcells  144.000000
 U42                       INVX2           osu05_stdcells  144.000000
 U43                       INVX2           osu05_stdcells  144.000000
 U44                       INVX2           osu05_stdcells  144.000000
 U45                       INVX2           osu05_stdcells  144.000000
 U46                       INVX2           osu05_stdcells  144.000000
 U47                       BUFX2           osu05_stdcells  216.000000
-U48                       AND2X2          osu05_stdcells  288.000000
-U49                       OR2X1           osu05_stdcells  288.000000
-U50                       AND2X2          osu05_stdcells  288.000000
-U51                       INVX2           osu05_stdcells  144.000000
-U52                       INVX2           osu05_stdcells  144.000000
-U53                       INVX2           osu05_stdcells  144.000000
-U54                       INVX2           osu05_stdcells  144.000000
-U55                       INVX2           osu05_stdcells  144.000000
-U56                       NAND2X1         osu05_stdcells  216.000000
-U57                       BUFX2           osu05_stdcells  216.000000
+U48                       INVX2           osu05_stdcells  144.000000
+U49                       INVX2           osu05_stdcells  144.000000
+U50                       INVX2           osu05_stdcells  144.000000
+U51                       AND2X2          osu05_stdcells  288.000000
+U52                       BUFX2           osu05_stdcells  216.000000
+U53                       AND2X2          osu05_stdcells  288.000000
+U54                       AND2X2          osu05_stdcells  288.000000
+U55                       AND2X2          osu05_stdcells  288.000000
+U56                       AND2X2          osu05_stdcells  288.000000
+U57                       INVX2           osu05_stdcells  144.000000
 U58                       BUFX2           osu05_stdcells  216.000000
-U59                       BUFX2           osu05_stdcells  216.000000
-U60                       BUFX2           osu05_stdcells  216.000000
-U61                       BUFX2           osu05_stdcells  216.000000
-U62                       NAND2X1         osu05_stdcells  216.000000
-U63                       NAND2X1         osu05_stdcells  216.000000
-U64                       BUFX2           osu05_stdcells  216.000000
-U65                       BUFX2           osu05_stdcells  216.000000
-U66                       BUFX2           osu05_stdcells  216.000000
+U59                       INVX2           osu05_stdcells  144.000000
+U60                       INVX2           osu05_stdcells  144.000000
+U61                       INVX2           osu05_stdcells  144.000000
+U62                       INVX2           osu05_stdcells  144.000000
+U63                       INVX2           osu05_stdcells  144.000000
+U64                       INVX2           osu05_stdcells  144.000000
+U65                       INVX2           osu05_stdcells  144.000000
+U66                       INVX2           osu05_stdcells  144.000000
 U67                       BUFX2           osu05_stdcells  216.000000
 U68                       BUFX2           osu05_stdcells  216.000000
-U69                       BUFX2           osu05_stdcells  216.000000
-U70                       INVX2           osu05_stdcells  144.000000
+U69                       OR2X1           osu05_stdcells  288.000000
+U70                       AND2X2          osu05_stdcells  288.000000
 U71                       INVX2           osu05_stdcells  144.000000
 U72                       INVX2           osu05_stdcells  144.000000
 U73                       INVX2           osu05_stdcells  144.000000
 U74                       INVX2           osu05_stdcells  144.000000
 U75                       INVX2           osu05_stdcells  144.000000
-U76                       INVX2           osu05_stdcells  144.000000
-U77                       INVX2           osu05_stdcells  144.000000
-U78                       INVX2           osu05_stdcells  144.000000
-U79                       INVX2           osu05_stdcells  144.000000
-U80                       INVX2           osu05_stdcells  144.000000
-U81                       INVX2           osu05_stdcells  144.000000
-U82                       INVX2           osu05_stdcells  144.000000
-U83                       INVX2           osu05_stdcells  144.000000
-U84                       INVX2           osu05_stdcells  144.000000
-U85                       INVX2           osu05_stdcells  144.000000
-U86                       INVX2           osu05_stdcells  144.000000
-U87                       INVX2           osu05_stdcells  144.000000
-U88                       INVX2           osu05_stdcells  144.000000
-U89                       INVX2           osu05_stdcells  144.000000
-U90                       INVX2           osu05_stdcells  144.000000
+U76                       AND2X2          osu05_stdcells  288.000000
+U77                       NAND2X1         osu05_stdcells  216.000000
+U78                       BUFX2           osu05_stdcells  216.000000
+U79                       BUFX2           osu05_stdcells  216.000000
+U80                       BUFX2           osu05_stdcells  216.000000
+U81                       BUFX2           osu05_stdcells  216.000000
+U82                       BUFX2           osu05_stdcells  216.000000
+U83                       NAND2X1         osu05_stdcells  216.000000
+U84                       NAND2X1         osu05_stdcells  216.000000
+U85                       BUFX2           osu05_stdcells  216.000000
+U86                       BUFX2           osu05_stdcells  216.000000
+U87                       BUFX2           osu05_stdcells  216.000000
+U88                       BUFX2           osu05_stdcells  216.000000
+U89                       BUFX2           osu05_stdcells  216.000000
+U90                       BUFX2           osu05_stdcells  216.000000
 U91                       INVX2           osu05_stdcells  144.000000
 U92                       INVX2           osu05_stdcells  144.000000
 U93                       INVX2           osu05_stdcells  144.000000
@@ -1536,17 +1477,169 @@ U297                      INVX2           osu05_stdcells  144.000000
 U298                      INVX2           osu05_stdcells  144.000000
 U299                      INVX2           osu05_stdcells  144.000000
 U300                      INVX2           osu05_stdcells  144.000000
-U301                      XOR2X1          osu05_stdcells  504.000000
-U302                      NOR2X1          osu05_stdcells  216.000000
-U303                      AOI21X1         osu05_stdcells  288.000000
-U304                      NAND2X1         osu05_stdcells  216.000000
-U305                      OAI21X1         osu05_stdcells  207.000000
-U306                      XNOR2X1         osu05_stdcells  504.000000
-U307                      NOR2X1          osu05_stdcells  216.000000
-U308                      XOR2X1          osu05_stdcells  504.000000
-dp_tetris/U1              AND2X2          osu05_stdcells  288.000000
-dp_tetris/U3              NOR2X1          osu05_stdcells  216.000000
-dp_tetris/U4              NOR2X1          osu05_stdcells  216.000000
+U301                      INVX2           osu05_stdcells  144.000000
+U302                      INVX2           osu05_stdcells  144.000000
+U303                      INVX2           osu05_stdcells  144.000000
+U304                      INVX2           osu05_stdcells  144.000000
+U305                      INVX2           osu05_stdcells  144.000000
+U306                      INVX2           osu05_stdcells  144.000000
+U307                      INVX2           osu05_stdcells  144.000000
+U308                      INVX2           osu05_stdcells  144.000000
+U309                      INVX2           osu05_stdcells  144.000000
+U310                      INVX2           osu05_stdcells  144.000000
+U311                      INVX2           osu05_stdcells  144.000000
+U312                      INVX2           osu05_stdcells  144.000000
+U313                      INVX2           osu05_stdcells  144.000000
+U314                      INVX2           osu05_stdcells  144.000000
+U315                      INVX2           osu05_stdcells  144.000000
+U316                      INVX2           osu05_stdcells  144.000000
+U317                      INVX2           osu05_stdcells  144.000000
+U318                      INVX2           osu05_stdcells  144.000000
+U319                      INVX2           osu05_stdcells  144.000000
+U320                      INVX2           osu05_stdcells  144.000000
+U321                      INVX2           osu05_stdcells  144.000000
+U322                      INVX2           osu05_stdcells  144.000000
+U323                      INVX2           osu05_stdcells  144.000000
+U324                      INVX2           osu05_stdcells  144.000000
+U325                      INVX2           osu05_stdcells  144.000000
+U326                      INVX2           osu05_stdcells  144.000000
+U327                      INVX2           osu05_stdcells  144.000000
+U328                      INVX2           osu05_stdcells  144.000000
+U329                      INVX2           osu05_stdcells  144.000000
+U330                      INVX2           osu05_stdcells  144.000000
+U331                      INVX2           osu05_stdcells  144.000000
+U332                      INVX2           osu05_stdcells  144.000000
+U333                      INVX2           osu05_stdcells  144.000000
+U334                      INVX2           osu05_stdcells  144.000000
+U335                      INVX2           osu05_stdcells  144.000000
+U336                      INVX2           osu05_stdcells  144.000000
+U337                      INVX2           osu05_stdcells  144.000000
+U338                      INVX2           osu05_stdcells  144.000000
+U339                      INVX2           osu05_stdcells  144.000000
+U340                      INVX2           osu05_stdcells  144.000000
+U341                      INVX2           osu05_stdcells  144.000000
+U342                      INVX2           osu05_stdcells  144.000000
+U343                      INVX2           osu05_stdcells  144.000000
+U344                      INVX2           osu05_stdcells  144.000000
+U345                      INVX2           osu05_stdcells  144.000000
+U346                      INVX2           osu05_stdcells  144.000000
+U347                      INVX2           osu05_stdcells  144.000000
+U348                      INVX2           osu05_stdcells  144.000000
+U349                      INVX2           osu05_stdcells  144.000000
+U350                      XOR2X1          osu05_stdcells  504.000000
+U351                      NOR2X1          osu05_stdcells  216.000000
+U352                      AOI21X1         osu05_stdcells  288.000000
+U353                      NAND2X1         osu05_stdcells  216.000000
+U354                      OAI21X1         osu05_stdcells  207.000000
+U355                      XNOR2X1         osu05_stdcells  504.000000
+U356                      NOR2X1          osu05_stdcells  216.000000
+U357                      XOR2X1          osu05_stdcells  504.000000
+dp_tetris/U2              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U3              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U4              INVX2           osu05_stdcells  144.000000
+dp_tetris/U5              INVX2           osu05_stdcells  144.000000
+dp_tetris/U6              INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U7              INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U8              INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U9              INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U10             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U11             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U12             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U13             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U14             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U15             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U16             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U17             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U18             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U19             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U20             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U21             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U22             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U23             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U24             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U25             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U26             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U27             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U28             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U29             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U30             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U31             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U32             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U33             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U34             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U35             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U36             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U37             INVX2           osu05_stdcells  144.000000
+                                                                    so
+dp_tetris/U41             NOR2X1          osu05_stdcells  216.000000
+dp_tetris/U42             NOR2X1          osu05_stdcells  216.000000
+dp_tetris/U43             NOR3X1          osu05_stdcells  576.000000
+dp_tetris/U44             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U45             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U46             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U47             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U48             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U49             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U50             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U51             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U52             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U53             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U54             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U55             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U56             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U57             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U58             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U59             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U60             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U61             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U62             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U63             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U64             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U65             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U66             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U67             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U68             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U69             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U70             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U71             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U72             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U73             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U74             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U75             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U76             NAND3X1         osu05_stdcells  324.000000
+dp_tetris/U77             NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U3       AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U4       AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U5       AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U6       AND2X2          osu05_stdcells  288.000000
@@ -1593,7 +1686,221 @@ dp_tetris/mymove/U317     INVX2           osu05_stdcells  144.000000
 dp_tetris/mymove/U318     INVX2           osu05_stdcells  144.000000
 dp_tetris/mymove/U319     INVX2           osu05_stdcells  144.000000
 dp_tetris/mymove/U320     INVX2           osu05_stdcells  144.000000
-dp_tetris/mymove/U325     INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U341     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U342     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U343     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U344     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U345     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U346     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U347     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U348     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U349     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U350     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U351     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U352     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U353     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U354     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U355     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U356     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U357     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U358     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U359     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U360     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U361     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U362     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U363     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U364     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U365     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U366     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U367     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U368     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U369     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U370     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U371     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U372     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U373     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U374     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U375     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U376     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U377     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U378     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U379     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U380     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U381     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U382     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U383     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U384     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U385     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U386     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U387     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U388     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U389     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U390     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U391     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U392     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U393     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U394     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U395     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U396     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U397     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U398     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U399     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U400     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U401     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U402     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U403     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U404     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U405     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U406     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U407     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U408     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U409     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U410     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U411     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U412     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U413     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U414     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U415     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U416     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U417     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U418     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U419     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U420     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U421     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U422     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U423     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U424     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U425     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U426     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U427     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U428     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U429     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U430     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U431     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U432     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U433     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U434     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U435     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U436     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U437     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U438     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U439     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U440     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U441     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U442     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U443     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U444     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U445     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U446     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U447     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U448     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U449     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U450     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U451     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U452     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U453     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U454     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U455     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U456     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U457     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U458     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U459     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U460     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U461     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U462     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U463     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U464     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U465     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U466     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U467     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U468     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U469     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U470     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U471     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U472     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U473     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U474     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U475     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U476     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U477     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U478     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U479     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U480     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U481     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U482     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U483     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U484     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U485     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U486     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U487     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U488     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U489     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U490     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U491     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U492     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U493     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U494     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U495     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U496     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U497     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U498     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U499     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U500     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U501     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U502     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U503     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U504     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U505     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U506     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U507     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U508     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U509     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U510     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U511     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U512     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U513     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U514     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U515     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U516     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U517     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U518     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U519     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U520     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U521     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U522     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U523     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U524     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U525     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U526     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U527     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U528     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U529     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U530     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U531     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U532     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U533     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U534     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U535     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U536     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U537     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U538     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U539     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U540     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U541     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U542     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U543     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U544     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U545     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U546     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U547     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U548     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U549     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U550     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U551     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U552     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U553     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U554     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U555     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U556     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U557     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U558     AOI22X1         osu05_stdcells  360.000000
@@ -1710,6 +2017,7 @@ dp_tetris/mymove/U668     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U669     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U670     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U671     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U672     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U673     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U674     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U675     OAI21X1         osu05_stdcells  207.000000
@@ -1865,6 +2173,7 @@ dp_tetris/mymove/U825     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U826     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U827     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U828     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U829     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U830     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U831     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U832     NAND3X1         osu05_stdcells  324.000000
@@ -1884,6 +2193,7 @@ dp_tetris/mymove/U845     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U846     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U847     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U848     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U849     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U850     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U851     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U852     NAND3X1         osu05_stdcells  324.000000
@@ -1920,6 +2230,7 @@ dp_tetris/mymove/U882     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U883     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U884     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U885     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U886     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U887     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U888     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U889     AOI21X1         osu05_stdcells  288.000000
@@ -1936,6 +2247,7 @@ dp_tetris/mymove/U899     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U900     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U901     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U902     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U903     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U904     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U905     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U906     NOR2X1          osu05_stdcells  216.000000
@@ -2001,7 +2313,6 @@ dp_tetris/mymove/U965     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U966     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U967     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U968     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U969     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U970     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U971     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U972     NAND2X1         osu05_stdcells  216.000000
@@ -2034,6 +2345,7 @@ dp_tetris/mymove/U998     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U999     AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1000    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1001    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1002    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1003    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1004    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1005    OAI21X1         osu05_stdcells  207.000000
@@ -2062,6 +2374,7 @@ dp_tetris/mymove/U1028    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1029    AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1030    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1031    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1032    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1033    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1034    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1035    OAI21X1         osu05_stdcells  207.000000
@@ -2109,6 +2422,7 @@ dp_tetris/mymove/U1076    AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1077    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1078    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1079    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1080    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1081    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1082    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1083    NAND3X1         osu05_stdcells  324.000000
@@ -2154,7 +2468,6 @@ dp_tetris/mymove/U1122    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1123    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1124    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1125    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1126    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1127    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1128    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1129    NAND2X1         osu05_stdcells  216.000000
@@ -2168,6 +2481,7 @@ dp_tetris/mymove/U1136    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1137    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1138    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1139    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1140    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1141    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1142    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1143    NOR2X1          osu05_stdcells  216.000000
@@ -2182,7 +2496,6 @@ dp_tetris/mymove/U1151    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1152    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1153    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1154    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1155    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1156    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1157    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1158    NAND2X1         osu05_stdcells  216.000000
@@ -2196,6 +2509,7 @@ dp_tetris/mymove/U1165    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1166    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1167    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1168    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1169    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1170    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1171    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1172    NOR2X1          osu05_stdcells  216.000000
@@ -2220,7 +2534,6 @@ dp_tetris/mymove/U1190    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1191    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1193    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1194    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1195    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1196    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1197    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1198    OAI21X1         osu05_stdcells  207.000000
@@ -2244,6 +2557,7 @@ dp_tetris/mymove/U1215    AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1216    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1217    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1218    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1219    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1220    AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1221    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1222    OAI21X1         osu05_stdcells  207.000000
@@ -2251,7 +2565,6 @@ dp_tetris/mymove/U1223    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1224    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1225    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1226    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1227    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1228    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1229    AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1230    OAI21X1         osu05_stdcells  207.000000
@@ -2314,7 +2627,6 @@ dp_tetris/mymove/U1287    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1288    AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1289    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1291    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1292    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1293    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1294    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1295    OAI21X1         osu05_stdcells  207.000000
@@ -2348,13 +2660,13 @@ dp_tetris/mymove/U1326    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1328    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1329    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1330    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1331    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1332    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1334    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1335    AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1336    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1337    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1338    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1339    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1340    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1341    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1342    NOR2X1          osu05_stdcells  216.000000
@@ -2366,7 +2678,6 @@ dp_tetris/mymove/U1347    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1348    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1349    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1350    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1351    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1352    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1353    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1354    NOR2X1          osu05_stdcells  216.000000
@@ -2431,100 +2742,100 @@ dp_tetris/mymove/location_temp_reg[4]
                                                                     n
 dp_tetris/mymove/new_board_state_reg[0]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[1]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[2]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[3]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[4]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[5]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[6]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[7]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[8]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[9]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[10]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[11]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[12]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[13]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[14]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[15]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[16]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[17]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[18]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[19]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[20]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[21]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[22]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[23]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[24]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[25]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[26]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[27]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[28]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[29]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[30]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_board_state_reg[31]
                           DFFNEGX1        osu05_stdcells  864.000000
-                                                                    n, so
+                                                                    n
 dp_tetris/mymove/new_location_reg[0]
                           DFFNEGX1        osu05_stdcells  864.000000
                                                                     n
@@ -2582,10 +2893,42 @@ dp_tetris/mymove/rotation_temp_reg[0]
 dp_tetris/mymove/rotation_temp_reg[1]
                           DFFNEGX1        osu05_stdcells  864.000000
                                                                     n
+dp_tetris/mymove/touched_reg
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n
 dp_tetris/myredraw        clear_redraw                    0.000000  b
 dp_tetris/myrng           rng                             0.000000  b
+fsm_tetris/U6             INVX2           osu05_stdcells  144.000000
+fsm_tetris/U8             INVX2           osu05_stdcells  144.000000
+fsm_tetris/U9             OR2X1           osu05_stdcells  288.000000
+fsm_tetris/U10            OAI21X1         osu05_stdcells  207.000000
+fsm_tetris/U11            OAI21X1         osu05_stdcells  207.000000
+fsm_tetris/U12            OAI21X1         osu05_stdcells  207.000000
+fsm_tetris/U13            NOR2X1          osu05_stdcells  216.000000
+fsm_tetris/U14            NAND2X1         osu05_stdcells  216.000000
+fsm_tetris/U15            NAND2X1         osu05_stdcells  216.000000
+fsm_tetris/U16            NOR2X1          osu05_stdcells  216.000000
+fsm_tetris/U17            AOI22X1         osu05_stdcells  360.000000
+fsm_tetris/U18            OAI22X1         osu05_stdcells  360.000000
+fsm_tetris/U19            NAND3X1         osu05_stdcells  324.000000
+fsm_tetris/U20            NOR2X1          osu05_stdcells  216.000000
+fsm_tetris/next_state_reg[0]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n
+fsm_tetris/next_state_reg[1]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n
+fsm_tetris/next_state_reg[2]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n
+fsm_tetris/state_reg[0]   DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+fsm_tetris/state_reg[1]   DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
+fsm_tetris/state_reg[2]   DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n, so
 --------------------------------------------------------------------------------
-Total 1236 cells                                          325917.000000
+Total 1595 cells                                          421533.000000
 1
 report_area 
 Warning: Design 'top_module' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
@@ -2594,7 +2937,7 @@ Warning: Design 'top_module' has '2' unresolved references. For more detailed in
 Report : area
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:21 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -2603,21 +2946,21 @@ Library(s) Used:
     osu05_stdcells (File: /clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db)
 
 Number of ports:                           37
-Number of nets:                          1244
-Number of cells:                         1236
-Number of combinational cells:           1181
-Number of sequential cells:                55
+Number of nets:                          1636
+Number of cells:                         1595
+Number of combinational cells:           1533
+Number of sequential cells:                62
 Number of macros/black boxes:               0
-Number of buf/inv:                        283
-Number of references:                      20
+Number of buf/inv:                        371
+Number of references:                      21
 
-Combinational area:             280125.000000
-Buf/Inv area:                    41904.000000
-Noncombinational area:           45792.000000
+Combinational area:             369693.000000
+Buf/Inv area:                    55368.000000
+Noncombinational area:           51840.000000
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                325917.000000
+Total cell area:                421533.000000
 Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)
@@ -2632,32 +2975,13 @@ Report : timing
         -max_paths 3
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:21 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
 Wire Load Model Mode: top
 
-  Startpoint: dp_tetris/mymove/new_board_state_reg[30]
-              (falling edge-triggered flip-flop)
-  Endpoint: board_out[30]
-            (output port clocked by vclk)
-  Path Group: (none)
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  dp_tetris/mymove/new_board_state_reg[30]/CLK (DFFNEGX1)
-                                                          0.00       0.00 f
-  dp_tetris/mymove/new_board_state_reg[30]/Q (DFFNEGX1)
-                                                          0.39       0.39 f
-  board_out[30] (out)                                     0.00       0.39 f
-  data arrival time                                                  0.39
-  --------------------------------------------------------------------------
-  (Path is unconstrained)
-
-
-  Startpoint: dp_tetris/mymove/new_board_state_reg[24]
+  Startpoint: fsm_tetris/state_reg[1]
               (falling edge-triggered flip-flop)
   Endpoint: board_out[24]
             (output port clocked by vclk)
@@ -2666,17 +2990,22 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  dp_tetris/mymove/new_board_state_reg[24]/CLK (DFFNEGX1)
-                                                          0.00       0.00 f
-  dp_tetris/mymove/new_board_state_reg[24]/Q (DFFNEGX1)
-                                                          0.39       0.39 f
-  board_out[24] (out)                                     0.00       0.39 f
-  data arrival time                                                  0.39
+  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.47       0.47 r
+  dp_tetris/U5/Y (INVX2)                                  0.17       0.64 f
+  dp_tetris/U76/Y (NAND3X1)                               0.85       1.49 r
+  U66/Y (INVX2)                                           0.25       1.74 f
+  U29/Y (BUFX2)                                           0.34       2.08 f
+  U23/Y (INVX2)                                           0.67       2.75 r
+  dp_tetris/U59/Y (AOI22X1)                               0.17       2.93 f
+  dp_tetris/U30/Y (INVX2)                                 0.11       3.04 r
+  board_out[24] (out)                                     0.00       3.04 r
+  data arrival time                                                  3.04
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
 
-  Startpoint: dp_tetris/mymove/new_board_state_reg[20]
+  Startpoint: fsm_tetris/state_reg[1]
               (falling edge-triggered flip-flop)
   Endpoint: board_out[20]
             (output port clocked by vclk)
@@ -2685,12 +3014,41 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  dp_tetris/mymove/new_board_state_reg[20]/CLK (DFFNEGX1)
-                                                          0.00       0.00 f
-  dp_tetris/mymove/new_board_state_reg[20]/Q (DFFNEGX1)
-                                                          0.39       0.39 f
-  board_out[20] (out)                                     0.00       0.39 f
-  data arrival time                                                  0.39
+  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.47       0.47 r
+  dp_tetris/U5/Y (INVX2)                                  0.17       0.64 f
+  dp_tetris/U76/Y (NAND3X1)                               0.85       1.49 r
+  U66/Y (INVX2)                                           0.25       1.74 f
+  U29/Y (BUFX2)                                           0.34       2.08 f
+  U23/Y (INVX2)                                           0.67       2.75 r
+  dp_tetris/U63/Y (AOI22X1)                               0.17       2.93 f
+  dp_tetris/U26/Y (INVX2)                                 0.11       3.04 r
+  board_out[20] (out)                                     0.00       3.04 r
+  data arrival time                                                  3.04
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fsm_tetris/state_reg[1]
+              (falling edge-triggered flip-flop)
+  Endpoint: board_out[18]
+            (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.47       0.47 r
+  dp_tetris/U5/Y (INVX2)                                  0.17       0.64 f
+  dp_tetris/U76/Y (NAND3X1)                               0.85       1.49 r
+  U66/Y (INVX2)                                           0.25       1.74 f
+  U29/Y (BUFX2)                                           0.34       2.08 f
+  U23/Y (INVX2)                                           0.67       2.75 r
+  dp_tetris/U66/Y (AOI22X1)                               0.17       2.93 f
+  dp_tetris/U24/Y (INVX2)                                 0.11       3.04 r
+  board_out[18] (out)                                     0.00       3.04 r
+  data arrival time                                                  3.04
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
@@ -2708,7 +3066,7 @@ Report : power
         -analysis_effort low
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:22 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 
@@ -2735,12 +3093,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.4381 mW   (61%)
-  Net Switching Power  = 920.4948 uW   (39%)
+  Cell Internal Power  =   1.4754 mW   (56%)
+  Net Switching Power  =   1.1789 mW   (44%)
                          ---------
-Total Dynamic Power    =   2.3586 mW  (100%)
+Total Dynamic Power    =   2.6543 mW  (100%)
 
-Cell Leakage Power     =  88.8309 nW
+Cell Leakage Power     = 114.4699 nW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -2752,10 +3110,10 @@ memory             0.0000            0.0000            0.0000            0.0000 
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential         0.5680        1.8312e-02           13.0998            0.5863  (  24.95%)
-combinational      0.8701            0.8934           75.7311            1.7636  (  75.05%)
+sequential         0.4662        2.0725e-02           14.8300            0.4870  (  18.35%)
+combinational      1.0091            1.1582           99.6400            2.1674  (  81.65%)
 --------------------------------------------------------------------------------------------------
-Total              1.4381 mW         0.9117 mW        88.8309 nW         2.3499 mW
+Total              1.4754 mW         1.1789 mW       114.4699 nW         2.6544 mW
 1
 redirect timing.rep { report_timing }
 redirect cell.rep { report_cell }
@@ -2764,7 +3122,7 @@ quit
 
 Memory usage for this session 156 Mbytes.
 Memory usage for this session including child processes 156 Mbytes.
-CPU usage for this session 9 seconds ( 0.00 hours ).
-Elapsed time for this session 12 seconds ( 0.00 hours ).
+CPU usage for this session 8 seconds ( 0.00 hours ).
+Elapsed time for this session 10 seconds ( 0.00 hours ).
 
 Thank you...

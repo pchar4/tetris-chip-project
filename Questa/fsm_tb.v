@@ -20,7 +20,7 @@ initial
 begin
 
 // Cycle 1
-restart = 0;
+restart = 1;
 placed = 0;
 game_over = 0;
 in_clka = 0; in_clkb = 0; #10;
@@ -29,7 +29,7 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 2
-restart = 1;
+restart = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;

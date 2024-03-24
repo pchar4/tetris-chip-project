@@ -7,27 +7,32 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 04:36:22 2024
+Date   : Sun Mar 24 13:08:54 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
 Wire Load Model Mode: top
 
-  Startpoint: dp_tetris/mymove/new_board_state_reg[30]
+  Startpoint: fsm_tetris/state_reg[1]
               (falling edge-triggered flip-flop)
-  Endpoint: board_out[30]
+  Endpoint: board_out[24]
             (output port clocked by vclk)
   Path Group: (none)
   Path Type: max
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  dp_tetris/mymove/new_board_state_reg[30]/CLK (DFFNEGX1)
-                                                          0.00       0.00 f
-  dp_tetris/mymove/new_board_state_reg[30]/Q (DFFNEGX1)
-                                                          0.39       0.39 f
-  board_out[30] (out)                                     0.00       0.39 f
-  data arrival time                                                  0.39
+  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.47       0.47 r
+  dp_tetris/U5/Y (INVX2)                                  0.17       0.64 f
+  dp_tetris/U76/Y (NAND3X1)                               0.85       1.49 r
+  U66/Y (INVX2)                                           0.25       1.74 f
+  U29/Y (BUFX2)                                           0.34       2.08 f
+  U23/Y (INVX2)                                           0.67       2.75 r
+  dp_tetris/U59/Y (AOI22X1)                               0.17       2.93 f
+  dp_tetris/U30/Y (INVX2)                                 0.11       3.04 r
+  board_out[24] (out)                                     0.00       3.04 r
+  data arrival time                                                  3.04
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
