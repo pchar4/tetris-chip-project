@@ -25,11 +25,11 @@ wire  [SIZE-1:0]          temp_state; 	// Internal wire for output of function
 reg   [SIZE-1:0]          next_state; 	// Temporary reg to hold next state to
 					// update state on output
 //----------Code startes Here------------------------
-assign temp_state = fsm_function(state, game_over);
+assign temp_state = fsm_function(state, game_over, placed, restart);
 //----------Function for Combinational Logic to read inputs -----------
 function [SIZE-1:0] fsm_function;
   input  [SIZE-1:0] state;
-  input game_over;
+  input game_over, placed, restart;
 
 case(state)
 // feels like it makes sense to have a board_start_state that only gets hit on reset

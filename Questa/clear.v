@@ -319,6 +319,7 @@ always @(negedge clka) begin
 						end
 					end
         endcase
+	end
 end
 
 always @(negedge clkb) begin
