@@ -325,7 +325,7 @@ end
 always @(negedge clkb) begin
 	if (restart) begin
 		board_out <= 0;
-		temp_board <= 0;
+		// temp_board <= 0;
 		error <= 0;
 	end else begin
 		board_out <= temp_board;

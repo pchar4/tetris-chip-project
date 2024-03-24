@@ -1,4 +1,3 @@
-Warning: Design 'top_module' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : timing
@@ -7,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 13:08:54 2024
+Date   : Sun Mar 24 14:01:28 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
@@ -15,7 +14,7 @@ Wire Load Model Mode: top
 
   Startpoint: fsm_tetris/state_reg[1]
               (falling edge-triggered flip-flop)
-  Endpoint: board_out[24]
+  Endpoint: board_out[12]
             (output port clocked by vclk)
   Path Group: (none)
   Path Type: max
@@ -23,16 +22,16 @@ Wire Load Model Mode: top
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
-  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.47       0.47 r
-  dp_tetris/U5/Y (INVX2)                                  0.17       0.64 f
-  dp_tetris/U76/Y (NAND3X1)                               0.85       1.49 r
-  U66/Y (INVX2)                                           0.25       1.74 f
-  U29/Y (BUFX2)                                           0.34       2.08 f
-  U23/Y (INVX2)                                           0.67       2.75 r
-  dp_tetris/U59/Y (AOI22X1)                               0.17       2.93 f
-  dp_tetris/U30/Y (INVX2)                                 0.11       3.04 r
-  board_out[24] (out)                                     0.00       3.04 r
-  data arrival time                                                  3.04
+  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.50       0.50 r
+  U192/Y (INVX2)                                          0.18       0.68 f
+  dp_tetris/U76/Y (NAND3X1)                               0.85       1.54 r
+  U69/Y (INVX2)                                           0.25       1.78 f
+  U42/Y (BUFX2)                                           0.34       2.13 f
+  U33/Y (INVX2)                                           0.67       2.80 r
+  dp_tetris/U72/Y (AOI22X1)                               0.43       3.23 f
+  U108/Y (INVX2)                                          0.15       3.38 r
+  board_out[12] (out)                                     0.00       3.38 r
+  data arrival time                                                  3.38
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
