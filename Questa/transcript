@@ -13,7 +13,7 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -debugDB -voptargs=""+acc"" top_module_tb 
-# Start time: 04:20:00 on Mar 19,2024
+# Start time: 14:30:56 on Mar 19,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
@@ -26,10 +26,10 @@
 # Loading work.move_piece(fast)
 # Loading work.main_FSM(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
-add wave sim:/top_module_tb/*
+add wave -r /*
 run -all
 # ** Note: $stop    : testbench_top.v(80)
 #    Time: 320 ns  Iteration: 0  Instance: /top_module_tb
 # Break in Module top_module_tb at testbench_top.v line 80
-# End time: 04:21:56 on Mar 19,2024, Elapsed time: 0:01:56
+# End time: 14:40:22 on Mar 19,2024, Elapsed time: 0:09:26
 # Errors: 0, Warnings: 1

@@ -1,5 +1,5 @@
 //-----------------------------------------------------
-//// Design Name : Testbench for top_module
+//// Design Name : Testbench for random mumber
 //// File Name   : top_module_tb.v
 //// Function    : Testbench for top module and total project.
 ////-----------------------------------------------------

@@ -3,9 +3,21 @@ K4
 z2
 Z0 !s12c _opt1
 Z1 !s99 nomlopt
+Z2 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
 R0
 R1
-Z2 !s12c _opt
+R0
+R1
+R0
+R1
+R2
 R1
 R2
 R1
@@ -18,10 +30,10 @@ R1
 cModel Technology
 Z3 d/storage-home/p/pac9/spring2024/elec422/tetris-chip-project/Questa
 T_opt
-!s110 1710839039
-VZC<@hkRcbjB^DnGE<L0<H0
+!s110 1710874513
+V1FIDPHg92_6]EHOI<HJz92
 04 9 4 work top_dp_tb fast 0
-=1-4cd98f4b57d1-65f954ff-6508d-13924b
+=1-d09466164d60-65f9df91-2e38d-1a0bcc
 R1
 Z4 !s12b OEM100
 Z5 !s124 OEM100
@@ -31,10 +43,10 @@ n@_opt
 Z8 OL;O;2023.2;77
 R3
 T_opt1
-!s110 1710840000
-V;C4AN1554DgoQE8V3hoYS1
+!s110 1710876656
+V_ZEe?8ZNTbonnZ0<d1>M^0
 04 13 4 work top_module_tb fast 0
-=1-4cd98f4b57d1-65f958c0-91c24-13ba99
+=1-d09466164d60-65f9e7f0-a19d2-1a850d
 R1
 R4
 R5
@@ -43,25 +55,25 @@ R7
 n@_opt1
 R8
 vclear_redraw
-Z9 2clear.v|dp.v|main_FSM.v|move_piece.v|rng.v|testbench_dp.v|testbench_top.v|top_module.v
-Z10 !s110 1710839955
+Z9 2clear_tb.v|clear.v|dp.v|main_FSM.v|move_piece.v|rng.v|testbench_dp.v|testbench_top.v|top_module.v
+Z10 !s110 1710875669
 !i10b 1
-!s100 bma6ZQV^M43KfOUDdK=^=2
-ImUehaWVP9fE_6:]na@[OH0
+!s100 `HlKQ<Tbkh9zHoXVA26HC3
+IJ_dlUc;YXNj7D=QCB4zB51
 R3
-w1710839613
+w1710874859
 8clear.v
 Fclear.v
-!i122 63
-L0 1 224
+!i122 74
+L0 1 214
 Z11 VDg1SIo80bB@j0V0VzS_@n1
 Z12 OL;L;2023.2;77
 r1
 !s85 0
 31
-Z13 !s108 1710839955.000000
-Z14 !s107 top_module.v|testbench_top.v|testbench_dp.v|rng.v|move_piece.v|main_FSM.v|dp.v|clear.v|
-Z15 !s90 clear.v|dp.v|main_FSM.v|move_piece.v|rng.v|testbench_dp.v|testbench_top.v|top_module.v|
+Z13 !s108 1710875669.000000
+Z14 !s107 top_module.v|testbench_top.v|testbench_dp.v|rng.v|move_piece.v|main_FSM.v|dp.v|clear.v|clear_tb.v|
+Z15 !s90 clear_tb.v|clear.v|dp.v|main_FSM.v|move_piece.v|rng.v|testbench_dp.v|testbench_top.v|top_module.v|
 !i113 0
 Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R7
@@ -69,14 +81,14 @@ vdp
 R9
 R10
 !i10b 1
-!s100 LJ]2;NlLFfFokHWST13dG2
-IdAn3_>`Zl8g3JGM_2XjhC0
+!s100 [mRS=cf8iRiY[_zNF4:<d3
+I>o;e5:>^NOWaj3VhGa7IG1
 R3
-w1710839811
+w1710875659
 8dp.v
 Fdp.v
-!i122 63
-L0 8 93
+!i122 74
+L0 8 99
 R11
 R12
 r1
@@ -117,10 +129,10 @@ R10
 !s100 75=[l:1>jlAbGL@URM_eh0
 ICa5XA^2IVngliM[<iXQlk2
 R3
-w1710836885
+Z21 w1710841700
 8main_FSM.v
 Fmain_FSM.v
-!i122 63
+!i122 74
 L0 9 82
 R11
 R12
@@ -138,14 +150,14 @@ vmove_piece
 R9
 R10
 !i10b 1
-!s100 18=1W00_AeRoF4k[l@HP]3
-IzeLMjHU00FY?L>`<b?llA0
+!s100 ]RWWGM5db:5G0HUHeba:81
+Il5zF4Uhcm6ICXocDjmhIB2
 R3
-w1710839894
+w1710844916
 8move_piece.v
 Fmove_piece.v
-!i122 63
-L0 9 183
+!i122 74
+L0 9 184
 R11
 R12
 r1
@@ -189,7 +201,7 @@ R3
 w1710828578
 8rng.v
 Frng.v
-!i122 63
+!i122 74
 L0 6 32
 R11
 R12
@@ -209,10 +221,10 @@ R10
 !s100 7Fc1Sl`4;Pa_XRYGXSbKQ2
 IR?>9@XmGW7kPQ54lHPnE<3
 R3
-w1710839011
+w1710871956
 8testbench_dp.v
 Ftestbench_dp.v
-!i122 63
+!i122 74
 L0 8 74
 R11
 R12
@@ -232,10 +244,10 @@ R10
 !s100 O<70:QeY@0EnJgNgoC:oN1
 IKO0<zo2WEB_a;WB?@EbhT1
 R3
-w1710839247
+R21
 8top_module.v
 Ftop_module.v
-!i122 63
+!i122 74
 L0 18 39
 R11
 R12
@@ -255,10 +267,10 @@ R10
 !s100 Vd?KPKX8Z3S_RDaOB408R1
 ITzaVNXjSS3kTAdGT8bMJl1
 R3
-w1710839950
+R21
 8testbench_top.v
 Ftestbench_top.v
-!i122 63
+!i122 74
 L0 8 76
 R11
 R12

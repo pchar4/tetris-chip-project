@@ -18,14 +18,18 @@ output wire [1:0] rotation_out, curr_piece_out;
 output wire [4:0] location_out;
 output wire [31:0] board_out;
 //------------Internal Variables--------
+parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
+// arbitrary assignment but useful to give meaning to the move
 wire  left, right, rotate;
 assign left = (move == 0);
 assign right = (move == 1);
 assign rotate = (move == 2);
-wire  [1:0] piece_selection;
-wire [31:0] temp_board;
-assign board_out = temp_board;
-parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
+wire  [1:0] piece_selection, temp_piece;
+assign curr_piece_out = (state == GEN) ? piece_selection : temp_piece;
+wire [31:0] temp_board_1, temp_board_2;
+assign board_out = (state == MOVE) ? temp_board_1 : temp_board_2;
+
+
 rng myrng(.clka(clka), 
       .clkb(clkb), 
       .restart(restart), 
@@ -34,13 +38,15 @@ clear_redraw myredraw(
          .clka(clka), 
          .clkb(clkb), 
          .restart(restart),
+         .state(state),
          .board_in(board_in), 
-         .board_out(temp_board),
-         .curr_piece(curr_piece_in), 
+         .board_out(temp_board_1),
+         .curr_piece(piece_selection), // change #1 from debugging
          .error(error_out));
 move_piece mymove (.clka(clka),
                .clkb(clkb),
                .restart(restart),
+               .state(state),
                .curr_board_state(board_in), 
                .curr_piece_type(curr_piece_in),
                .curr_piece_location(location_in),
@@ -50,7 +56,7 @@ move_piece mymove (.clka(clka),
                .rotate(rotate), 
                .new_location(location_out), 
                .new_rotation(rotation_out), 
-               .new_board_state(temp_board), 
+               .new_board_state(temp_board_2), 
                .touched(touched));
 // //-------------Code Starts Here---------
 // always @ (negedge clka)
