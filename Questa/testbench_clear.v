@@ -30,16 +30,17 @@ initial
 begin
 
 // Cycle 1
-in_restart = 0;
+in_restart = 1;
 in_curr_piece = 2'b00;
-in_board_in = 32'h123456FF;
+in_board_in = 32'h00000000;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 2
-in_restart = 1;
+in_restart = 0;
+state = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -54,7 +55,6 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 4
-state = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;

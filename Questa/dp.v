@@ -8,7 +8,7 @@
 module dp (clka, clkb, restart, move, state, location_in, board_in, rotation_in, curr_piece_in, curr_piece_out, location_out, rotation_out, touched, board_out, error_out);
 //-----------Input Ports---------------
 input clka, clkb, restart;
-input wire [1:0] curr_piece_in, rotation_in, move; // 0 == left, 1 == right, 2 == rotate
+input wire [1:0] curr_piece_in, rotation_in, move; // 1 == left, 2 == right, 3 == rotate
 input wire [31:0] board_in;
 input wire [2:0] state;
 input wire [4:0] location_in;
@@ -27,7 +27,7 @@ assign rotate = (move == 3);
 wire  [1:0] piece_selection, temp_piece;
 assign curr_piece_out = (state == GEN) ? piece_selection : temp_piece;
 wire [31:0] temp_board_1, temp_board_2;
-assign board_out = (state == MOVE) ? temp_board_1 : temp_board_2;
+assign board_out = (state == MOVE) ? temp_board_2 : temp_board_1;
 
 
 rng myrng(.clka(clka), 

@@ -11,7 +11,7 @@ module top_dp_tb();
 reg  in_clka, in_clkb, in_restart;
 wire [1:0] rotation, curr_piece;
 reg  [1:0] in_move;
-wire [2:0] state;
+reg [2:0] state;
 // Outputs from top_module
 wire [31:0] board;
 wire [4:0] location;
@@ -36,7 +36,7 @@ initial
 begin
 
 // Cycle 1
-in_restart = 0;
+in_restart = 1;
 in_move = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -44,7 +44,8 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 2
-in_restart = 1;
+in_restart = 0;
+state = 4;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -52,6 +53,7 @@ in_clka = 0; in_clkb = 1; #10
 
 // Cycle 3
 in_restart = 0;
+state = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;

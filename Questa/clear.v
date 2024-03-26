@@ -106,6 +106,13 @@ always @(negedge clka) begin
 					end
         endcase
 	end
+	else if (state == 1) begin // state == 1 is MOVE phase, don't clear anything, leave board as is
+		temp_board <= board_in;
+		temp_error <= 0;
+	end
+	else if (restart) begin
+		temp_board <= 0;
+	end
 	else begin
 		temp_error <= 0;
 		if(board_in[31:28] == 4'b1111)
@@ -123,7 +130,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -137,7 +143,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 
 			end
 		end
@@ -155,7 +160,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -169,7 +173,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 
 			end
 		end
@@ -186,7 +189,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -199,7 +201,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end               
 		end                   
 		else if(board_in[19:16] == 4'b1111)
@@ -215,7 +216,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -227,7 +227,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 
 			end
 		end
@@ -243,7 +242,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -254,7 +252,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 
 			end
 		end
@@ -269,7 +266,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= 1'b0;
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -279,7 +275,6 @@ always @(negedge clka) begin
 			temp_board[ 4]    <= board_in[ 0];
 			temp_board[ 3]    <= 1'b0;
 			temp_board[ 0]    <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 		end
 		else if(board_in[ 7: 4] == 4'b1111)
@@ -292,7 +287,6 @@ always @(negedge clka) begin
 			temp_board[ 4] <= 1'b0;
 			temp_board[ 3] <= 1'b0;
 			temp_board[ 0] <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 			end
 			else
 			begin
@@ -301,7 +295,6 @@ always @(negedge clka) begin
 			temp_board[ 4] <= board_in[ 0];
 			temp_board[ 3] <= 1'b0;
 			temp_board[ 0] <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 
 			end
 		end
@@ -313,7 +306,6 @@ always @(negedge clka) begin
 			temp_board[ 4] <= board_in[4];
 			temp_board[ 3] <= 1'b0;
 			temp_board[ 0] <= 1'b0;
-			// gen_new(curr_piece, board_in, temp_board, error);
 		end
 		else // don't need to clear line(s)
 		begin
@@ -323,7 +315,7 @@ always @(negedge clka) begin
 end
 
 always @(negedge clkb) begin
-	if (restart) begin
+	if (restart || state == 4) begin // board remains 0 if restarted or if we are in newboard state
 		board_out <= 0;
 		// temp_board <= 0;
 		error <= 0;
