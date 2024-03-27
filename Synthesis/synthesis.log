@@ -29,19 +29,19 @@
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 Initializing...
-Current time:       Sun Mar 24 14:01:21 2024
+Current time:       Wed Mar 27 15:19:39 2024
 Hostname:           cobalt.clear.rice.edu
 CPU Model:          Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
 CPU Details:        Cores = 40 : Sockets = 2 : Cache Size = 25600 KB : Freq = 3.40 GHz
 OS:                 Linux 4.18.0-513.9.1.el8_9.x86_64
-RAM:                125 GB (Free  16 GB)
-Swap:                19 GB (Free  19 GB)
-Work Filesystem:    /storage-home/p/pac9 mounted to clearstor.clear.rice.edu:/clear-home/pac9
+RAM:                125 GB (Free   5 GB)
+Swap:                19 GB (Free  18 GB)
+Work Filesystem:    /storage-home/l/ltr1 mounted to clearstor.clear.rice.edu:/clear-home/ltr1
 Tmp Filesystem:     /tmp mounted to /dev/mapper/vg0-tmp
-Work Disk:          5038 GB (Free 1702 GB)
+Work Disk:          5038 GB (Free 1631 GB)
 Tmp Disk:             5 GB (Free   5 GB)
 
-CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Disk Free: 5 GB
+CPU Load: 17%, Ram Free: 5 GB, Swap Free: 18 GB, Work Disk Free: 1631 GB, Tmp Disk Free: 5 GB
 #/**************************************************/
 #/* Compile Script for Synopsys                    */
 #/*                                                */
@@ -153,10 +153,10 @@ Inferred memory devices in process
 ===============================================================================
 Presto compilation completed successfully. (main_FSM)
 Information: Building the design 'rng'. (HDL-193)
-Warning:  ./rng.v:15: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./rng.v:14: The statements in initial blocks are ignored. (VER-281)
 
 Inferred memory devices in process
-	in routine rng line 21 in file
+	in routine rng line 19 in file
 		'./rng.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -165,7 +165,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine rng line 29 in file
+	in routine rng line 27 in file
 		'./rng.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -211,7 +211,7 @@ Statistics for case statements in always block at line 83 in file
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            97            |    auto/auto     |
+|            98            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
@@ -279,7 +279,7 @@ Warning: Nothing implicitly matched 'clka' (SEL-003)
 set_output_delay $my_output_delay_ns -clock $clk_name [all_outputs]
 1
 compile -ungroup_all -map_effort medium
-CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Disk Free: 5 GB
+CPU Load: 17%, Ram Free: 5 GB, Swap Free: 18 GB, Work Disk Free: 1631 GB, Tmp Disk Free: 5 GB
 Information: Checking out the license 'DesignWare'. (SEC-104)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -298,7 +298,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 5446                                   |
+| Leaf Cell Count                                         | 5484                                   |
 | Number of User Hierarchies                              | 5                                      |
 | Sequential Cell Count                                   | 129                                    |
 | Macro Count                                             | 0                                      |
@@ -306,13 +306,13 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 2135                                   |
+| Number of Dont Touch Cells                              | 2145                                   |
 | Number of Dont Touch Nets                               | 0                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
 ====================================================================================================
 
-Information: There are 49 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 54 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -328,6 +328,14 @@ Information: The register 'random_reg[1]' is a constant and will be removed. (OP
 
   Updating timing information
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U51/B dp_tetris/U51/Y dp_tetris/U9/A dp_tetris/U9/Y 
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U49/B dp_tetris/U49/Y dp_tetris/U10/A dp_tetris/U10/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U49'
+         to break a timing loop. (OPT-314)
 Information: Ungrouping hierarchy dp_tetris. (OPT-772)
 Information: Ungrouping hierarchy fsm_tetris. (OPT-772)
 Information: Ungrouping hierarchy dp_tetris/myrng. (OPT-772)
@@ -336,7 +344,6 @@ Information: Ungrouping hierarchy dp_tetris/mymove. (OPT-772)
 
   Beginning Implementation Selection
   ----------------------------------
-Information: The register 'dp_tetris/mymove/old_rotation_reg[1]' will be removed. (OPT-1207)
   Processing 'DW01_dec_width5_DW01_dec_0'
   Processing 'DW01_inc_width5_DW01_inc_1'
   Processing 'DW01_add_width5_DW01_add_0'
@@ -350,19 +357,19 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:04  369036.0      0.00       0.0       0.0                          
-    0:00:04  369036.0      0.00       0.0       0.0                          
-    0:00:04  369036.0      0.00       0.0       0.0                          
-    0:00:04  369036.0      0.00       0.0       0.0                          
-    0:00:04  369036.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
+    0:00:05  573921.0      0.00       0.0       0.0                          
+    0:00:05  573921.0      0.00       0.0       0.0                          
+    0:00:05  573921.0      0.00       0.0       0.0                          
+    0:00:05  573921.0      0.00       0.0       0.0                          
+    0:00:05  573921.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
 
 
 
@@ -373,9 +380,9 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -385,21 +392,21 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  356508.0      0.00       0.0       0.0                          
-    0:00:05  353340.0      0.00       0.0       0.0                          
-    0:00:05  352260.0      0.00       0.0       0.0                          
-    0:00:05  351468.0      0.00       0.0       0.0                          
-    0:00:05  350892.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
-    0:00:05  350604.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  551745.0      0.00       0.0       0.0                          
+    0:00:05  547929.0      0.00       0.0       0.0                          
+    0:00:05  545481.0      0.00       0.0       0.0                          
+    0:00:05  544761.0      0.00       0.0       0.0                          
+    0:00:05  544257.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
+    0:00:05  544113.0      0.00       0.0       0.0                          
 Loading db file '/clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -408,7 +415,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Disk Free: 5 GB
+CPU Load: 17%, Ram Free: 5 GB, Swap Free: 18 GB, Work Disk Free: 1631 GB, Tmp Disk Free: 5 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -430,7 +437,7 @@ Unmapped MV Cells
 ----------------------------------------------------------------------------------------------------
 1
 compile -incremental_mapping -map_effort medium
-CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Disk Free: 5 GB
+CPU Load: 17%, Ram Free: 5 GB, Swap Free: 18 GB, Work Disk Free: 1631 GB, Tmp Disk Free: 5 GB
 ====================================================================================================
 | Flow Information                                                                                 |
 ----------------------------------------------------------------------------------------------------
@@ -439,9 +446,9 @@ CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Di
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 1176                                   |
+| Leaf Cell Count                                         | 1938                                   |
 | Number of User Hierarchies                              | 0                                      |
-| Sequential Cell Count                                   | 127                                    |
+| Sequential Cell Count                                   | 128                                    |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
@@ -449,7 +456,7 @@ CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Di
 | Number of Clocks                                        | 1                                      |
 | Number of Dont Touch Cells                              | 0                                      |
 | Number of Dont Touch Nets                               | 0                                      |
-| Number of Size Only Cells                               | 0                                      |
+| Number of Size Only Cells                               | 2                                      |
 | Design with UPF Data                                    | false                                  |
 ====================================================================================================
 
@@ -459,6 +466,14 @@ CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Di
 
   Updating timing information
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U51/B dp_tetris/U51/Y dp_tetris/U9/A dp_tetris/U9/Y 
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U49/B dp_tetris/U49/Y dp_tetris/U10/A dp_tetris/U10/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U49'
+         to break a timing loop. (OPT-314)
 
   Beginning Mapping Optimizations  (Medium effort)  (Incremental)
   -------------------------------
@@ -474,9 +489,9 @@ Information: Command 'do_operand_isolation' is obsolete and is being ignored.  P
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:00  350604.0      0.00       0.0       0.0                          
-    0:00:00  350604.0      0.00       0.0       0.0                          
-    0:00:00  350604.0      0.00       0.0       0.0                          
+    0:00:00  544113.0      0.00       0.0       0.0                          
+    0:00:00  544113.0      0.00       0.0       0.0                          
+    0:00:00  544113.0      0.00       0.0       0.0                          
 Loading db file '/clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -485,7 +500,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-CPU Load: 6%, Ram Free: 16 GB, Swap Free: 19 GB, Work Disk Free: 1702 GB, Tmp Disk Free: 5 GB
+CPU Load: 17%, Ram Free: 5 GB, Swap Free: 18 GB, Work Disk Free: 1631 GB, Tmp Disk Free: 5 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -510,13 +525,21 @@ check_design
 1
 report_constraint -all_violators
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U51/B dp_tetris/U51/Y dp_tetris/U9/A dp_tetris/U9/Y 
+Information: Timing loop detected. (OPT-150)
+	dp_tetris/U49/B dp_tetris/U49/Y dp_tetris/U10/A dp_tetris/U10/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U51'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'dp_tetris/U49'
+         to break a timing loop. (OPT-314)
  
 ****************************************
 Report : constraint
         -all_violators
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 14:01:28 2024
+Date   : Wed Mar 27 15:19:47 2024
 ****************************************
 
 This design has no violated constraints.
@@ -525,7 +548,7 @@ This design has no violated constraints.
 set filename [format "%s%s"  $my_toplevel ".vh"]
 top_module.vh
 write -f verilog -output $filename
-Writing verilog file '/storage-home/p/pac9/spring2024/elec422/tetris-chip-project/Synthesis/top_module.vh'.
+Writing verilog file '/storage-home/l/ltr1/elec422/FinalProject/Synthesis/top_module.vh'.
 1
 set filename [format "%s%s"  $my_toplevel ".sdc"]
 top_module.sdc
@@ -537,73 +560,75 @@ report_cell
 Report : cell
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 14:01:28 2024
+Date   : Wed Mar 27 15:19:47 2024
 ****************************************
 
 Attributes:
     b - black box (unknown)
+    d - dont_touch
     h - hierarchical
    mo - map_only
     n - noncombinational
     r - removable
+   so - sizing only
     u - contains unmapped logic
 
 Cell                      Reference       Library             Area  Attributes
 --------------------------------------------------------------------------------
-U1                        NAND2X1         osu05_stdcells  216.000000
+U1                        OR2X2           osu05_stdcells  288.000000
 U2                        AND2X2          osu05_stdcells  288.000000
-U3                        AND2X2          osu05_stdcells  288.000000
-U4                        OR2X2           osu05_stdcells  288.000000
-U5                        AND2X2          osu05_stdcells  288.000000
-U6                        XNOR2X1         osu05_stdcells  504.000000
-U7                        AND2X2          osu05_stdcells  288.000000
-U8                        AND2X2          osu05_stdcells  288.000000
-U9                        AND2X2          osu05_stdcells  288.000000
-U10                       AND2X2          osu05_stdcells  288.000000
-U11                       AND2X2          osu05_stdcells  288.000000
-U12                       AND2X2          osu05_stdcells  288.000000
-U13                       AND2X2          osu05_stdcells  288.000000
-U14                       AND2X2          osu05_stdcells  288.000000
-U15                       OR2X2           osu05_stdcells  288.000000
-U16                       AND2X2          osu05_stdcells  288.000000
-U17                       AND2X2          osu05_stdcells  288.000000
-U18                       AND2X2          osu05_stdcells  288.000000
-U19                       AND2X2          osu05_stdcells  288.000000
-U20                       AND2X2          osu05_stdcells  288.000000
-U21                       XNOR2X1         osu05_stdcells  504.000000
-U22                       AND2X2          osu05_stdcells  288.000000
-U23                       OR2X2           osu05_stdcells  288.000000
-U24                       AND2X2          osu05_stdcells  288.000000
-U25                       AND2X2          osu05_stdcells  288.000000
-U26                       AND2X2          osu05_stdcells  288.000000
-U27                       AND2X2          osu05_stdcells  288.000000
-U28                       AND2X2          osu05_stdcells  288.000000
-U29                       AND2X2          osu05_stdcells  288.000000
-U30                       AND2X2          osu05_stdcells  288.000000
-U31                       AND2X2          osu05_stdcells  288.000000
-U32                       AND2X2          osu05_stdcells  288.000000
-U33                       INVX2           osu05_stdcells  144.000000
+U3                        OR2X2           osu05_stdcells  288.000000
+U4                        XNOR2X1         osu05_stdcells  504.000000
+U5                        OR2X2           osu05_stdcells  288.000000
+U6                        AND2X2          osu05_stdcells  288.000000
+U7                        XNOR2X1         osu05_stdcells  504.000000
+U8                        INVX2           osu05_stdcells  144.000000
+U9                        INVX2           osu05_stdcells  144.000000
+U10                       INVX2           osu05_stdcells  144.000000
+U11                       INVX2           osu05_stdcells  144.000000
+U12                       INVX2           osu05_stdcells  144.000000
+U13                       INVX2           osu05_stdcells  144.000000
+U14                       INVX2           osu05_stdcells  144.000000
+U15                       INVX2           osu05_stdcells  144.000000
+U16                       INVX2           osu05_stdcells  144.000000
+U17                       BUFX2           osu05_stdcells  216.000000
+U18                       BUFX2           osu05_stdcells  216.000000
+U19                       BUFX2           osu05_stdcells  216.000000
+U20                       BUFX2           osu05_stdcells  216.000000
+U21                       BUFX2           osu05_stdcells  216.000000
+U22                       BUFX2           osu05_stdcells  216.000000
+U23                       INVX2           osu05_stdcells  144.000000
+U24                       BUFX2           osu05_stdcells  216.000000
+U25                       BUFX2           osu05_stdcells  216.000000
+U26                       INVX2           osu05_stdcells  144.000000
+U27                       INVX2           osu05_stdcells  144.000000
+U28                       INVX2           osu05_stdcells  144.000000
+U29                       INVX2           osu05_stdcells  144.000000
+U30                       INVX2           osu05_stdcells  144.000000
+U31                       INVX2           osu05_stdcells  144.000000
+U32                       INVX2           osu05_stdcells  144.000000
+U33                       BUFX2           osu05_stdcells  216.000000
 U34                       BUFX2           osu05_stdcells  216.000000
 U35                       BUFX2           osu05_stdcells  216.000000
 U36                       BUFX2           osu05_stdcells  216.000000
-U37                       INVX2           osu05_stdcells  144.000000
-U38                       INVX2           osu05_stdcells  144.000000
-U39                       INVX2           osu05_stdcells  144.000000
+U37                       BUFX2           osu05_stdcells  216.000000
+U38                       BUFX2           osu05_stdcells  216.000000
+U39                       BUFX2           osu05_stdcells  216.000000
 U40                       BUFX2           osu05_stdcells  216.000000
-U41                       BUFX2           osu05_stdcells  216.000000
-U42                       BUFX2           osu05_stdcells  216.000000
-U43                       BUFX2           osu05_stdcells  216.000000
-U44                       BUFX2           osu05_stdcells  216.000000
-U45                       BUFX2           osu05_stdcells  216.000000
+U41                       INVX2           osu05_stdcells  144.000000
+U42                       INVX2           osu05_stdcells  144.000000
+U43                       INVX2           osu05_stdcells  144.000000
+U44                       INVX2           osu05_stdcells  144.000000
+U45                       INVX2           osu05_stdcells  144.000000
 U46                       INVX2           osu05_stdcells  144.000000
-U47                       INVX2           osu05_stdcells  144.000000
-U48                       INVX2           osu05_stdcells  144.000000
+U47                       BUFX2           osu05_stdcells  216.000000
+U48                       BUFX2           osu05_stdcells  216.000000
 U49                       INVX2           osu05_stdcells  144.000000
 U50                       INVX2           osu05_stdcells  144.000000
-U51                       INVX2           osu05_stdcells  144.000000
-U52                       INVX2           osu05_stdcells  144.000000
+U51                       BUFX2           osu05_stdcells  216.000000
+U52                       BUFX2           osu05_stdcells  216.000000
 U53                       BUFX2           osu05_stdcells  216.000000
-U54                       BUFX2           osu05_stdcells  216.000000
+U54                       INVX2           osu05_stdcells  144.000000
 U55                       BUFX2           osu05_stdcells  216.000000
 U56                       BUFX2           osu05_stdcells  216.000000
 U57                       BUFX2           osu05_stdcells  216.000000
@@ -613,44 +638,44 @@ U60                       BUFX2           osu05_stdcells  216.000000
 U61                       INVX2           osu05_stdcells  144.000000
 U62                       INVX2           osu05_stdcells  144.000000
 U63                       INVX2           osu05_stdcells  144.000000
-U64                       BUFX2           osu05_stdcells  216.000000
-U65                       BUFX2           osu05_stdcells  216.000000
+U64                       INVX2           osu05_stdcells  144.000000
+U65                       INVX2           osu05_stdcells  144.000000
 U66                       INVX2           osu05_stdcells  144.000000
 U67                       INVX2           osu05_stdcells  144.000000
 U68                       INVX2           osu05_stdcells  144.000000
 U69                       INVX2           osu05_stdcells  144.000000
-U70                       AND2X2          osu05_stdcells  288.000000
-U71                       INVX2           osu05_stdcells  144.000000
-U72                       INVX2           osu05_stdcells  144.000000
+U70                       BUFX2           osu05_stdcells  216.000000
+U71                       BUFX2           osu05_stdcells  216.000000
+U72                       OR2X1           osu05_stdcells  288.000000
 U73                       BUFX2           osu05_stdcells  216.000000
-U74                       BUFX2           osu05_stdcells  216.000000
-U75                       INVX2           osu05_stdcells  144.000000
-U76                       INVX2           osu05_stdcells  144.000000
-U77                       INVX2           osu05_stdcells  144.000000
-U78                       INVX2           osu05_stdcells  144.000000
+U74                       AND2X2          osu05_stdcells  288.000000
+U75                       BUFX2           osu05_stdcells  216.000000
+U76                       BUFX2           osu05_stdcells  216.000000
+U77                       BUFX2           osu05_stdcells  216.000000
+U78                       BUFX2           osu05_stdcells  216.000000
 U79                       INVX2           osu05_stdcells  144.000000
 U80                       INVX2           osu05_stdcells  144.000000
 U81                       INVX2           osu05_stdcells  144.000000
-U82                       INVX2           osu05_stdcells  144.000000
-U83                       INVX2           osu05_stdcells  144.000000
-U84                       INVX2           osu05_stdcells  144.000000
-U85                       INVX2           osu05_stdcells  144.000000
+U82                       BUFX2           osu05_stdcells  216.000000
+U83                       OR2X1           osu05_stdcells  288.000000
+U84                       OR2X1           osu05_stdcells  288.000000
+U85                       BUFX2           osu05_stdcells  216.000000
 U86                       INVX2           osu05_stdcells  144.000000
 U87                       INVX2           osu05_stdcells  144.000000
 U88                       INVX2           osu05_stdcells  144.000000
 U89                       INVX2           osu05_stdcells  144.000000
 U90                       INVX2           osu05_stdcells  144.000000
-U91                       INVX2           osu05_stdcells  144.000000
-U92                       INVX2           osu05_stdcells  144.000000
-U93                       INVX2           osu05_stdcells  144.000000
+U91                       BUFX2           osu05_stdcells  216.000000
+U92                       OR2X1           osu05_stdcells  288.000000
+U93                       AND2X2          osu05_stdcells  288.000000
 U94                       INVX2           osu05_stdcells  144.000000
-U95                       INVX2           osu05_stdcells  144.000000
-U96                       INVX2           osu05_stdcells  144.000000
+U95                       OR2X1           osu05_stdcells  288.000000
+U96                       OR2X1           osu05_stdcells  288.000000
 U97                       INVX2           osu05_stdcells  144.000000
-U98                       INVX2           osu05_stdcells  144.000000
+U98                       OR2X1           osu05_stdcells  288.000000
 U99                       INVX2           osu05_stdcells  144.000000
-U100                      INVX2           osu05_stdcells  144.000000
-U101                      INVX2           osu05_stdcells  144.000000
+U100                      BUFX2           osu05_stdcells  216.000000
+U101                      BUFX2           osu05_stdcells  216.000000
 U102                      INVX2           osu05_stdcells  144.000000
 U103                      INVX2           osu05_stdcells  144.000000
 U104                      INVX2           osu05_stdcells  144.000000
@@ -854,101 +879,128 @@ U301                      INVX2           osu05_stdcells  144.000000
 U302                      INVX2           osu05_stdcells  144.000000
 U303                      INVX2           osu05_stdcells  144.000000
 U304                      INVX2           osu05_stdcells  144.000000
-U305                      XOR2X1          osu05_stdcells  504.000000
-U306                      NOR2X1          osu05_stdcells  216.000000
-U307                      AOI21X1         osu05_stdcells  288.000000
-U308                      NAND2X1         osu05_stdcells  216.000000
-U309                      OAI21X1         osu05_stdcells  207.000000
-U310                      XNOR2X1         osu05_stdcells  504.000000
-U311                      NOR2X1          osu05_stdcells  216.000000
-U312                      XOR2X1          osu05_stdcells  504.000000
-U313                      NAND2X1         osu05_stdcells  216.000000
-U314                      NAND2X1         osu05_stdcells  216.000000
-U315                      NAND2X1         osu05_stdcells  216.000000
-U316                      NAND2X1         osu05_stdcells  216.000000
-U317                      NAND2X1         osu05_stdcells  216.000000
-U318                      NAND2X1         osu05_stdcells  216.000000
-U319                      NAND2X1         osu05_stdcells  216.000000
-U320                      NAND2X1         osu05_stdcells  216.000000
-U321                      NAND2X1         osu05_stdcells  216.000000
-U322                      NAND2X1         osu05_stdcells  216.000000
-U323                      NAND2X1         osu05_stdcells  216.000000
-U324                      NAND2X1         osu05_stdcells  216.000000
-U325                      NOR2X1          osu05_stdcells  216.000000
-U326                      NOR2X1          osu05_stdcells  216.000000
-U327                      NOR2X1          osu05_stdcells  216.000000
-U328                      NOR2X1          osu05_stdcells  216.000000
-U329                      NOR2X1          osu05_stdcells  216.000000
-U330                      NOR2X1          osu05_stdcells  216.000000
-U331                      NOR2X1          osu05_stdcells  216.000000
-U332                      NOR2X1          osu05_stdcells  216.000000
-U333                      NOR2X1          osu05_stdcells  216.000000
-U334                      NOR2X1          osu05_stdcells  216.000000
-U335                      NOR2X1          osu05_stdcells  216.000000
-U336                      NOR2X1          osu05_stdcells  216.000000
-U337                      NOR2X1          osu05_stdcells  216.000000
-U338                      NOR2X1          osu05_stdcells  216.000000
-U339                      NOR2X1          osu05_stdcells  216.000000
-U340                      NOR2X1          osu05_stdcells  216.000000
-U341                      NOR2X1          osu05_stdcells  216.000000
-U342                      NOR2X1          osu05_stdcells  216.000000
-U343                      NOR2X1          osu05_stdcells  216.000000
-U344                      NOR2X1          osu05_stdcells  216.000000
-U345                      NOR2X1          osu05_stdcells  216.000000
-U346                      NOR2X1          osu05_stdcells  216.000000
-U347                      NOR2X1          osu05_stdcells  216.000000
-U348                      NOR2X1          osu05_stdcells  216.000000
-U349                      NOR2X1          osu05_stdcells  216.000000
-U350                      NOR2X1          osu05_stdcells  216.000000
-U351                      NOR2X1          osu05_stdcells  216.000000
-U352                      NOR2X1          osu05_stdcells  216.000000
-U353                      NOR2X1          osu05_stdcells  216.000000
-U354                      NOR2X1          osu05_stdcells  216.000000
-U355                      NOR2X1          osu05_stdcells  216.000000
-U356                      NOR2X1          osu05_stdcells  216.000000
-U357                      NOR2X1          osu05_stdcells  216.000000
-U358                      NOR2X1          osu05_stdcells  216.000000
-U359                      NAND2X1         osu05_stdcells  216.000000
-U360                      NAND2X1         osu05_stdcells  216.000000
-U361                      NAND2X1         osu05_stdcells  216.000000
-U362                      NOR2X1          osu05_stdcells  216.000000
-U363                      NOR2X1          osu05_stdcells  216.000000
-U364                      NOR2X1          osu05_stdcells  216.000000
-U365                      NOR2X1          osu05_stdcells  216.000000
-U366                      NOR2X1          osu05_stdcells  216.000000
-U367                      NOR2X1          osu05_stdcells  216.000000
-U368                      NOR2X1          osu05_stdcells  216.000000
-U369                      NOR2X1          osu05_stdcells  216.000000
-U370                      NOR2X1          osu05_stdcells  216.000000
-U371                      NOR2X1          osu05_stdcells  216.000000
-U372                      NOR2X1          osu05_stdcells  216.000000
-U373                      NOR2X1          osu05_stdcells  216.000000
-U374                      NOR2X1          osu05_stdcells  216.000000
-U375                      NOR2X1          osu05_stdcells  216.000000
-U376                      NOR2X1          osu05_stdcells  216.000000
-U377                      NOR2X1          osu05_stdcells  216.000000
-U378                      NAND2X1         osu05_stdcells  216.000000
-U379                      NOR2X1          osu05_stdcells  216.000000
-U380                      NOR2X1          osu05_stdcells  216.000000
-dp_tetris/U41             NOR2X1          osu05_stdcells  216.000000
-dp_tetris/U42             NOR2X1          osu05_stdcells  216.000000
-dp_tetris/U43             NOR3X1          osu05_stdcells  576.000000
-dp_tetris/U44             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U45             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U46             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U47             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U48             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U49             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U50             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U51             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U52             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U53             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U54             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U55             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U56             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U57             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U58             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U59             AOI22X1         osu05_stdcells  360.000000
+U305                      INVX2           osu05_stdcells  144.000000
+U306                      INVX2           osu05_stdcells  144.000000
+U307                      INVX2           osu05_stdcells  144.000000
+U308                      INVX2           osu05_stdcells  144.000000
+U309                      INVX2           osu05_stdcells  144.000000
+U310                      INVX2           osu05_stdcells  144.000000
+U311                      INVX2           osu05_stdcells  144.000000
+U312                      INVX2           osu05_stdcells  144.000000
+U313                      INVX2           osu05_stdcells  144.000000
+U314                      INVX2           osu05_stdcells  144.000000
+U315                      INVX2           osu05_stdcells  144.000000
+U316                      INVX2           osu05_stdcells  144.000000
+U317                      INVX2           osu05_stdcells  144.000000
+U318                      INVX2           osu05_stdcells  144.000000
+U319                      INVX2           osu05_stdcells  144.000000
+U320                      INVX2           osu05_stdcells  144.000000
+U321                      INVX2           osu05_stdcells  144.000000
+U322                      INVX2           osu05_stdcells  144.000000
+U323                      INVX2           osu05_stdcells  144.000000
+U324                      INVX2           osu05_stdcells  144.000000
+U325                      INVX2           osu05_stdcells  144.000000
+U326                      INVX2           osu05_stdcells  144.000000
+U327                      INVX2           osu05_stdcells  144.000000
+U328                      INVX2           osu05_stdcells  144.000000
+U329                      INVX2           osu05_stdcells  144.000000
+U330                      INVX2           osu05_stdcells  144.000000
+U331                      INVX2           osu05_stdcells  144.000000
+U332                      INVX2           osu05_stdcells  144.000000
+U333                      INVX2           osu05_stdcells  144.000000
+U334                      INVX2           osu05_stdcells  144.000000
+U335                      INVX2           osu05_stdcells  144.000000
+U336                      INVX2           osu05_stdcells  144.000000
+U337                      INVX2           osu05_stdcells  144.000000
+U338                      INVX2           osu05_stdcells  144.000000
+U339                      INVX2           osu05_stdcells  144.000000
+U340                      INVX2           osu05_stdcells  144.000000
+U341                      INVX2           osu05_stdcells  144.000000
+U342                      INVX2           osu05_stdcells  144.000000
+U343                      INVX2           osu05_stdcells  144.000000
+U344                      INVX2           osu05_stdcells  144.000000
+U345                      INVX2           osu05_stdcells  144.000000
+U346                      INVX2           osu05_stdcells  144.000000
+U347                      INVX2           osu05_stdcells  144.000000
+U348                      INVX2           osu05_stdcells  144.000000
+U349                      INVX2           osu05_stdcells  144.000000
+U350                      INVX2           osu05_stdcells  144.000000
+U351                      INVX2           osu05_stdcells  144.000000
+U352                      INVX2           osu05_stdcells  144.000000
+U353                      INVX2           osu05_stdcells  144.000000
+U354                      INVX2           osu05_stdcells  144.000000
+U355                      INVX2           osu05_stdcells  144.000000
+U356                      INVX2           osu05_stdcells  144.000000
+U357                      INVX2           osu05_stdcells  144.000000
+U358                      INVX2           osu05_stdcells  144.000000
+U359                      INVX2           osu05_stdcells  144.000000
+U360                      INVX2           osu05_stdcells  144.000000
+U361                      INVX2           osu05_stdcells  144.000000
+U362                      INVX2           osu05_stdcells  144.000000
+U363                      INVX2           osu05_stdcells  144.000000
+U364                      INVX2           osu05_stdcells  144.000000
+U365                      INVX2           osu05_stdcells  144.000000
+U366                      INVX2           osu05_stdcells  144.000000
+U367                      INVX2           osu05_stdcells  144.000000
+U368                      INVX2           osu05_stdcells  144.000000
+U369                      INVX2           osu05_stdcells  144.000000
+U370                      INVX2           osu05_stdcells  144.000000
+U371                      INVX2           osu05_stdcells  144.000000
+U372                      INVX2           osu05_stdcells  144.000000
+U373                      INVX2           osu05_stdcells  144.000000
+U374                      INVX2           osu05_stdcells  144.000000
+U375                      INVX2           osu05_stdcells  144.000000
+U376                      INVX2           osu05_stdcells  144.000000
+U377                      INVX2           osu05_stdcells  144.000000
+U378                      INVX2           osu05_stdcells  144.000000
+U379                      INVX2           osu05_stdcells  144.000000
+U380                      INVX2           osu05_stdcells  144.000000
+U381                      INVX2           osu05_stdcells  144.000000
+U382                      INVX2           osu05_stdcells  144.000000
+U383                      INVX2           osu05_stdcells  144.000000
+U384                      INVX2           osu05_stdcells  144.000000
+U385                      INVX2           osu05_stdcells  144.000000
+U386                      INVX2           osu05_stdcells  144.000000
+U387                      INVX2           osu05_stdcells  144.000000
+U388                      INVX2           osu05_stdcells  144.000000
+U389                      INVX2           osu05_stdcells  144.000000
+U390                      INVX2           osu05_stdcells  144.000000
+U391                      INVX2           osu05_stdcells  144.000000
+U392                      INVX2           osu05_stdcells  144.000000
+U393                      INVX2           osu05_stdcells  144.000000
+U394                      XOR2X1          osu05_stdcells  504.000000
+U395                      NOR2X1          osu05_stdcells  216.000000
+U396                      AOI21X1         osu05_stdcells  288.000000
+U397                      NAND2X1         osu05_stdcells  216.000000
+U398                      OAI21X1         osu05_stdcells  207.000000
+U399                      XNOR2X1         osu05_stdcells  504.000000
+U400                      NOR2X1          osu05_stdcells  216.000000
+U401                      XOR2X1          osu05_stdcells  504.000000
+U402                      NOR2X1          osu05_stdcells  216.000000
+U403                      NOR2X1          osu05_stdcells  216.000000
+dp_tetris/U3              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U4              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U5              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U6              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U7              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U8              AND2X2          osu05_stdcells  288.000000
+dp_tetris/U9              INVX2           osu05_stdcells  144.000000
+                                                                    d, so
+dp_tetris/U10             INVX2           osu05_stdcells  144.000000
+                                                                    d, so
+dp_tetris/U49             OAI21X1         osu05_stdcells  207.000000
+                                                                    so
+dp_tetris/U50             NAND3X1         osu05_stdcells  324.000000
+dp_tetris/U51             OAI21X1         osu05_stdcells  207.000000
+                                                                    so
+dp_tetris/U54             NOR2X1          osu05_stdcells  216.000000
+dp_tetris/U55             OR2X1           osu05_stdcells  288.000000
+dp_tetris/U56             NOR2X1          osu05_stdcells  216.000000
+                                                                    d
+dp_tetris/U57             NOR2X1          osu05_stdcells  216.000000
+                                                                    d
+dp_tetris/U58             NAND2X1         osu05_stdcells  216.000000
+dp_tetris/U59             NOR2X1          osu05_stdcells  216.000000
 dp_tetris/U60             AOI22X1         osu05_stdcells  360.000000
 dp_tetris/U61             AOI22X1         osu05_stdcells  360.000000
 dp_tetris/U62             AOI22X1         osu05_stdcells  360.000000
@@ -965,412 +1017,1152 @@ dp_tetris/U72             AOI22X1         osu05_stdcells  360.000000
 dp_tetris/U73             AOI22X1         osu05_stdcells  360.000000
 dp_tetris/U74             AOI22X1         osu05_stdcells  360.000000
 dp_tetris/U75             AOI22X1         osu05_stdcells  360.000000
-dp_tetris/U76             NAND3X1         osu05_stdcells  324.000000
-dp_tetris/U77             NOR2X1          osu05_stdcells  216.000000
+dp_tetris/U76             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U77             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U78             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U79             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U80             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U81             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U82             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U83             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U84             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U85             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U86             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U87             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U88             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U89             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U90             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U91             AOI22X1         osu05_stdcells  360.000000
+dp_tetris/U92             NAND3X1         osu05_stdcells  324.000000
+dp_tetris/U93             NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U3       AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U4       AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U5       AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U6       AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U7       AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U8       AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U10      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U11      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U12      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U13      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U14      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U15      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U16      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U17      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U18      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U19      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U20      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U21      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U22      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U23      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U24      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U25      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U26      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U27      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U28      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U29      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U30      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U31      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U32      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U33      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U34      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U35      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U36      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U37      AND2X2          osu05_stdcells  288.000000
 dp_tetris/mymove/U38      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U39      AND2X2          osu05_stdcells  288.000000
+dp_tetris/mymove/U40      INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U46      INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U47      INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U49      INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U290     INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U291     INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U293     INVX2           osu05_stdcells  144.000000
+dp_tetris/mymove/U309     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U310     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U311     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U312     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U313     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U314     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U315     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U316     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U317     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U318     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U319     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U320     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U321     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U322     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U323     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U324     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U325     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U326     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U327     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U328     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U329     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U330     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U331     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U332     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U333     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U334     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U335     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U336     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U337     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U338     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U339     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U340     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U341     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U344     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U345     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U346     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U347     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U342     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U343     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U344     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U345     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U346     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U347     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U348     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U349     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U350     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U350     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U351     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U352     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U353     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U354     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U353     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U354     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U355     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U356     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U357     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U358     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U359     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U360     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U361     OR2X1           osu05_stdcells  288.000000
-dp_tetris/mymove/U362     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U363     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U364     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U365     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U366     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U367     OR2X1           osu05_stdcells  288.000000
-dp_tetris/mymove/U368     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U369     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U356     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U357     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U358     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U359     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U360     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U361     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U362     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U363     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U364     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U365     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U366     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U367     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U368     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U369     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U370     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U371     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U372     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U373     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U374     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U375     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U376     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U377     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U378     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U379     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U380     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U381     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U382     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U383     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U384     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U385     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U386     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U387     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U388     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U389     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U390     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U391     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U392     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U393     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U394     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U395     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U396     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U397     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U398     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U399     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U400     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U401     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U402     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U403     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U404     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U405     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U406     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U407     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U408     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U409     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U410     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U411     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U412     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U413     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U414     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U415     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U416     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U417     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U418     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U419     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U420     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U421     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U422     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U423     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U424     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U425     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U421     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U422     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U423     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U424     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U425     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U426     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U427     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U427     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U428     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U429     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U430     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U431     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U432     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U433     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U434     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U435     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U436     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U437     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U438     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U439     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U429     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U430     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U431     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U432     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U433     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U434     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U435     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U436     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U437     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U438     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U439     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U440     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U441     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U442     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U443     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U444     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U445     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U446     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U447     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U477     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U441     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U442     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U443     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U444     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U445     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U446     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U447     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U448     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U449     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U450     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U451     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U452     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U453     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U454     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U455     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U456     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U457     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U458     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U459     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U460     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U461     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U462     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U463     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U464     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U465     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U466     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U467     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U468     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U469     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U470     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U471     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U472     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U473     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U474     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U475     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U476     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U477     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U478     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U479     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U479     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U480     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U481     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U482     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U483     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U484     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U485     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U486     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U487     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U482     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U483     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U484     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U485     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U486     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U487     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U488     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U489     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U490     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U490     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U491     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U492     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U493     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U494     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U495     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U496     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U497     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U498     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U499     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U500     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U501     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U502     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U537     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U556     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U492     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U493     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U494     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U495     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U496     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U497     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U498     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U499     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U500     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U501     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U502     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U503     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U504     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U505     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U506     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U507     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U508     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U509     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U510     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U511     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U512     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U513     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U514     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U515     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U516     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U517     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U518     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U519     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U520     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U521     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U522     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U523     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U524     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U525     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U526     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U527     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U528     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U529     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U530     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U531     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U532     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U533     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U534     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U535     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U536     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U537     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U538     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U539     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U540     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U541     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U542     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U543     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U544     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U545     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U546     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U547     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U548     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U549     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U550     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U551     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U552     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U553     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U554     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U555     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U556     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U557     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U564     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U565     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U566     OR2X1           osu05_stdcells  288.000000
-dp_tetris/mymove/U567     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U558     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U559     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U560     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U561     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U562     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U563     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U564     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U565     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U566     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U567     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U568     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U569     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U569     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U570     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U571     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U572     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U573     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U574     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U575     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U576     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U577     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U578     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U577     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U578     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U579     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U580     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U581     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U589     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U590     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U591     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U592     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U606     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U582     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U583     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U584     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U585     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U586     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U587     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U588     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U589     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U590     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U591     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U592     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U593     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U594     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U595     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U596     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U597     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U598     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U599     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U600     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U601     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U602     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U603     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U604     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U605     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U606     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U607     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U608     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U609     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U610     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U615     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U616     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U621     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U626     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U608     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U609     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U610     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U611     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U612     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U613     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U614     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U615     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U616     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U617     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U618     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U619     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U620     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U621     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U622     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U623     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U624     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U625     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U626     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U627     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U628     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U629     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U628     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U629     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U630     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U631     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U632     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U633     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U634     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U635     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U636     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U637     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U638     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U639     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U640     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U641     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U644     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U646     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U647     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U648     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U649     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U656     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U658     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U667     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U668     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U669     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U675     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U677     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U642     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U643     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U644     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U645     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U646     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U647     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U648     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U649     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U650     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U651     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U652     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U653     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U654     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U655     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U656     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U657     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U658     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U659     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U660     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U661     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U662     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U663     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U664     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U665     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U666     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U667     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U668     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U669     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U670     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U671     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U672     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U673     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U674     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U675     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U676     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U677     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U678     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U679     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U680     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U681     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U682     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U683     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U684     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U685     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U686     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U687     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U688     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U689     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U690     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U689     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U690     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U691     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U692     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U693     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U694     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U695     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U696     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U697     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U698     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U699     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U700     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U701     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U702     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U703     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U704     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U706     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U707     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U712     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U713     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U714     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U715     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U716     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U705     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U706     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U707     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U708     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U709     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U710     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U711     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U712     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U713     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U714     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U715     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U716     NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U717     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U718     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U719     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U735     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U740     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U741     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U742     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U744     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U745     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U746     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U747     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U718     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U719     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U720     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U721     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U722     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U723     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U724     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U725     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U726     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U727     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U728     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U729     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U730     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U731     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U732     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U733     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U734     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U735     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U736     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U737     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U738     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U739     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U740     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U741     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U742     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U743     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U744     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U745     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U746     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U747     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U748     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U749     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U750     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U751     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U752     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U753     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U754     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U755     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U756     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U757     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U758     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U759     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U760     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U761     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U762     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U763     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U768     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U769     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U770     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U763     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U764     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U765     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U766     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U767     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U768     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U769     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U770     AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U771     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U772     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U772     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U773     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U774     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U775     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U789     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U791     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U774     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U775     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U776     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U777     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U778     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U779     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U780     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U781     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U782     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U783     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U784     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U785     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U786     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U787     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U788     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U789     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U790     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U791     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U792     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U793     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U794     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U795     OR2X1           osu05_stdcells  288.000000
 dp_tetris/mymove/U796     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U797     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U798     NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U799     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U800     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U801     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U800     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U801     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U802     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U803     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U804     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U805     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U806     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U807     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U808     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U812     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U819     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U809     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U810     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U811     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U812     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U813     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U814     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U815     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U816     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U817     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U818     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U819     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U820     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U822     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U823     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U824     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U825     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U821     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U822     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U823     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U824     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U825     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U826     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U827     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U828     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U829     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U830     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U831     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U833     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U837     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U841     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U842     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U843     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U844     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U845     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U832     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U833     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U834     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U835     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U836     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U837     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U838     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U839     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U840     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U841     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U842     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U843     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U844     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U845     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U846     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U847     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U848     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U849     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U850     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U851     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U853     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U861     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U862     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U863     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U864     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U865     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U852     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U853     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U854     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U855     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U856     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U857     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U858     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U859     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U860     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U861     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U862     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U863     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U864     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U865     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U866     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U867     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U868     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U869     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U870     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U871     NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U872     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U874     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U885     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U886     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U887     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U888     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U902     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U904     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U905     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U906     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U911     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U912     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U913     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U914     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U915     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U916     NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U917     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U918     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U933     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U873     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U874     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U875     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U876     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U877     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U878     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U879     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U880     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U881     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U882     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U883     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U884     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U885     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U886     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U887     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U888     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U889     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U890     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U891     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U892     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U893     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U894     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U895     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U896     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U897     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U898     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U899     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U900     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U901     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U902     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U903     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U904     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U905     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U906     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U907     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U908     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U909     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U910     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U911     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U912     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U913     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U914     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U915     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U916     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U917     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U918     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U919     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U920     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U921     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U922     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U923     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U924     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U925     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U926     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U927     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U928     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U929     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U930     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U931     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U932     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U933     OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U934     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U939     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U940     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U941     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U942     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U943     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U944     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U935     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U936     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U937     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U938     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U939     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U940     OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U941     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U942     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U943     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U944     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U945     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U946     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U961     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U962     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U966     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U967     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U968     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U969     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U970     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U971     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U946     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U947     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U948     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U949     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U950     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U951     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U952     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U953     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U954     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U955     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U956     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U957     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U958     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U959     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U960     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U961     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U962     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U963     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U964     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U965     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U966     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U967     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U968     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U969     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U970     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U971     OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U972     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U973     AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U986     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U992     AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U993     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U994     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U995     NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U996     NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U997     OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U998     OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U999     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U973     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U974     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U975     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U976     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U977     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U978     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U979     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U980     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U982     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U983     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U984     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U985     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U986     AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U987     OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U988     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U989     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U990     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U991     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U992     NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U993     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U994     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U995     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U996     AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U997     NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U998     OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U999     NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1000    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1001    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1002    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1003    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1004    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1005    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1007    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1011    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1017    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1018    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1019    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1025    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1026    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1027    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1028    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1029    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1035    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1037    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1041    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1050    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1051    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1052    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1053    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1058    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1060    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1073    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1074    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1075    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1076    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1082    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1084    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1098    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1099    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1100    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1114    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1116    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1006    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1007    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1008    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1009    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1010    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1011    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1012    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1013    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1014    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1015    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1016    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1017    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1018    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1019    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1020    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1021    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1022    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1023    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1024    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1025    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1026    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1027    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1028    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1029    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1030    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1031    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1032    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1033    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1034    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1035    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1036    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1037    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1038    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1039    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1040    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1041    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1042    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1043    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1044    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1045    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1046    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1047    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1048    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1049    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1050    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1051    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1052    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1053    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1054    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1055    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1056    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1057    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1058    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1059    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1060    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1061    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1062    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1063    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1064    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1065    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1066    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1067    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1068    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1069    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1070    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1071    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1072    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1073    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1074    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1075    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1076    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1077    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1078    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1079    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1080    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1081    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1082    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1083    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1084    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1085    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1086    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1087    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1088    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1089    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1090    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1091    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1092    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1093    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1094    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1095    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1096    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1097    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1098    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1099    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1100    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1101    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1102    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1103    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1104    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1105    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1106    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1107    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1108    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1109    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1110    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1111    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1112    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1113    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1114    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1115    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1116    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1117    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1118    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1123    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1124    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1125    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1126    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1119    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1120    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1121    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1122    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1123    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1124    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1125    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1126    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1127    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1128    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1128    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1129    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1130    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1130    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1131    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1132    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1133    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1134    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1135    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1136    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1137    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1138    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1139    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1140    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1141    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1142    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1143    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1144    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1145    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1146    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1147    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1152    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1153    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1147    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1148    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1149    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1150    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1151    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1152    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1153    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1154    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1155    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1155    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1156    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1157    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1158    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1159    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1157    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1158    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1159    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1160    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1161    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1162    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1163    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1164    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1165    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1166    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1167    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1168    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1169    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1170    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1171    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1172    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1173    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1174    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1175    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1176    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1176    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1177    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1178    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1179    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1180    AOI21X1         osu05_stdcells  288.000000
 dp_tetris/mymove/U1181    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1182    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1183    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1184    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1185    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1186    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1187    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1188    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1189    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1199    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1202    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1216    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1217    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1218    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1219    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1220    AOI21X1         osu05_stdcells  288.000000
-dp_tetris/mymove/U1221    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1222    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1227    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1236    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1237    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1238    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1240    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1183    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1184    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1185    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1186    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1187    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1188    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1189    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1190    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1191    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1192    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1193    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1194    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1195    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1196    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1197    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1198    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1199    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1200    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1202    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1203    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1204    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1205    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1206    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1207    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1208    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1209    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1210    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1211    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1212    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1213    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1214    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1215    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1216    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1217    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1218    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1219    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1220    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1221    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1222    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1223    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1224    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1225    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1226    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1227    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1228    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1229    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1230    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1231    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1232    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1233    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1234    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1235    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1236    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1237    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1238    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1239    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1240    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1241    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1242    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1243    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1246    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1252    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1260    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1261    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1243    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1244    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1245    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1246    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1248    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1249    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1250    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1251    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1252    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1253    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1254    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1255    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1256    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1257    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1258    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1259    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1260    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1261    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1262    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1263    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1265    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1266    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1267    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1268    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1263    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1264    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1265    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1266    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1267    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1268    OAI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1269    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1270    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1271    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1272    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1272    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1273    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1274    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1275    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1290    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1291    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1292    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1293    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1294    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1276    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1277    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1278    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1279    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1280    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1281    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1282    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1283    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1284    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1285    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1286    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1287    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1288    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1289    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1290    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1291    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1292    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1293    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1294    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1295    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1298    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1299    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1296    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1297    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1298    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1299    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1300    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1301    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1302    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1304    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1305    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1301    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1302    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1303    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1304    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1305    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1307    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1308    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1309    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1310    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1323    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1324    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1332    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1311    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1312    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1313    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1314    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1315    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1316    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1317    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1318    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1319    AOI21X1         osu05_stdcells  288.000000
+dp_tetris/mymove/U1321    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1322    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1324    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1325    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1326    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1327    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1328    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1330    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1332    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1333    AOI22X1         osu05_stdcells  360.000000
 dp_tetris/mymove/U1334    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1336    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1340    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1337    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1338    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1339    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1340    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/U1341    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1342    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1343    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1344    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1343    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1344    NAND3X1         osu05_stdcells  324.000000
 dp_tetris/mymove/U1345    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1346    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1347    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1348    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1349    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1350    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1351    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1352    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1353    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1354    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1355    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1356    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1357    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1358    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1359    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1360    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1361    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1362    OR2X1           osu05_stdcells  288.000000
-dp_tetris/mymove/U1363    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1346    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1347    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1348    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1349    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1350    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1351    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1352    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1353    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1354    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1355    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1356    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1357    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1358    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1359    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1360    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1361    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1362    NAND2X1         osu05_stdcells  216.000000
 dp_tetris/mymove/U1364    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1365    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1366    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1367    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1368    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1365    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1366    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1367    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1368    OAI21X1         osu05_stdcells  207.000000
 dp_tetris/mymove/U1369    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1370    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1371    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1372    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1373    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1374    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1375    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1376    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1379    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1380    AOI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1387    OAI22X1         osu05_stdcells  360.000000
-dp_tetris/mymove/U1388    OAI21X1         osu05_stdcells  207.000000
-dp_tetris/mymove/U1390    NOR2X1          osu05_stdcells  216.000000
-dp_tetris/mymove/U1391    NAND2X1         osu05_stdcells  216.000000
-dp_tetris/mymove/U1392    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1394    NAND3X1         osu05_stdcells  324.000000
-dp_tetris/mymove/U1399    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1370    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1371    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1372    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1373    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1374    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1375    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1376    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1377    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1378    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1379    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1380    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1381    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1382    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1383    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1384    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1385    AOI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1386    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1387    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1388    OR2X1           osu05_stdcells  288.000000
+dp_tetris/mymove/U1389    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1390    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1392    OAI22X1         osu05_stdcells  360.000000
+dp_tetris/mymove/U1393    OAI21X1         osu05_stdcells  207.000000
+dp_tetris/mymove/U1394    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1395    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1396    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1397    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1398    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1399    NAND3X1         osu05_stdcells  324.000000
+dp_tetris/mymove/U1400    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1401    NOR2X1          osu05_stdcells  216.000000
+dp_tetris/mymove/U1402    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1403    NAND2X1         osu05_stdcells  216.000000
+dp_tetris/mymove/U1404    NOR2X1          osu05_stdcells  216.000000
 dp_tetris/mymove/location_temp_reg[0]
                           DFFNEGX1        osu05_stdcells  864.000000
                                                                     n
@@ -1521,13 +2313,16 @@ dp_tetris/mymove/old_location_reg[4]
 dp_tetris/mymove/old_rotation_reg[0]
                           DFFNEGX1        osu05_stdcells  864.000000
                                                                     n
-dp_tetris/mymove/r1231/U1_1_1
+dp_tetris/mymove/old_rotation_reg[1]
+                          DFFNEGX1        osu05_stdcells  864.000000
+                                                                    n
+dp_tetris/mymove/r1235/U1_1_1
                           HAX1            osu05_stdcells  720.000000
                                                                     mo, r
-dp_tetris/mymove/r1231/U1_1_2
+dp_tetris/mymove/r1235/U1_1_2
                           HAX1            osu05_stdcells  720.000000
                                                                     mo, r
-dp_tetris/mymove/r1231/U1_1_3
+dp_tetris/mymove/r1235/U1_1_3
                           HAX1            osu05_stdcells  720.000000
                                                                     mo, r
 dp_tetris/mymove/rotation_temp_reg[0]
@@ -1984,7 +2779,7 @@ fsm_tetris/state_reg[1]   DFFNEGX1        osu05_stdcells  864.000000
 fsm_tetris/state_reg[2]   DFFNEGX1        osu05_stdcells  864.000000
                                                                     n
 --------------------------------------------------------------------------------
-Total 1176 cells                                          350604.000000
+Total 1938 cells                                          544113.000000
 1
 report_area 
  
@@ -1992,7 +2787,7 @@ report_area
 Report : area
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 14:01:28 2024
+Date   : Wed Mar 27 15:19:47 2024
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -2001,21 +2796,21 @@ Library(s) Used:
     osu05_stdcells (File: /clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db)
 
 Number of ports:                           37
-Number of nets:                          1184
-Number of cells:                         1176
-Number of combinational cells:           1049
-Number of sequential cells:               127
+Number of nets:                          1947
+Number of cells:                         1939
+Number of combinational cells:           1810
+Number of sequential cells:               128
 Number of macros/black boxes:               0
-Number of buf/inv:                        271
-Number of references:                      17
+Number of buf/inv:                        386
+Number of references:                      16
 
-Combinational area:             240876.000000
-Buf/Inv area:                    40536.000000
-Noncombinational area:          109728.000000
+Combinational area:             433521.000000
+Buf/Inv area:                    58392.000000
+Noncombinational area:          110592.000000
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                350604.000000
+Total cell area:                544113.000000
 Total area:                 undefined
 1
 report_timing -path full -delay max -max_paths 3 -nworst 1
@@ -2027,37 +2822,13 @@ Report : timing
         -max_paths 3
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 14:01:28 2024
+Date   : Wed Mar 27 15:19:47 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
 Wire Load Model Mode: top
 
-  Startpoint: fsm_tetris/state_reg[1]
-              (falling edge-triggered flip-flop)
-  Endpoint: board_out[12]
-            (output port clocked by vclk)
-  Path Group: (none)
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
-  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.50       0.50 r
-  U192/Y (INVX2)                                          0.18       0.68 f
-  dp_tetris/U76/Y (NAND3X1)                               0.85       1.54 r
-  U69/Y (INVX2)                                           0.25       1.78 f
-  U42/Y (BUFX2)                                           0.34       2.13 f
-  U33/Y (INVX2)                                           0.67       2.80 r
-  dp_tetris/U72/Y (AOI22X1)                               0.43       3.23 f
-  U108/Y (INVX2)                                          0.15       3.38 r
-  board_out[12] (out)                                     0.00       3.38 r
-  data arrival time                                                  3.38
-  --------------------------------------------------------------------------
-  (Path is unconstrained)
-
-
-  Startpoint: fsm_tetris/state_reg[1]
+  Startpoint: fsm_tetris/state_reg[2]
               (falling edge-triggered flip-flop)
   Endpoint: board_out[13]
             (output port clocked by vclk)
@@ -2066,41 +2837,65 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
-  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.50       0.50 r
-  U192/Y (INVX2)                                          0.18       0.68 f
-  dp_tetris/U76/Y (NAND3X1)                               0.85       1.54 r
-  U69/Y (INVX2)                                           0.25       1.78 f
-  U42/Y (BUFX2)                                           0.34       2.13 f
-  U33/Y (INVX2)                                           0.67       2.80 r
-  dp_tetris/U71/Y (AOI22X1)                               0.38       3.17 f
-  U115/Y (INVX2)                                          0.18       3.36 r
-  board_out[13] (out)                                     0.00       3.36 r
-  data arrival time                                                  3.36
+  fsm_tetris/state_reg[2]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[2]/Q (DFFNEGX1)                    0.59       0.59 r
+  U274/Y (INVX2)                                          0.16       0.74 f
+  dp_tetris/U92/Y (NAND3X1)                               0.83       1.58 r
+  U90/Y (INVX2)                                           0.25       1.82 f
+  U37/Y (BUFX2)                                           0.34       2.17 f
+  U13/Y (INVX2)                                           0.67       2.84 r
+  dp_tetris/U87/Y (AOI22X1)                               0.49       3.32 f
+  U139/Y (INVX2)                                          0.16       3.48 r
+  board_out[13] (out)                                     0.00       3.48 r
+  data arrival time                                                  3.48
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
 
-  Startpoint: fsm_tetris/state_reg[1]
+  Startpoint: fsm_tetris/state_reg[2]
               (falling edge-triggered flip-flop)
-  Endpoint: board_out[11]
+  Endpoint: board_out[12]
             (output port clocked by vclk)
   Path Group: (none)
   Path Type: max
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  fsm_tetris/state_reg[1]/CLK (DFFNEGX1)                  0.00       0.00 f
-  fsm_tetris/state_reg[1]/Q (DFFNEGX1)                    0.50       0.50 r
-  U192/Y (INVX2)                                          0.18       0.68 f
-  dp_tetris/U76/Y (NAND3X1)                               0.85       1.54 r
-  U69/Y (INVX2)                                           0.25       1.78 f
-  U42/Y (BUFX2)                                           0.34       2.13 f
-  U33/Y (INVX2)                                           0.67       2.80 r
-  dp_tetris/U73/Y (AOI22X1)                               0.38       3.17 f
-  U106/Y (INVX2)                                          0.18       3.36 r
-  board_out[11] (out)                                     0.00       3.36 r
-  data arrival time                                                  3.36
+  fsm_tetris/state_reg[2]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[2]/Q (DFFNEGX1)                    0.59       0.59 r
+  U274/Y (INVX2)                                          0.16       0.74 f
+  dp_tetris/U92/Y (NAND3X1)                               0.83       1.58 r
+  U90/Y (INVX2)                                           0.25       1.82 f
+  U37/Y (BUFX2)                                           0.34       2.17 f
+  U13/Y (INVX2)                                           0.67       2.84 r
+  dp_tetris/U88/Y (AOI22X1)                               0.49       3.32 f
+  U133/Y (INVX2)                                          0.16       3.48 r
+  board_out[12] (out)                                     0.00       3.48 r
+  data arrival time                                                  3.48
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fsm_tetris/state_reg[2]
+              (falling edge-triggered flip-flop)
+  Endpoint: board_out[15]
+            (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  fsm_tetris/state_reg[2]/CLK (DFFNEGX1)                  0.00       0.00 f
+  fsm_tetris/state_reg[2]/Q (DFFNEGX1)                    0.59       0.59 r
+  U274/Y (INVX2)                                          0.16       0.74 f
+  dp_tetris/U92/Y (NAND3X1)                               0.83       1.58 r
+  U90/Y (INVX2)                                           0.25       1.82 f
+  U37/Y (BUFX2)                                           0.34       2.17 f
+  U13/Y (INVX2)                                           0.67       2.84 r
+  dp_tetris/U85/Y (AOI22X1)                               0.44       3.28 f
+  U146/Y (INVX2)                                          0.19       3.47 r
+  board_out[15] (out)                                     0.00       3.47 r
+  data arrival time                                                  3.47
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
@@ -2117,7 +2912,7 @@ Report : power
         -analysis_effort low
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Sun Mar 24 14:01:28 2024
+Date   : Wed Mar 27 15:19:48 2024
 ****************************************
 
 
@@ -2144,12 +2939,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  = 828.0852 uW   (71%)
-  Net Switching Power  = 337.9013 uW   (29%)
+  Cell Internal Power  = 817.6495 uW   (71%)
+  Net Switching Power  = 329.1658 uW   (29%)
                          ---------
-Total Dynamic Power    =   1.1660 mW  (100%)
+Total Dynamic Power    =   1.1468 mW  (100%)
 
-Cell Leakage Power     =  96.8969 nW
+Cell Leakage Power     = 151.5130 nW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -2161,10 +2956,10 @@ memory             0.0000            0.0000            0.0000            0.0000 
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential         0.7142        1.2952e-02           31.3901            0.7272  (  62.36%)
-combinational      0.1139            0.3249           65.5068            0.4389  (  37.64%)
+sequential         0.6988        6.7898e-03           31.6372            0.7056  (  61.52%)
+combinational      0.1188            0.3224          119.8757            0.4413  (  38.48%)
 --------------------------------------------------------------------------------------------------
-Total              0.8281 mW         0.3379 mW        96.8969 nW         1.1661 mW
+Total              0.8176 mW         0.3292 mW       151.5130 nW         1.1470 mW
 1
 redirect timing.rep { report_timing }
 redirect cell.rep { report_cell }
@@ -2173,7 +2968,7 @@ quit
 
 Memory usage for this session 157 Mbytes.
 Memory usage for this session including child processes 157 Mbytes.
-CPU usage for this session 8 seconds ( 0.00 hours ).
-Elapsed time for this session 10 seconds ( 0.00 hours ).
+CPU usage for this session 10 seconds ( 0.00 hours ).
+Elapsed time for this session 12 seconds ( 0.00 hours ).
 
 Thank you...

@@ -1,5 +1,5 @@
 $date
-	Sun Mar 24 13:00:55 2024
+	Wed Mar 27 14:09:10 2024
 $end
 $version
 	QuestaSim Version 2023.2
@@ -301,12 +301,20 @@ $var wire 1 c! temp_board_2 [3] $end
 $var wire 1 d! temp_board_2 [2] $end
 $var wire 1 e! temp_board_2 [1] $end
 $var wire 1 f! temp_board_2 [0] $end
+$var wire 1 g! location [4] $end
+$var wire 1 h! location [3] $end
+$var wire 1 i! location [2] $end
+$var wire 1 j! location [1] $end
+$var wire 1 k! location [0] $end
+$var wire 1 l! rotation [1] $end
+$var wire 1 m! rotation [0] $end
 
 $scope module myrng $end
 $var wire 1 E clka $end
 $var wire 1 F clkb $end
 $var wire 1 G restart $end
-$var reg 2 g! random [1:0] $end
+$var reg 2 n! random [1:0] $end
+$var reg 1 o! temp_rand $end
 $upscope $end
 
 $scope module myredraw $end
@@ -350,10 +358,10 @@ $var wire 1 $! curr_piece [0] $end
 $var wire 1 P state [2] $end
 $var wire 1 Q state [1] $end
 $var wire 1 R state [0] $end
-$var reg 32 h! board_out [31:0] $end
-$var reg 1 i! error $end
-$var reg 32 j! temp_board [31:0] $end
-$var reg 1 k! temp_error $end
+$var reg 32 p! board_out [31:0] $end
+$var reg 1 q! error $end
+$var reg 32 r! temp_board [31:0] $end
+$var reg 1 s! temp_error $end
 $upscope $end
 
 $scope module mymove $end
@@ -363,13 +371,13 @@ $var wire 1 G restart $end
 $var wire 1 ~ left $end
 $var wire 1 !! right $end
 $var wire 1 "! rotate $end
-$var wire 1 S curr_piece_location [4] $end
-$var wire 1 T curr_piece_location [3] $end
-$var wire 1 U curr_piece_location [2] $end
-$var wire 1 V curr_piece_location [1] $end
-$var wire 1 W curr_piece_location [0] $end
-$var wire 1 L curr_piece_rotation [1] $end
-$var wire 1 M curr_piece_rotation [0] $end
+$var wire 1 g! curr_piece_location [4] $end
+$var wire 1 h! curr_piece_location [3] $end
+$var wire 1 i! curr_piece_location [2] $end
+$var wire 1 j! curr_piece_location [1] $end
+$var wire 1 k! curr_piece_location [0] $end
+$var wire 1 l! curr_piece_rotation [1] $end
+$var wire 1 m! curr_piece_rotation [0] $end
 $var wire 1 N curr_piece_type [1] $end
 $var wire 1 O curr_piece_type [0] $end
 $var wire 1 X curr_board_state [31] $end
@@ -407,42 +415,42 @@ $var wire 1 w curr_board_state [0] $end
 $var wire 1 P state [2] $end
 $var wire 1 Q state [1] $end
 $var wire 1 R state [0] $end
-$var reg 1 l! touched $end
-$var reg 2 m! new_rotation [1:0] $end
-$var reg 5 n! new_location [4:0] $end
-$var reg 32 o! new_board_state [31:0] $end
-$var reg 5 p! location_temp [4:0] $end
-$var reg 5 q! old_location [4:0] $end
-$var reg 2 r! rotation_temp [1:0] $end
-$var reg 2 s! old_rotation [1:0] $end
+$var reg 1 t! touched $end
+$var reg 2 u! new_rotation [1:0] $end
+$var reg 5 v! new_location [4:0] $end
+$var reg 32 w! new_board_state [31:0] $end
+$var reg 5 x! location_temp [4:0] $end
+$var reg 5 y! old_location [4:0] $end
+$var reg 2 z! rotation_temp [1:0] $end
+$var reg 2 {! old_rotation [1:0] $end
 $upscope $end
 $upscope $end
 
 $scope module fsm_tetris $end
-$var parameter 32 t! SIZE $end
-$var parameter 3 u! GEN $end
-$var parameter 3 v! MOVE $end
-$var parameter 3 w! LAND $end
-$var parameter 3 x! CLEAR $end
-$var parameter 3 y! NEWBOARD $end
-$var parameter 3 z! GAMEOVER $end
+$var parameter 32 |! SIZE $end
+$var parameter 3 }! GEN $end
+$var parameter 3 ~! MOVE $end
+$var parameter 3 !" LAND $end
+$var parameter 3 "" CLEAR $end
+$var parameter 3 #" NEWBOARD $end
+$var parameter 3 $" GAMEOVER $end
 $var wire 1 E clka $end
 $var wire 1 F clkb $end
 $var wire 1 G restart $end
 $var wire 1 K game_over $end
 $var wire 1 J placed $end
-$var reg 3 {! state [2:0] $end
-$var wire 1 |! temp_state [2] $end
-$var wire 1 }! temp_state [1] $end
-$var wire 1 ~! temp_state [0] $end
-$var reg 3 !" next_state [2:0] $end
+$var reg 3 %" state [2:0] $end
+$var wire 1 &" temp_state [2] $end
+$var wire 1 '" temp_state [1] $end
+$var wire 1 (" temp_state [0] $end
+$var reg 3 )" next_state [2:0] $end
 
 $scope function fsm_function $end
-$var reg 3 "" fsm_function [2:0] $end
-$var reg 3 #" state [2:0] $end
-$var reg 1 $" game_over $end
-$var reg 1 %" placed $end
-$var reg 1 &" restart $end
+$var reg 3 *" fsm_function [2:0] $end
+$var reg 3 +" state [2:0] $end
+$var reg 1 ," game_over $end
+$var reg 1 -" placed $end
+$var reg 1 ." restart $end
 $upscope $end
 
 $scope begin FSM_SEQ $end

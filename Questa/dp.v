@@ -25,9 +25,14 @@ assign left = (move == 1);
 assign right = (move == 2);
 assign rotate = (move == 3);
 wire  [1:0] piece_selection, temp_piece;
-assign curr_piece_out = (state == GEN) ? piece_selection : temp_piece;
+assign temp_piece = (state == GEN) ? piece_selection : ((state == NEWBOARD) ? 2'b00 : temp_piece);
+assign curr_piece_out = (state == NEWBOARD) ? 2'b00 : temp_piece;
 wire [31:0] temp_board_1, temp_board_2;
-assign board_out = (state == MOVE) ? temp_board_1 : temp_board_2;
+assign board_out = (state == MOVE) ? temp_board_2 : temp_board_1;
+wire [4:0] location;
+wire [1:0] rotation;
+assign location = (state == NEWBOARD) ? 5'b00010 : location_out;
+assign rotation = (state == NEWBOARD) ? 2'b00 : rotation_out;
 
 
 rng myrng(.clka(clka), 
@@ -49,8 +54,8 @@ move_piece mymove (.clka(clka),
                .state(state),
                .curr_board_state(board_in), 
                .curr_piece_type(curr_piece_in),
-               .curr_piece_location(location_in),
-               .curr_piece_rotation(rotation_in),
+               .curr_piece_location(location),
+               .curr_piece_rotation(rotation),
                .left(left),
                .right(right), 
                .rotate(rotate), 

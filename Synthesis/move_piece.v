@@ -84,6 +84,7 @@ always @ (negedge clkb)
 begin
 
 // done <= 1'b1;
+if (state == 3'b001) begin
 new_location = location_temp +4; // to move down a row
 new_rotation = rotation_temp;
 new_board_state = curr_board_state;
@@ -186,6 +187,13 @@ if (restart) begin
   new_rotation = 0;
   new_board_state = 0; 
   touched = 0;
+end
+end
+else begin
+new_board_state = curr_board_state;
+new_location = curr_piece_location;
+new_rotation = curr_piece_rotation;
+touched = 1'b0;
 end
 end
 

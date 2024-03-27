@@ -11,11 +11,9 @@ output reg [1:0] random;
 reg temp_rand;
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the d1 and d2 and d_out registers
-
 initial begin
-   temp_rand = 2'b0;
+	temp_rand = 2'b0;
 end
-
 // Cycle through user values at clk frequency and then pick one
 // clk is really fast, user input is random, so this should be as close to TRNG as we can get
 always @ (negedge clka) begin
