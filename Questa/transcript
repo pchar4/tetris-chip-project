@@ -13,7 +13,7 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -debugDB -voptargs=""+acc"" top_module_tb 
-# Start time: 14:08:48 on Mar 27,2024
+# Start time: 19:56:28 on Mar 27,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
@@ -27,19 +27,10 @@
 # Loading work.main_FSM(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 add wave -r /*
-# Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
-# Cannot lock WLF file: "vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: ltr1  Hostname: opal.clear.rice.edu  ProcessID: 2991887
-#           Attempting to use alternate WLF file "./wlftuWD1nA".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftuWD1nA
 run -all
 # ** Note: $stop    : testbench_top.v(83)
 #    Time: 320 ns  Iteration: 0  Instance: /top_module_tb
 # Break in Module top_module_tb at testbench_top.v line 83
-# End time: 14:09:35 on Mar 27,2024, Elapsed time: 0:00:47
-# Errors: 0, Warnings: 3
+exit
+# End time: 19:57:15 on Mar 27,2024, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 1
