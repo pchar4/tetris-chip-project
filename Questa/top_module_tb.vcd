@@ -1,5 +1,5 @@
 $date
-	Wed Mar 27 14:09:10 2024
+	Wed Mar 27 19:56:49 2024
 $end
 $version
 	QuestaSim Version 2023.2
@@ -314,7 +314,7 @@ $var wire 1 E clka $end
 $var wire 1 F clkb $end
 $var wire 1 G restart $end
 $var reg 2 n! random [1:0] $end
-$var reg 1 o! temp_rand $end
+$var reg 2 o! temp_rand [1:0] $end
 $upscope $end
 
 $scope module myredraw $end

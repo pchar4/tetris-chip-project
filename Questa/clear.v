@@ -15,7 +15,10 @@ reg temp_error;
 
 
 always @(negedge clka) begin
-	if (state == 0) begin // state == 0 is GEN phase
+	if (restart) begin
+		temp_board <= 0;
+	end
+	else if (state == 0) begin // state == 0 is GEN phase
 		case(curr_piece)
             // single rect []
 			
