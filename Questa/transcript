@@ -12,13 +12,13 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -debugDB -voptargs=""+acc"" top_fall_tb 
-# Start time: 14:43:48 on Apr 01,2024
+# vsim -debugDB -voptargs=""+acc"" sides_tb 
+# Start time: 16:16:09 on Apr 01,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.top_fall_tb(fast)
+# Loading work.sides_tb(fast)
 # Loading work.top_module(fast)
 # Loading work.dp(fast)
 # Loading work.rng(fast)
@@ -28,8 +28,8 @@
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 add wave -r /*
 run -all
-# ** Note: $stop    : testbench_falling.v(129)
-#    Time: 640 ns  Iteration: 0  Instance: /top_fall_tb
-# Break in Module top_fall_tb at testbench_falling.v line 129
-# End time: 14:44:21 on Apr 01,2024, Elapsed time: 0:00:33
+# ** Note: $stop    : testbench_sides.v(129)
+#    Time: 640 ns  Iteration: 0  Instance: /sides_tb
+# Break in Module sides_tb at testbench_sides.v line 129
+# End time: 16:18:40 on Apr 01,2024, Elapsed time: 0:02:31
 # Errors: 0, Warnings: 1

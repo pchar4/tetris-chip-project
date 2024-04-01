@@ -85,7 +85,11 @@ begin
 
 // done <= 1'b1;
 if (state == 3'b001) begin
-new_location = location_temp +4; // to move down a row
+if(new_location == location_temp) begin
+	new_location = location_temp +4; // to move down a row
+end else begin
+	new_location = location_temp;
+end
 new_rotation = rotation_temp;
 new_board_state = curr_board_state;
 new_board_state[old_location] = 1'b0;
