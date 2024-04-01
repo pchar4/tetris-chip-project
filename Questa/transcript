@@ -12,13 +12,13 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -debugDB -voptargs=""+acc"" sides_tb 
-# Start time: 14:04:32 on Apr 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
+# vsim -debugDB -voptargs=""+acc"" diff_games_tb 
+# Start time: 14:20:43 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.sides_tb(fast)
+# Loading work.diff_games_tb(fast)
 # Loading work.top_module(fast)
 # Loading work.dp(fast)
 # Loading work.rng(fast)
@@ -28,8 +28,8 @@
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 add wave -r /*
 run -all
-# ** Note: $stop    : testbench_sides.v(129)
-#    Time: 640 ns  Iteration: 0  Instance: /sides_tb
-# Break in Module sides_tb at testbench_sides.v line 129
-# End time: 14:10:34 on Apr 01,2024, Elapsed time: 0:06:02
+# ** Note: $stop    : testbench_diff_games.v(172)
+#    Time: 920 ns  Iteration: 0  Instance: /diff_games_tb
+# Break in Module diff_games_tb at testbench_diff_games.v line 172
+# End time: 14:22:39 on Apr 01,2024, Elapsed time: 0:01:56
 # Errors: 0, Warnings: 1

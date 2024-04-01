@@ -1,55 +1,17 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
-Z2 !s12c _opt2
+R0
 R1
-R2
+Z2 !s12c _opt
 R1
-R2
-R1
-Z3 !s12c _opt1
+Z3 !s12c _opt2
 R1
 R3
 R1
 R3
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R3
-R1
-R3
-R1
-R0
-R1
-R0
 R1
 R0
 R1
@@ -71,21 +33,13 @@ R3
 R1
 R3
 R1
-R0
-R1
 R3
 R1
 R3
 R1
 R3
 R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
+R3
 R1
 R3
 R1
@@ -96,6 +50,56 @@ R1
 R0
 R1
 R0
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
 R1
 !s11f MIXED_VERSIONS
 13
@@ -117,11 +121,12 @@ Z7 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
 Z8 tCvgOpt 0
 n@_opt
 Z9 OL;O;2023.2;77
+R4
 T_opt1
-!s110 1711587389
-V`nU1k9M=6V6^c4I_T`RKH2
-04 13 4 work top_module_tb fast 0
-=1-4cd98f4b57d1-6604c03d-ac71-29e0c3
+!s110 1711999244
+V^?^BD79iWH5iIgmP9LC:V2
+04 13 4 work diff_games_tb fast 0
+=1-4cd98f4b57d1-660b090b-d181d-10e7be
 R1
 R5
 R6
@@ -129,7 +134,6 @@ R7
 R8
 n@_opt1
 R9
-R4
 T_opt2
 !s110 1711997000
 V0_^6WI5ghAc0:?90ajh4:1
@@ -144,8 +148,8 @@ n@_opt2
 R9
 R4
 vclear_redraw
-Z10 2clear_tb.v|clear.v|dp.v|fsm_tb.v|main_FSM.v|move_piece.v|rng.v|testbench_clear.v|testbench_dp.v|testbench_falling.v|testbench_sides.v|testbench_top.v|top_module.v
-Z11 !s110 1711998252
+Z10 2clear_tb.v|clear.v|dp.v|fsm_tb.v|main_FSM.v|move_piece.v|rng.v|testbench_clear.v|testbench_diff_games.v|testbench_dp.v|testbench_falling.v|testbench_sides.v|testbench_top.v|top_module.v
+Z11 !s110 1711999227
 !i10b 1
 !s100 h==cbCCKS2=l3T?Vf`7kl1
 IiO@Nz3diC^Ha:Yd[ffZk>3
@@ -153,18 +157,41 @@ R4
 Z12 w1711930765
 8clear.v
 Fclear.v
-!i122 121
+!i122 123
 L0 1 323
 Z13 VDg1SIo80bB@j0V0VzS_@n1
 Z14 OL;L;2023.2;77
 r1
 !s85 0
 31
-Z15 !s108 1711998252.000000
-Z16 !s107 top_module.v|testbench_top.v|testbench_sides.v|testbench_falling.v|testbench_dp.v|testbench_clear.v|rng.v|move_piece.v|main_FSM.v|fsm_tb.v|dp.v|clear.v|clear_tb.v|
-Z17 !s90 clear_tb.v|clear.v|dp.v|fsm_tb.v|main_FSM.v|move_piece.v|rng.v|testbench_clear.v|testbench_dp.v|testbench_falling.v|testbench_sides.v|testbench_top.v|top_module.v|
+Z15 !s108 1711999227.000000
+Z16 !s107 top_module.v|testbench_top.v|testbench_sides.v|testbench_falling.v|testbench_dp.v|testbench_diff_games.v|testbench_clear.v|rng.v|move_piece.v|main_FSM.v|fsm_tb.v|dp.v|clear.v|clear_tb.v|
+Z17 !s90 clear_tb.v|clear.v|dp.v|fsm_tb.v|main_FSM.v|move_piece.v|rng.v|testbench_clear.v|testbench_diff_games.v|testbench_dp.v|testbench_falling.v|testbench_sides.v|testbench_top.v|top_module.v|
 !i113 0
 Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vdiff_games_tb
+R10
+R11
+!i10b 1
+!s100 MX97F0hALJzhmSa=_17KK1
+IS_:;d4FDA?mbbY`fPi]hC2
+R4
+w1711999223
+8testbench_diff_games.v
+Ftestbench_diff_games.v
+!i122 123
+L0 8 168
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
 R8
 vdp
 R10
@@ -176,7 +203,7 @@ R4
 Z19 w1711572450
 8dp.v
 Fdp.v
-!i122 121
+!i122 123
 L0 8 104
 R13
 R14
@@ -199,7 +226,7 @@ R4
 w1711299669
 8fsm_tb.v
 Ffsm_tb.v
-!i122 121
+!i122 123
 L0 8 117
 R13
 R14
@@ -244,7 +271,7 @@ R4
 w1711300460
 8main_FSM.v
 Fmain_FSM.v
-!i122 121
+!i122 123
 L0 9 83
 R13
 R14
@@ -268,7 +295,7 @@ R4
 R19
 8move_piece.v
 Fmove_piece.v
-!i122 121
+!i122 123
 L0 9 192
 R13
 R14
@@ -313,7 +340,7 @@ R4
 w1711587843
 8rng.v
 Frng.v
-!i122 121
+!i122 123
 L0 6 35
 R13
 R14
@@ -336,7 +363,7 @@ R4
 w1711998245
 8testbench_sides.v
 Ftestbench_sides.v
-!i122 121
+!i122 123
 Z24 L0 8 125
 R13
 R14
@@ -359,7 +386,7 @@ R4
 R12
 8testbench_clear.v
 Ftestbench_clear.v
-!i122 121
+!i122 123
 L0 8 536
 R13
 R14
@@ -382,7 +409,7 @@ R4
 w1711481472
 8testbench_dp.v
 Ftestbench_dp.v
-!i122 121
+!i122 123
 L0 8 74
 R13
 R14
@@ -405,7 +432,7 @@ R4
 w1711998115
 8testbench_falling.v
 Ftestbench_falling.v
-!i122 121
+!i122 123
 R24
 R13
 R14
@@ -428,7 +455,7 @@ R4
 w1710841700
 8top_module.v
 Ftop_module.v
-!i122 121
+!i122 123
 L0 18 39
 R13
 R14
@@ -451,7 +478,7 @@ R4
 w1711585906
 8testbench_top.v
 Ftestbench_top.v
-!i122 121
+!i122 123
 L0 8 79
 R13
 R14
