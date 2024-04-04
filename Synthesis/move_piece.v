@@ -85,12 +85,16 @@ begin
 
 // done <= 1'b1;
 if (state == 3'b001) begin
-new_location = location_temp +4; // to move down a row
+if(new_location == location_temp) begin
+	new_location = location_temp +4; // to move down a row
+end else begin
+	new_location = location_temp;
+end
 new_rotation = rotation_temp;
 new_board_state = curr_board_state;
 new_board_state[old_location] = 1'b0;
 new_board_state[new_location] = 1'b1;
-if(new_location < 4) begin
+if(new_location > 27) begin
   touched = 1'b1;
 end else begin
   touched = 1'b0;

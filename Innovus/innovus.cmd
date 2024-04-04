@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Thu Mar 28 14:04:06 2024                
+#  Created on Mon Apr  1 20:09:05 2024                
 #                                                     
 #######################################################
 
@@ -262,4 +262,3 @@ streamOut final.gds -mapFile /clear/apps/osu/soc/cadence/flow/ami05/gds2_encount
 saveNetlist final.v
 saveDesign top_module.enc
 set enc_check_rename_command_name 1
-win
