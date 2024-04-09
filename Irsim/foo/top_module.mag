@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1712622712
+timestamp 1712693004
 << metal1 >>
 rect 14 3307 3490 3327
 rect 38 3283 3466 3303
@@ -17206,7 +17206,7 @@ rect 3185 1912 3230 1917
 rect 849 1907 854 1912
 rect 2113 1907 2118 1912
 rect 3281 1907 3286 1937
-rect 3425 1922 3504 1927
+rect 3425 1922 3499 1927
 rect 3297 1912 3406 1917
 rect 185 1902 262 1907
 rect 273 1902 310 1907
@@ -101020,7 +101020,6 @@ box -8 -3 64 105
 << labels >>
 rlabel metal2 2876 3338 2876 3338 4 in_clka
 rlabel metal2 2004 3338 2004 3338 4 in_clkb
-rlabel metal3 3501 1925 3501 1925 4 in_restart
 rlabel metal3 3501 795 3501 795 4 in_move[1]
 rlabel metal3 3501 815 3501 815 4 in_move[0]
 rlabel metal2 956 3338 956 3338 4 board_out[31]
@@ -101057,6 +101056,7 @@ rlabel metal2 2484 3338 2484 3338 4 board_out[1]
 rlabel metal2 2388 3338 2388 3338 4 board_out[0]
 rlabel metal2 38 37 38 37 4 gnd
 rlabel metal2 14 13 14 13 4 vdd
+rlabel metal3 3497 1925 3497 1925 1 in_restart
 << properties >>
 string path 28836.002 6345.000 28836.002 6435.000 
 << end >>
