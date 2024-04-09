@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Mon Apr  1 20:09:05 2024                
+#  Created on Mon Apr  8 19:23:56 2024                
 #                                                     
 #######################################################
 
@@ -41,6 +41,7 @@ set sprCreateIeRingSpacing 1.2
 set sprCreateIeRingOffset 1.2
 set sprCreateIeRingThreshold 1.2
 set sprCreateIeRingJogDistance 1.2
+setPlaceMode -placeIoPins true
 setAddRingMode -stacked_via_top_layer metal3
 setAddRingMode -stacked_via_bottom_layer metal1
 addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -center 1 -type core_rings -jog_distance 1.8 -threshold 1.8 -nets {gnd vdd} -follow core -layer {bottom metal1 top metal1 right metal2 left metal2} -width 6.0 -spacing 1.2 -offset 1.8
@@ -161,9 +162,17 @@ getPlaceMode -quiet -place_global_exp_inverter_rewiring
 getPlaceMode -ignoreUnproperPowerInit -quiet
 getPlaceMode -quiet -expSkipGP
 setDelayCalMode -engine feDc
+unsetPinConstraint -edge -pin * -cell *
 psp::embedded_egr_init_
 psp::embedded_egr_term_
 scanReorder
+getExtractRCMode -relative_c_th -quiet
+getExtractRCMode -coupling_c_th -quiet
+getExtractRCMode -total_c_th -quiet
+getDesignMode -pessimisticMode -quiet
+getExtractRCMode -lefTechFileMap -quiet
+getExtractRCMode -turboReduce -quiet
+getExtractRCMode -coupled -quiet
 setDelayCalMode -engine aae
 all_setup_analysis_views
 getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
@@ -262,3 +271,15 @@ streamOut final.gds -mapFile /clear/apps/osu/soc/cadence/flow/ami05/gds2_encount
 saveNetlist final.v
 saveDesign top_module.enc
 set enc_check_rename_command_name 1
+win
+zoomBox 73.08500 94.02700 1066.93900 1076.89900
+zoomBox 429.15800 554.75800 947.95700 1067.82400
+zoomBox 590.35100 741.30800 908.95900 1056.39500
+zoomBox 693.82200 851.67000 889.48700 1045.17300
+zoomBox 780.97400 924.01000 883.11400 1025.02100
+zoomBox 795.25100 935.86000 882.07000 1021.72000
+zoomBox 833.55200 973.47700 872.07500 1011.57400
+zoomBox 838.05300 978.02000 870.79800 1010.40300
+zoomBox 795.92600 935.49500 882.74800 1021.35800
+zoomBox 783.99000 923.50300 886.13400 1024.51800
+zoomBox 753.42800 892.79600 894.80400 1032.61000

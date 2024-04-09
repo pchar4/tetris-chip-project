@@ -5,6 +5,7 @@ catch { setExtractRCMode  -engine preRoute }
 catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
 catch {setNanoRouteMode -quiet -grouteExpTdUseTifTimingEngineForImportDesign false}
 
+catch { setPlaceMode -place_global_place_io_pins true }
 catch { setPlaceMode -timingDriven false }
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
 catch { setDelayCalMode -engine aae }
