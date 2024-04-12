@@ -1,5 +1,5 @@
 $date
-	Mon Apr  1 20:06:59 2024
+	Fri Apr 12 08:44:46 2024
 $end
 $version
 	QuestaSim Version 2023.2
@@ -8,7 +8,7 @@ $timescale
 	10ps
 $end
 
-$scope module diff_games_tb $end
+$scope module top_fall_tb $end
 $var reg 1 ! in_clka $end
 $var reg 1 " in_clkb $end
 $var reg 1 # in_restart $end
