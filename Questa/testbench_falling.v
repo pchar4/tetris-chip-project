@@ -72,6 +72,231 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
+// Cycle 9
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 10
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 11
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 12
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 13
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 14
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 15
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 16
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 17
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 18
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 19
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
 // Cycle 5
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -121,6 +346,32 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
+
+// Cycle 5
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 6
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 7
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 8
+in_move = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
 
 $dumpfile ("top_module_tb.vcd"); 
 $dumpvars; 
