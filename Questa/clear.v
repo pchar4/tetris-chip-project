@@ -61,7 +61,7 @@ always @(negedge clka) begin
 						temp_error <= board_in[1] | board_in[2]; 
 					end
 					temp_board[1] <= 1'b1;
-					temp_board[2] <= 1'b1;
+					temp_board[5] <= 1'b1;
                     end
             // 4 rects, square  [][]
 			//                  [][]
@@ -308,7 +308,7 @@ always @(negedge clka) begin
 end
 
 always @(negedge clkb) begin
-	if (restart || state == 4) begin // board remains 0 if restarted or if we are in newboard state
+	if (restart|| state == 4) begin // board remains 0 if restarted or if we are in newboard state
 		board_out <= 0;
 		// temp_board <= 0;
 		error <= 0;

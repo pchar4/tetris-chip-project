@@ -21,6 +21,7 @@ output wire [31:0] board_out;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101;
 // arbitrary assignment but useful to give meaning to the move
 wire  left, right, rotate;
+wire [4:0] temp_location;
 assign left = (move == 1);
 assign right = (move == 2);
 assign rotate = (move == 3);
@@ -29,9 +30,11 @@ assign temp_piece = (state == GEN) ? piece_selection : ((state == NEWBOARD) ? 2'
 assign curr_piece_out = (state == NEWBOARD) ? 2'b00 : temp_piece;
 wire [31:0] temp_board_1, temp_board_2;
 assign board_out = (state == MOVE && old_state != GEN) ? temp_board_2 : temp_board_1;
+// 
 wire [4:0] location;
 wire [1:0] rotation;
-assign location = (state == NEWBOARD || (state == GEN)) ? 5'b00010 : location_out;
+assign temp_location = (temp_piece == 2'b00) ? 5'b00001 : 5'b00101;
+assign location = (state == NEWBOARD || (state == GEN)) ? temp_location : location_out;
 assign rotation = (state == NEWBOARD) ? 2'b00 : rotation_out;
 
 

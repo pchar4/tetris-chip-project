@@ -23,6 +23,7 @@ reg   [SIZE-1:0]          state;    	// Initial FSM state reg and then after
 					// processing new output FSM state reg
 wire  [SIZE-1:0]          temp_state; 	// Internal wire for output of function
 					// for setting next state
+reg  [SIZE-1:0]          prev_state; 	// Temporary reg to hold the output of old_state to update on clkb
 reg   [SIZE-1:0]          next_state; 	// Temporary reg to hold next state to
 					// update state on output
 //----------Code startes Here------------------------
@@ -61,13 +62,14 @@ begin : FSM_SEQ
   if (restart == 1'b1) begin
     next_state <= NEWBOARD;
   end else begin
-    old_state <= next_state;
+    prev_state <= next_state;
     next_state <= temp_state;
   end
 end
 //----------Output Logic——————————————
 always @ (negedge clkb)
 begin : OUTPUT_LOGIC
+  old_state <= prev_state;
   case(next_state)
   GAMEOVER: begin
       state <= next_state;
