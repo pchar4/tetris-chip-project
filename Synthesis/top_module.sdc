@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Mon Apr  1 20:03:29 2024
+# Created by write_sdc on Mon Apr 15 23:48:31 2024
 
 ###################################################################
 set sdc_version 2.1
@@ -11,7 +11,7 @@ set_driving_cell -lib_cell INVX1 [get_ports in_clkb]
 set_driving_cell -lib_cell INVX1 [get_ports in_restart]
 set_driving_cell -lib_cell INVX1 [get_ports {in_move[1]}]
 set_driving_cell -lib_cell INVX1 [get_ports {in_move[0]}]
-create_clock -name vclk  -period 50  -waveform {0 25}
+create_clock -name vclk  -period 100  -waveform {0 50}
 set_input_delay -clock vclk  1  [get_ports in_clka]
 set_input_delay -clock vclk  1  [get_ports in_clkb]
 set_input_delay -clock vclk  1  [get_ports in_restart]

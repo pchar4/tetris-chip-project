@@ -25,7 +25,7 @@ output wire [31:0] board_out;
 //----------Internal Wires---------------------------
 wire touched, error;
 wire [1:0] rotation, curr_piece;
-wire [2:0] state;
+wire [2:0] state, old_state;
 wire [4:0] location;
 wire [31:0] board;
 //----------Code startes Here------------------------
@@ -35,10 +35,11 @@ dp dp_tetris(.clka(in_clka),
             .restart(in_restart), 
             .move(in_move), 
             .state(state),
+            .old_state(old_state),
             .location_in(location), 
             .board_in(board), 
             .rotation_in(rotation), 
-            .curr_piece_in(curr_piece), 
+            //.curr_piece_in(curr_piece), 
             .curr_piece_out(curr_piece), 
             .location_out(location), 
             .rotation_out(rotation), 
@@ -50,7 +51,8 @@ main_FSM fsm_tetris(.clka(in_clka),
                     .restart(in_restart), 
                     .placed(touched), 
                     .game_over(error),
-                    .state(state));
+                    .state(state),
+                    .old_state(old_state));
 
 
 endmodule // End of Module top_module

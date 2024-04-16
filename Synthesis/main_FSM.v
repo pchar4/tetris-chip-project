@@ -6,7 +6,7 @@
 // 		 start signal to data path dp.
 // 		 Waits then for done signal from the datapath.
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, placed, game_over, state);
+module main_FSM (clka, clkb, restart, placed, game_over, state, old_state);
 //-------------Input Ports-----------------------------
 // placed to indicate that a piece has finished falling
 // which row for telling us which row is an issue
@@ -14,6 +14,7 @@ module main_FSM (clka, clkb, restart, placed, game_over, state);
 input wire   clka, clkb, restart, game_over, placed;
 //-------------Output Ports----------------------------
 output state[2:0]; //TODO: find out if we need more outputs
+output reg [2:0] old_state;
 //——————Internal Constants--------------------------
 parameter SIZE = 3;
 parameter GEN  = 3'b000, MOVE = 3'b001, LAND = 3'b010, CLEAR = 3'b011, NEWBOARD = 3'b100, GAMEOVER = 3'b101; // despite clear being a state we are not using it
@@ -22,6 +23,7 @@ reg   [SIZE-1:0]          state;    	// Initial FSM state reg and then after
 					// processing new output FSM state reg
 wire  [SIZE-1:0]          temp_state; 	// Internal wire for output of function
 					// for setting next state
+reg  [SIZE-1:0]          prev_state; 	// Temporary reg to hold the output of old_state to update on clkb
 reg   [SIZE-1:0]          next_state; 	// Temporary reg to hold next state to
 					// update state on output
 //----------Code startes Here------------------------
@@ -60,12 +62,14 @@ begin : FSM_SEQ
   if (restart == 1'b1) begin
     next_state <= NEWBOARD;
   end else begin
+    prev_state <= next_state;
     next_state <= temp_state;
   end
 end
 //----------Output Logic——————————————
 always @ (negedge clkb)
 begin : OUTPUT_LOGIC
+  old_state <= prev_state;
   case(next_state)
   GAMEOVER: begin
       state <= next_state;

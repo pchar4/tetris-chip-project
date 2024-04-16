@@ -36,8 +36,8 @@ always @(negedge clka) begin
 						temp_error <= 0;
 					end
 					else //not clear any line
-					begin
-						temp_error <= board_in[1];
+					begin  // board_in[1] is the first line. board_in[5] is the second line, which means no room for falling piece.
+						temp_error <= board_in[1] | board_in[5]; 
 					end
 					temp_board[1] <= 1'b1;		
                     end
@@ -57,11 +57,11 @@ always @(negedge clka) begin
 						temp_error <= 0; 
 					end
 					else //not clear any line
-					begin
-						temp_error <= board_in[1] | board_in[2]; 
+					begin  // board_in[1] and board_in[2] are the first line. board_in[5] and board_in[6] are the second line, which means no room for falling piece.
+						temp_error <= board_in[1] | board_in[2] | board_in[5] | board_in[6];  
 					end
 					temp_board[1] <= 1'b1;
-					temp_board[2] <= 1'b1;
+					temp_board[5] <= 1'b1;
                     end
             // 4 rects, square  [][]
 			//                  [][]
@@ -80,8 +80,8 @@ always @(negedge clka) begin
 						temp_error <= board_in[5] | board_in[6]; 
 					end
 					else //not clear any line
-					begin
-						temp_error <= board_in[1] | board_in[2] | board_in[5] | board_in[6]; 
+					begin // board_in[1] and board_in[2] are the first line. board_in[5] and board_in[6] are the second line. board_in[9] and board_in[10] are the third line, which means no room for falling piece.
+						temp_error <= board_in[1] | board_in[2] | board_in[5] | board_in[6] | board_in[9] | board_in[10]; 
 					end
 					temp_board[1] <= 1'b1;
 					temp_board[2] <= 1'b1;
@@ -105,8 +105,8 @@ always @(negedge clka) begin
 							temp_error <= board_in[5] | board_in[6]; 
 						end
 						else //not clear any line
-						begin
-							temp_error <= board_in[1] | board_in[5] | board_in[6];
+						begin // board_in[1] is the first line. board_in[5] and board_in[6] are the second line. board_in[9] and board_in[10] are the third line, which means no room for falling piece.
+							temp_error <= board_in[1] | board_in[5] | board_in[6] | board_in[9] | board_in[10];
 						end
                         temp_board[1] <= 1'b1;
                         temp_board[5] <= 1'b1;
@@ -128,8 +128,8 @@ always @(negedge clka) begin
 							temp_error <= board_in[5] | board_in[6]; 
 						end
 						else //not clear any line
-						begin
-							temp_error <= board_in[1] | board_in[5] | board_in[6];
+						begin // board_in[1] is the first line. board_in[5] and board_in[6] are the second line. board_in[9] and board_in[10] are the third line, which means no room for falling piece.
+							temp_error <= board_in[1] | board_in[5] | board_in[6] | board_in[9] | board_in[10];
 						end
                         temp_board[1] <= 1'b1;
                         temp_board[5] <= 1'b1;
@@ -308,7 +308,7 @@ always @(negedge clka) begin
 end
 
 always @(negedge clkb) begin
-	if (restart || state == 4) begin // board remains 0 if restarted or if we are in newboard state
+	if (restart|| state == 4) begin // board remains 0 if restarted or if we are in newboard state
 		board_out <= 0;
 		// temp_board <= 0;
 		error <= 0;
