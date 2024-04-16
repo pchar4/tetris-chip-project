@@ -31,8 +31,8 @@ wire [31:0] temp_board_1, temp_board_2;
 assign left = (move == 1);
 assign right = (move == 2);
 assign rotate = (move == 3);
-assign temp_piece = (state == GEN) ? piece_selection : ((state == NEWBOARD) ? 2'b00 : temp_piece);
-assign curr_piece_out = (state == NEWBOARD) ? 2'b00 : temp_piece;
+assign temp_piece = (state == LAND || state == NEWBOARD) ? piece_selection : temp_piece;
+assign curr_piece_out = (state == GEN) ?  temp_piece : curr_piece_out;
 assign board_out = (state == MOVE && old_state != GEN) ? temp_board_2 : temp_board_1;
 assign temp_location = (temp_piece == 2'b00) ? 5'b00001 : 5'b00101;
 assign location = (state == NEWBOARD || (state == GEN)) ? temp_location : location_out;
@@ -50,7 +50,7 @@ clear_redraw myredraw(
          .state(state),
          .board_in(board_in), 
          .board_out(temp_board_1),
-         .curr_piece(piece_selection), // change #1 from debugging
+         .curr_piece(curr_piece_out), // change #1 from debugging
          .error(error_out));
 move_piece mymove (.clka(clka),
                .clkb(clkb),

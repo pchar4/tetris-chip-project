@@ -13,26 +13,26 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -debugDB -voptargs=""+acc"" top_fall_tb 
-# Start time: 13:44:36 on Apr 16,2024
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 15:09:04 on Apr 16,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.top_fall_tb(fast)
 # Loading work.top_module(fast)
 # Loading work.NOR2X1(fast)
-# Loading work.OR2X1(fast)
-# Loading work.OAI21X1(fast)
-# Loading work.NOR3X1(fast)
+# Loading work.AOI21X1(fast)
+# Loading work.NAND3X1(fast)
 # Loading work.AOI22X1(fast)
 # Loading work.NAND2X1(fast)
-# Loading work.NAND3X1(fast)
-# Loading work.INVX2(fast)
-# Loading work.AND2X2(fast)
+# Loading work.OR2X1(fast)
+# Loading work.OAI21X1(fast)
 # Loading work.OAI22X1(fast)
+# Loading work.AND2X2(fast)
+# Loading work.INVX2(fast)
 # Loading work.DFFNEGX1(fast)
-# Loading work.AOI21X1(fast)
 # Loading work.XNOR2X1(fast)
+# Loading work.NOR3X1(fast)
 # Loading work.HAX1(fast)
 # Loading work.OR2X2(fast)
 # Loading work.BUFX2(fast)
@@ -623,5 +623,5 @@ run -all
 # ** Note: $stop    : testbench_falling.v(380)
 #    Time: 2200 ns  Iteration: 0  Instance: /top_fall_tb
 # Break in Module top_fall_tb at testbench_falling.v line 380
-# End time: 13:49:47 on Apr 16,2024, Elapsed time: 0:05:11
+# End time: 15:09:36 on Apr 16,2024, Elapsed time: 0:00:32
 # Errors: 18, Warnings: 273

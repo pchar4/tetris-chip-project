@@ -58,7 +58,7 @@ always @(negedge clka) begin
 					end
 					else //not clear any line
 					begin  // board_in[1] and board_in[2] are the first line. board_in[5] and board_in[6] are the second line, which means no room for falling piece.
-						temp_error <= board_in[1] | board_in[2] | board_in[5] | board_in[6];  
+						temp_error <= board_in[1] | board_in[5] | board_in[9];  
 					end
 					temp_board[1] <= 1'b1;
 					temp_board[5] <= 1'b1;

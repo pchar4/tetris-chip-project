@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Mon Apr 15 23:48:31 2024
+Date   : Tue Apr 16 15:08:22 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
@@ -14,7 +14,7 @@ Wire Load Model Mode: top
 
   Startpoint: fsm_tetris/state_reg[0]
               (falling edge-triggered flip-flop)
-  Endpoint: board_out[10]
+  Endpoint: board_out[9]
             (output port clocked by vclk)
   Path Group: (none)
   Path Type: max
@@ -22,16 +22,16 @@ Wire Load Model Mode: top
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   fsm_tetris/state_reg[0]/CLK (DFFNEGX1)                  0.00       0.00 f
-  fsm_tetris/state_reg[0]/Q (DFFNEGX1)                    0.70       0.70 f
-  dp_tetris/U95/Y (OAI21X1)                               0.24       0.94 r
-  dp_tetris/U94/Y (NOR3X1)                                0.86       1.80 f
-  U90/Y (INVX2)                                           0.34       2.14 r
-  U35/Y (BUFX2)                                           0.32       2.46 r
-  U17/Y (INVX2)                                           0.81       3.27 f
-  dp_tetris/U92/Y (AOI22X1)                               0.48       3.74 r
-  U138/Y (INVX2)                                          0.27       4.01 f
-  board_out[10] (out)                                     0.00       4.01 f
-  data arrival time                                                  4.01
+  fsm_tetris/state_reg[0]/Q (DFFNEGX1)                    0.65       0.65 f
+  U268/Y (INVX2)                                          0.25       0.91 r
+  dp_tetris/U103/Y (AOI21X1)                              0.17       1.07 f
+  dp_tetris/U102/Y (NAND3X1)                              0.29       1.36 r
+  U66/Y (BUFX2)                                           0.33       1.69 r
+  U32/Y (INVX2)                                           0.58       2.27 f
+  dp_tetris/U70/Y (AOI22X1)                               0.50       2.77 r
+  U251/Y (INVX2)                                          0.24       3.02 f
+  board_out[9] (out)                                      0.00       3.02 f
+  data arrival time                                                  3.02
   --------------------------------------------------------------------------
   (Path is unconstrained)
 

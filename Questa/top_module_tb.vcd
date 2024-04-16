@@ -1,5 +1,5 @@
 $date
-	Tue Apr 16 14:11:49 2024
+	Tue Apr 16 15:07:49 2024
 $end
 $version
 	QuestaSim Version 2023.2
@@ -8,7 +8,7 @@ $timescale
 	1ns
 $end
 
-$scope module game1_tb $end
+$scope module top_fall_tb $end
 $var reg 1 ! in_clka $end
 $var reg 1 " in_clkb $end
 $var reg 1 # in_restart $end
@@ -258,4 +258,213 @@ $var wire 1 7! temp_board_1 [30] $end
 $var wire 1 8! temp_board_1 [29] $end
 $var wire 1 9! temp_board_1 [28] $end
 $var wire 1 :! temp_board_1 [27] $end
-$var wire 1 ;! temp_boa
+$var wire 1 ;! temp_board_1 [26] $end
+$var wire 1 <! temp_board_1 [25] $end
+$var wire 1 =! temp_board_1 [24] $end
+$var wire 1 >! temp_board_1 [23] $end
+$var wire 1 ?! temp_board_1 [22] $end
+$var wire 1 @! temp_board_1 [21] $end
+$var wire 1 A! temp_board_1 [20] $end
+$var wire 1 B! temp_board_1 [19] $end
+$var wire 1 C! temp_board_1 [18] $end
+$var wire 1 D! temp_board_1 [17] $end
+$var wire 1 E! temp_board_1 [16] $end
+$var wire 1 F! temp_board_1 [15] $end
+$var wire 1 G! temp_board_1 [14] $end
+$var wire 1 H! temp_board_1 [13] $end
+$var wire 1 I! temp_board_1 [12] $end
+$var wire 1 J! temp_board_1 [11] $end
+$var wire 1 K! temp_board_1 [10] $end
+$var wire 1 L! temp_board_1 [9] $end
+$var wire 1 M! temp_board_1 [8] $end
+$var wire 1 N! temp_board_1 [7] $end
+$var wire 1 O! temp_board_1 [6] $end
+$var wire 1 P! temp_board_1 [5] $end
+$var wire 1 Q! temp_board_1 [4] $end
+$var wire 1 R! temp_board_1 [3] $end
+$var wire 1 S! temp_board_1 [2] $end
+$var wire 1 T! temp_board_1 [1] $end
+$var wire 1 U! temp_board_1 [0] $end
+$var wire 1 V! temp_board_2 [31] $end
+$var wire 1 W! temp_board_2 [30] $end
+$var wire 1 X! temp_board_2 [29] $end
+$var wire 1 Y! temp_board_2 [28] $end
+$var wire 1 Z! temp_board_2 [27] $end
+$var wire 1 [! temp_board_2 [26] $end
+$var wire 1 \! temp_board_2 [25] $end
+$var wire 1 ]! temp_board_2 [24] $end
+$var wire 1 ^! temp_board_2 [23] $end
+$var wire 1 _! temp_board_2 [22] $end
+$var wire 1 `! temp_board_2 [21] $end
+$var wire 1 a! temp_board_2 [20] $end
+$var wire 1 b! temp_board_2 [19] $end
+$var wire 1 c! temp_board_2 [18] $end
+$var wire 1 d! temp_board_2 [17] $end
+$var wire 1 e! temp_board_2 [16] $end
+$var wire 1 f! temp_board_2 [15] $end
+$var wire 1 g! temp_board_2 [14] $end
+$var wire 1 h! temp_board_2 [13] $end
+$var wire 1 i! temp_board_2 [12] $end
+$var wire 1 j! temp_board_2 [11] $end
+$var wire 1 k! temp_board_2 [10] $end
+$var wire 1 l! temp_board_2 [9] $end
+$var wire 1 m! temp_board_2 [8] $end
+$var wire 1 n! temp_board_2 [7] $end
+$var wire 1 o! temp_board_2 [6] $end
+$var wire 1 p! temp_board_2 [5] $end
+$var wire 1 q! temp_board_2 [4] $end
+$var wire 1 r! temp_board_2 [3] $end
+$var wire 1 s! temp_board_2 [2] $end
+$var wire 1 t! temp_board_2 [1] $end
+$var wire 1 u! temp_board_2 [0] $end
+
+$scope module myrng $end
+$var wire 1 E clka $end
+$var wire 1 F clkb $end
+$var wire 1 G restart $end
+$var reg 2 v! random [1:0] $end
+$var reg 2 w! temp_rand [1:0] $end
+$upscope $end
+
+$scope module myredraw $end
+$var wire 1 E clka $end
+$var wire 1 F clkb $end
+$var wire 1 G restart $end
+$var wire 1 [ board_in [31] $end
+$var wire 1 \ board_in [30] $end
+$var wire 1 ] board_in [29] $end
+$var wire 1 ^ board_in [28] $end
+$var wire 1 _ board_in [27] $end
+$var wire 1 ` board_in [26] $end
+$var wire 1 a board_in [25] $end
+$var wire 1 b board_in [24] $end
+$var wire 1 c board_in [23] $end
+$var wire 1 d board_in [22] $end
+$var wire 1 e board_in [21] $end
+$var wire 1 f board_in [20] $end
+$var wire 1 g board_in [19] $end
+$var wire 1 h board_in [18] $end
+$var wire 1 i board_in [17] $end
+$var wire 1 j board_in [16] $end
+$var wire 1 k board_in [15] $end
+$var wire 1 l board_in [14] $end
+$var wire 1 m board_in [13] $end
+$var wire 1 n board_in [12] $end
+$var wire 1 o board_in [11] $end
+$var wire 1 p board_in [10] $end
+$var wire 1 q board_in [9] $end
+$var wire 1 r board_in [8] $end
+$var wire 1 s board_in [7] $end
+$var wire 1 t board_in [6] $end
+$var wire 1 u board_in [5] $end
+$var wire 1 v board_in [4] $end
+$var wire 1 w board_in [3] $end
+$var wire 1 x board_in [2] $end
+$var wire 1 y board_in [1] $end
+$var wire 1 z board_in [0] $end
+$var wire 1 N curr_piece [1] $end
+$var wire 1 O curr_piece [0] $end
+$var wire 1 P state [2] $end
+$var wire 1 Q state [1] $end
+$var wire 1 R state [0] $end
+$var reg 32 x! board_out [31:0] $end
+$var reg 1 y! error $end
+$var reg 32 z! temp_board [31:0] $end
+$var reg 1 {! temp_error $end
+$upscope $end
+
+$scope module mymove $end
+$var wire 1 E clka $end
+$var wire 1 F clkb $end
+$var wire 1 G restart $end
+$var wire 1 #! left $end
+$var wire 1 $! right $end
+$var wire 1 %! rotate $end
+$var wire 1 /! curr_piece_location [4] $end
+$var wire 1 0! curr_piece_location [3] $end
+$var wire 1 1! curr_piece_location [2] $end
+$var wire 1 2! curr_piece_location [1] $end
+$var wire 1 3! curr_piece_location [0] $end
+$var wire 1 4! curr_piece_rotation [1] $end
+$var wire 1 5! curr_piece_rotation [0] $end
+$var wire 1 N curr_piece_type [1] $end
+$var wire 1 O curr_piece_type [0] $end
+$var wire 1 [ curr_board_state [31] $end
+$var wire 1 \ curr_board_state [30] $end
+$var wire 1 ] curr_board_state [29] $end
+$var wire 1 ^ curr_board_state [28] $end
+$var wire 1 _ curr_board_state [27] $end
+$var wire 1 ` curr_board_state [26] $end
+$var wire 1 a curr_board_state [25] $end
+$var wire 1 b curr_board_state [24] $end
+$var wire 1 c curr_board_state [23] $end
+$var wire 1 d curr_board_state [22] $end
+$var wire 1 e curr_board_state [21] $end
+$var wire 1 f curr_board_state [20] $end
+$var wire 1 g curr_board_state [19] $end
+$var wire 1 h curr_board_state [18] $end
+$var wire 1 i curr_board_state [17] $end
+$var wire 1 j curr_board_state [16] $end
+$var wire 1 k curr_board_state [15] $end
+$var wire 1 l curr_board_state [14] $end
+$var wire 1 m curr_board_state [13] $end
+$var wire 1 n curr_board_state [12] $end
+$var wire 1 o curr_board_state [11] $end
+$var wire 1 p curr_board_state [10] $end
+$var wire 1 q curr_board_state [9] $end
+$var wire 1 r curr_board_state [8] $end
+$var wire 1 s curr_board_state [7] $end
+$var wire 1 t curr_board_state [6] $end
+$var wire 1 u curr_board_state [5] $end
+$var wire 1 v curr_board_state [4] $end
+$var wire 1 w curr_board_state [3] $end
+$var wire 1 x curr_board_state [2] $end
+$var wire 1 y curr_board_state [1] $end
+$var wire 1 z curr_board_state [0] $end
+$var wire 1 P state [2] $end
+$var wire 1 Q state [1] $end
+$var wire 1 R state [0] $end
+$var reg 1 |! touched $end
+$var reg 2 }! new_rotation [1:0] $end
+$var reg 5 ~! new_location [4:0] $end
+$var reg 32 !" new_board_state [31:0] $end
+$var reg 5 "" location_temp [4:0] $end
+$var reg 5 #" old_location [4:0] $end
+$var reg 2 $" rotation_temp [1:0] $end
+$var reg 2 %" old_rotation [1:0] $end
+$upscope $end
+$upscope $end
+
+$scope module fsm_tetris $end
+$var parameter 32 &" SIZE $end
+$var parameter 3 '" GEN $end
+$var parameter 3 (" MOVE $end
+$var parameter 3 )" LAND $end
+$var parameter 3 *" CLEAR $end
+$var parameter 3 +" NEWBOARD $end
+$var parameter 3 ," GAMEOVER $end
+$var wire 1 E clka $end
+$var wire 1 F clkb $end
+$var wire 1 G restart $end
+$var wire 1 K game_over $end
+$var wire 1 J placed $end
+$var reg 3 -" state [2:0] $end
+$var reg 3 ." old_state [2:0] $end
+$var wire 1 /" temp_state [2] $end
+$var wire 1 0" temp_state [1] $end
+$var wire 1 1" temp_state [0] $end
+$var reg 3 2" prev_state [2:0] $end
+$var reg 3 3" next_state [2:0] $end
+
+$scope function fsm_function $end
+$var reg 3 4" fsm_function [2:0] $end
+$var reg 3 5" state [2:0] $end
+$var reg 1 6" game_over $end
+$var reg 1 7" placed $end
+$var reg 1 8" restart $end
+$upscope $end
+
+$scope begin FSM_SEQ $end
+$upscope $end
+
+$scope begin OUTPUT_LOGIC $end
