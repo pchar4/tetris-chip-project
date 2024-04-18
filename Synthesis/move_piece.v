@@ -36,7 +36,7 @@ always @ (negedge clka) begin
     if(curr_piece_location % 4 == 0) begin
 location_temp = curr_piece_location;
     end
-    else if (curr_piece_location % 4 == 1 && curr_piece_type == 2'b11 && curr_piece_rotation == 2'b11) begin
+    else if (curr_piece_location % 4 == 1 && curr_piece_type == 2'b11 && curr_piece_rotation == 2'b10) begin
       location_temp = curr_piece_location;
     end else begin
 location_temp = curr_piece_location -1;
@@ -85,15 +85,13 @@ begin
 
 // done <= 1'b1;
 if (state == 3'b001) begin
-if(new_location == location_temp) begin
+if(new_location == location_temp & new_rotation == rotation_temp) begin
 	new_location = location_temp +4; // to move down a row
 end else begin
 	new_location = location_temp;
 end
 new_rotation = rotation_temp;
 new_board_state = curr_board_state;
-new_board_state[old_location] = 1'b0;
-new_board_state[new_location] = 1'b1;
 if(new_location > 27) begin
   touched = 1'b1;
 end else begin
@@ -101,12 +99,15 @@ end else begin
 end
 case (curr_piece_type)
 2'b00 : begin
+ new_board_state[old_location] = 1'b0;
+ new_board_state[new_location] = 1'b1;
  if (new_board_state[new_location + 4] == 1'b1)  begin
    touched = 1'b1;
  end
 end
 2'b01 : begin
   // Set the old values to 0 depending on the rotation
+  new_board_state[old_location] = 1'b0;
   if (old_rotation == 2'b01 || old_rotation == 2'b11) begin
     new_board_state[old_location+1] = 1'b0;
   end
@@ -126,8 +127,10 @@ end
 	touched = 1'b1;
     end
   end
+  new_board_state[new_location] = 1'b1;
 end
 2'b10 : begin
+  new_board_state[old_location] = 1'b0;
   // set the old values to 0
   new_board_state[old_location+1] = 1'b0;
   new_board_state[old_location-4] = 1'b0;
@@ -140,9 +143,11 @@ end
   if (new_board_state[new_location + 4] == 1'b1 || new_board_state[new_location + 5] == 1'b1) begin
     touched = 1'b1;
   end
+  new_board_state[new_location] = 1'b1;
 end
 
 2'b11 : begin
+  new_board_state[old_location] = 1'b0;
   // set the old values to 0 depending on rotation
   if (old_rotation == 2'b00) begin
     new_board_state[old_location+1] = 1'b0;
@@ -183,8 +188,10 @@ end
       touched = 1'b1;
     end
   end
+  new_board_state[new_location] = 1'b1;
 end
 endcase
+
 
 if (restart) begin
   new_location = 5;

@@ -36,7 +36,7 @@ assign curr_piece_out = (state == GEN) ?  temp_piece : curr_piece_out;
 assign board_out = (state == MOVE && old_state != GEN) ? temp_board_2 : temp_board_1;
 assign temp_location = (temp_piece == 2'b00) ? 5'b00001 : 5'b00101;
 assign location = (state == NEWBOARD || (state == GEN)) ? temp_location : location_out;
-assign rotation = (state == NEWBOARD) ? 2'b00 : rotation_out;
+assign rotation = (state == NEWBOARD || state == GEN) ? 2'b00 : rotation_out;
 
 
 rng myrng(.clka(clka), 

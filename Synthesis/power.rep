@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Apr 16 15:08:22 2024
+Date   : Thu Apr 18 10:04:25 2024
 ****************************************
 
 
@@ -31,12 +31,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  = 420.4868 uW   (69%)
-  Net Switching Power  = 188.8082 uW   (31%)
+  Cell Internal Power  = 417.5773 uW   (69%)
+  Net Switching Power  = 184.6217 uW   (31%)
                          ---------
-Total Dynamic Power    = 609.2950 uW  (100%)
+Total Dynamic Power    = 602.1990 uW  (100%)
 
-Cell Leakage Power     = 156.1970 nW
+Cell Leakage Power     = 159.5255 nW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -48,8 +48,8 @@ memory             0.0000            0.0000            0.0000            0.0000 
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential         0.3490        2.5683e-03           33.6146            0.3516  (  57.69%)
-combinational  7.1504e-02            0.1862          122.5824            0.2579  (  42.31%)
+sequential         0.3487        2.3937e-03           33.6146            0.3511  (  58.29%)
+combinational  6.8888e-02            0.1822          125.9109            0.2512  (  41.71%)
 --------------------------------------------------------------------------------------------------
-Total              0.4205 mW         0.1888 mW       156.1970 nW         0.6095 mW
+Total              0.4176 mW         0.1846 mW       159.5255 nW         0.6024 mW
 1

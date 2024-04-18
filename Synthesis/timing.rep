@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Apr 16 15:08:22 2024
+Date   : Thu Apr 18 10:04:25 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
@@ -23,15 +23,15 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   fsm_tetris/state_reg[0]/CLK (DFFNEGX1)                  0.00       0.00 f
   fsm_tetris/state_reg[0]/Q (DFFNEGX1)                    0.65       0.65 f
-  U268/Y (INVX2)                                          0.25       0.91 r
-  dp_tetris/U103/Y (AOI21X1)                              0.17       1.07 f
-  dp_tetris/U102/Y (NAND3X1)                              0.29       1.36 r
-  U66/Y (BUFX2)                                           0.33       1.69 r
-  U32/Y (INVX2)                                           0.58       2.27 f
-  dp_tetris/U70/Y (AOI22X1)                               0.50       2.77 r
-  U251/Y (INVX2)                                          0.24       3.02 f
-  board_out[9] (out)                                      0.00       3.02 f
-  data arrival time                                                  3.02
+  U259/Y (INVX2)                                          0.26       0.91 r
+  dp_tetris/U102/Y (AOI21X1)                              0.17       1.08 f
+  dp_tetris/U101/Y (NAND3X1)                              0.29       1.37 r
+  U73/Y (BUFX2)                                           0.33       1.70 r
+  U37/Y (INVX2)                                           0.58       2.28 f
+  dp_tetris/U69/Y (AOI22X1)                               0.49       2.77 r
+  U243/Y (INVX2)                                          0.27       3.04 f
+  board_out[9] (out)                                      0.00       3.04 f
+  data arrival time                                                  3.04
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
