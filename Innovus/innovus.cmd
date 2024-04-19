@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Thu Apr 18 10:11:02 2024                
+#  Created on Thu Apr 18 13:33:29 2024                
 #                                                     
 #######################################################
 
@@ -272,13 +272,3 @@ saveNetlist final.v
 saveDesign top_module.enc
 set enc_check_rename_command_name 1
 win
-gui_select -rect {-4.96000 297.78000 26.93400 497.53500}
-deselectAll
-gui_select -rect {-6.63800 282.67300 -3.28100 240.70800}
-gui_select -rect {233.40300 1034.69100 310.61900 1029.65500}
-deselectAll
-zoomBox -77.38500 254.71400 719.48400 968.08200
-zoomBox -51.17600 528.62600 364.79500 901.00900
-zoomBox -32.06600 671.64000 185.07500 866.02800
-gui_select -rect {-0.04400 829.22900 3.60800 836.81400}
-selectWire 111.1500 820.0500 112.0500 823.9500 2 n93

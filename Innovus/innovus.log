@@ -4,12 +4,12 @@ Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
 
 Version:	v22.14-s061_1, built Wed Oct 18 11:21:25 PDT 2023
 Options:	-init innovus.tcl -log innovus.log -overwrite 
-Date:		Thu Apr 18 10:10:28 2024
-Host:		opal.clear.rice.edu (x86_64 w/Linux 4.18.0-513.9.1.el8_9.x86_64) (10cores*40cpus*Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz 25600KB)
+Date:		Thu Apr 18 13:33:01 2024
+Host:		cobalt.clear.rice.edu (x86_64 w/Linux 4.18.0-513.9.1.el8_9.x86_64) (10cores*40cpus*Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz 25600KB)
 OS:		Red Hat Enterprise Linux 8.9 (Ootpa)
 
 License:
-		[10:10:28.396641] Configured Lic search path (21.01-s002): 5280@cadence.lic.rice.edu
+		[13:33:01.396633] Configured Lic search path (21.01-s002): 5280@cadence.lic.rice.edu
 
 		invs	Innovus Implementation System	22.1	checkout succeeded
 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
@@ -38,17 +38,17 @@ Set DBUPerIGU to M2 pitch 2400.
 ##  Check design process and node:  
 ##  Both design process and tech node are not set.
 
-*** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.46min, fe_real=0.60min, fe_mem=1421.5M) ***
-#% Begin Load netlist data ... (date=04/18 10:11:04, mem=1433.1M)
-*** Begin netlist parsing (mem=1421.5M) ***
+*** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.42min, fe_real=0.48min, fe_mem=1421.6M) ***
+#% Begin Load netlist data ... (date=04/18 13:33:30, mem=1437.8M)
+*** Begin netlist parsing (mem=1421.6M) ***
 Created 0 new cells from 0 timing libraries.
 Reading netlist ...
 Backslashed names will retain backslash and a trailing blank character.
 Reading verilog netlist 'top_module.vh'
 
-*** Memory Usage v#1 (Current mem = 1425.500M, initial mem = 651.723M) ***
-*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1425.5M) ***
-#% End Load netlist data ... (date=04/18 10:11:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1438.4M, current mem=1438.4M)
+*** Memory Usage v#1 (Current mem = 1425.562M, initial mem = 651.723M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1425.6M) ***
+#% End Load netlist data ... (date=04/18 13:33:30, total cpu=0:00:00.0, real=0:00:00.0, peak res=1443.1M, current mem=1443.1M)
 Set top cell to top_module.
 Hooked 0 DB cells to tlib cells.
 Starting recursive module instantiation check.
@@ -59,7 +59,7 @@ Building hierarchical netlist for Cell top_module ...
 ** info: there are 41 modules.
 ** info: there are 2027 stdCell insts.
 
-*** Memory Usage v#1 (Current mem = 1481.914M, initial mem = 651.723M) ***
+*** Memory Usage v#1 (Current mem = 1480.977M, initial mem = 651.723M) ***
 **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
 Type 'man IMPFP-3961' for more detail.
 **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
@@ -78,39 +78,39 @@ WARNING   IMPSYT-7328          1  The design has been initialized in physi...
 *** Message Summary: 4 warning(s), 0 error(s)
 
 <CMD> saveDesign top_module.enc
-#% Begin save design ... (date=04/18 10:11:04, mem=1737.7M)
-% Begin Save ccopt configuration ... (date=04/18 10:11:04, mem=1737.7M)
-% End Save ccopt configuration ... (date=04/18 10:11:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1739.3M, current mem=1739.3M)
-% Begin Save netlist data ... (date=04/18 10:11:04, mem=1759.4M)
+#% Begin save design ... (date=04/18 13:33:31, mem=1738.7M)
+% Begin Save ccopt configuration ... (date=04/18 13:33:31, mem=1738.7M)
+% End Save ccopt configuration ... (date=04/18 13:33:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=1740.5M, current mem=1740.3M)
+% Begin Save netlist data ... (date=04/18 13:33:31, mem=1760.5M)
 Writing Binary DB to top_module.enc.dat.tmp/top_module.v.bin in single-threaded mode...
-% End Save netlist data ... (date=04/18 10:11:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1765.4M, current mem=1759.7M)
+% End Save netlist data ... (date=04/18 13:33:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=1760.9M, current mem=1760.7M)
 Saving symbol-table file ...
 Saving congestion map file top_module.enc.dat.tmp/top_module.route.congmap.gz ...
-% Begin Save AAE data ... (date=04/18 10:11:05, mem=1760.6M)
+% Begin Save AAE data ... (date=04/18 13:33:31, mem=1761.6M)
 Saving AAE Data ...
-% End Save AAE data ... (date=04/18 10:11:05, total cpu=0:00:00.1, real=0:00:00.0, peak res=1789.3M, current mem=1761.1M)
+% End Save AAE data ... (date=04/18 13:33:31, total cpu=0:00:00.1, real=0:00:00.0, peak res=1790.8M, current mem=1762.1M)
 Saving preference file top_module.enc.dat.tmp/gui.pref.tcl ...
 Saving mode setting ...
 Saving global file ...
-% Begin Save floorplan data ... (date=04/18 10:11:06, mem=1767.4M)
+% Begin Save floorplan data ... (date=04/18 13:33:31, mem=1768.7M)
 Saving floorplan file ...
-% End Save floorplan data ... (date=04/18 10:11:07, total cpu=0:00:00.0, real=0:00:01.0, peak res=1769.3M, current mem=1769.3M)
+% End Save floorplan data ... (date=04/18 13:33:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=1770.6M, current mem=1770.6M)
 Saving Drc markers ...
 ... No Drc file written since there is no markers found.
-% Begin Save placement data ... (date=04/18 10:11:07, mem=1769.3M)
+% Begin Save placement data ... (date=04/18 13:33:32, mem=1770.6M)
 ** Saving stdCellPlacement_binary (version# 2) ...
 Save Adaptive View Pruning View Names to Binary file
-% End Save placement data ... (date=04/18 10:11:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1770.0M, current mem=1770.0M)
-% Begin Save routing data ... (date=04/18 10:11:07, mem=1770.0M)
+% End Save placement data ... (date=04/18 13:33:32, total cpu=0:00:00.1, real=0:00:00.0, peak res=1771.5M, current mem=1771.5M)
+% Begin Save routing data ... (date=04/18 13:33:32, mem=1771.5M)
 Saving route file ...
-*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1762.2M) ***
-% End Save routing data ... (date=04/18 10:11:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1770.4M, current mem=1770.4M)
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1764.3M) ***
+% End Save routing data ... (date=04/18 13:33:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=1771.8M, current mem=1771.8M)
 Saving property file top_module.enc.dat.tmp/top_module.prop
-*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1765.2M) ***
-% Begin Save power constraints data ... (date=04/18 10:11:07, mem=1771.7M)
-% End Save power constraints data ... (date=04/18 10:11:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1771.7M, current mem=1771.7M)
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1767.3M) ***
+% Begin Save power constraints data ... (date=04/18 13:33:32, mem=1773.2M)
+% End Save power constraints data ... (date=04/18 13:33:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=1773.2M, current mem=1773.2M)
 Generated self-contained design top_module.enc.dat.tmp
-#% End save design ... (date=04/18 10:11:09, total cpu=0:00:00.7, real=0:00:05.0, peak res=1789.3M, current mem=1773.5M)
+#% End save design ... (date=04/18 13:33:32, total cpu=0:00:00.7, real=0:00:01.0, peak res=1790.8M, current mem=1773.5M)
 *** Message Summary: 0 warning(s), 0 error(s)
 
 <CMD> getIoFlowFlag
@@ -141,10 +141,10 @@ Start create_tracks
 <CMD> setAddRingMode -stacked_via_top_layer metal3
 <CMD> setAddRingMode -stacked_via_bottom_layer metal1
 <CMD> addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -center 1 -type core_rings -jog_distance 1.8 -threshold 1.8 -nets {gnd vdd} -follow core -layer {bottom metal1 top metal1 right metal2 left metal2} -width 6.0 -spacing 1.2 -offset 1.8
-#% Begin addRing (date=04/18 10:11:09, mem=1774.9M)
+#% Begin addRing (date=04/18 13:33:32, mem=1774.7M)
 
 
-viaInitial starts at Thu Apr 18 10:11:09 2024
+viaInitial starts at Thu Apr 18 13:33:32 2024
 **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150000 ;
 **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150000 ;
 **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
@@ -153,7 +153,7 @@ Type 'man IMPPP-557' for more detail.
 Type 'man IMPPP-557' for more detail.
 **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
 Type 'man IMPPP-557' for more detail.
-viaInitial ends at Thu Apr 18 10:11:09 2024
+viaInitial ends at Thu Apr 18 13:33:32 2024
 Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1767.3M)
 Ring generation is complete.
 vias are now being generated.
@@ -166,7 +166,7 @@ ViaGen created 8 vias, deleted 0 via to avoid violation.
 |   via  |        8       |        0       |
 | metal2 |        4       |       NA       |
 +--------+----------------+----------------+
-#% End addRing (date=04/18 10:11:09, total cpu=0:00:00.0, real=0:00:00.0, peak res=1777.9M, current mem=1777.9M)
+#% End addRing (date=04/18 13:33:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=1777.5M, current mem=1777.5M)
 <CMD> getPlaceMode -place_hierarchical_flow -quiet
 <CMD> report_message -start_cmd
 <CMD> getRouteMode -maxRouteLayer -quiet
@@ -186,7 +186,7 @@ ViaGen created 8 vias, deleted 0 via to avoid violation.
 <CMD> getPlaceMode -quiet -bypassFlowEffortHighChecking
 <CMD> getDesignMode -quiet -siPrevention
 <CMD> getPlaceMode -quiet -place_global_exp_enable_3d
-*** placeDesign #1 [begin] () : totSession cpu/real = 0:00:28.9/0:00:36.4 (0.8), mem = 1768.3M
+*** placeDesign #1 [begin] () : totSession cpu/real = 0:00:26.5/0:00:27.9 (0.9), mem = 1768.3M
 <CMD> getPlaceMode -exp_slack_driven -quiet
 <CMD> um::push_snapshot_stack
 <CMD> getDesignMode -quiet -flowEffort
@@ -326,22 +326,22 @@ Pin Density = 0.5000.
 **WARN: (IMPSP-9531):	Turning off clkGateAware when timingDriven is off
 Iteration  1: Total net bbox = 2.551e-10 (1.48e-10 1.07e-10)
               Est.  stn bbox = 2.748e-10 (1.59e-10 1.16e-10)
-              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1915.3M
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1915.4M
 Iteration  2: Total net bbox = 2.551e-10 (1.48e-10 1.07e-10)
               Est.  stn bbox = 2.748e-10 (1.59e-10 1.16e-10)
-              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1915.3M
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1915.4M
 Iteration  3: Total net bbox = 1.047e+02 (6.07e+01 4.40e+01)
               Est.  stn bbox = 1.177e+02 (6.80e+01 4.97e+01)
-              cpu = 0:00:00.1 real = 0:00:00.0 mem = 1935.7M
+              cpu = 0:00:00.1 real = 0:00:01.0 mem = 1936.8M
 Iteration  4: Total net bbox = 2.773e+05 (1.44e+05 1.33e+05)
               Est.  stn bbox = 3.175e+05 (1.59e+05 1.59e+05)
-              cpu = 0:00:00.8 real = 0:00:01.0 mem = 1935.7M
+              cpu = 0:00:00.7 real = 0:00:00.0 mem = 1936.8M
 Iteration  5: Total net bbox = 2.907e+05 (1.55e+05 1.36e+05)
               Est.  stn bbox = 3.359e+05 (1.73e+05 1.63e+05)
-              cpu = 0:00:00.6 real = 0:00:00.0 mem = 1935.7M
+              cpu = 0:00:00.6 real = 0:00:01.0 mem = 1936.8M
 Iteration  6: Total net bbox = 2.968e+05 (1.60e+05 1.37e+05)
               Est.  stn bbox = 3.437e+05 (1.78e+05 1.66e+05)
-              cpu = 0:00:00.7 real = 0:00:01.0 mem = 1954.7M
+              cpu = 0:00:00.7 real = 0:00:01.0 mem = 1953.8M
 <CMD> psp::embedded_egr_init_
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
@@ -349,28 +349,28 @@ Max route layer is changed from 127 to 3 because there is no routing track above
 <CMD> psp::embedded_egr_term_
 Iteration  7: Total net bbox = 3.168e+05 (1.75e+05 1.42e+05)
               Est.  stn bbox = 3.672e+05 (1.96e+05 1.71e+05)
-              cpu = 0:00:00.7 real = 0:00:01.0 mem = 1955.7M
+              cpu = 0:00:00.7 real = 0:00:00.0 mem = 1958.5M
 Iteration  8: Total net bbox = 3.168e+05 (1.75e+05 1.42e+05)
               Est.  stn bbox = 3.672e+05 (1.96e+05 1.71e+05)
-              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1955.7M
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1958.5M
 Iteration  9: Total net bbox = 3.253e+05 (1.79e+05 1.47e+05)
               Est.  stn bbox = 3.766e+05 (2.00e+05 1.77e+05)
-              cpu = 0:00:02.5 real = 0:00:02.0 mem = 1957.4M
+              cpu = 0:00:02.6 real = 0:00:03.0 mem = 1958.5M
 Iteration 10: Total net bbox = 3.253e+05 (1.79e+05 1.47e+05)
               Est.  stn bbox = 3.766e+05 (2.00e+05 1.77e+05)
-              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1957.4M
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1958.5M
 Iteration 11: Total net bbox = 3.253e+05 (1.79e+05 1.47e+05)
               Est.  stn bbox = 3.766e+05 (2.00e+05 1.77e+05)
-              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1957.4M
-*** cost = 3.253e+05 (1.79e+05 1.47e+05) (cpu for global=0:00:05.3) real=0:00:06.0***
-Solver runtime cpu: 0:00:05.1 real: 0:00:05.4
-Core Placement runtime cpu: 0:00:05.3 real: 0:00:06.0
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1958.5M
+*** cost = 3.253e+05 (1.79e+05 1.47e+05) (cpu for global=0:00:05.4) real=0:00:07.0***
+Solver runtime cpu: 0:00:05.2 real: 0:00:05.4
+Core Placement runtime cpu: 0:00:05.3 real: 0:00:07.0
 <CMD> scanReorder
 Begin: Reorder Scan Chains
 **WARN: (IMPSP-9025):	No scan chain specified/traced.
 Type 'man IMPSP-9025' for more detail.
 End: Reorder Scan Chains
-*** Starting refinePlace (0:00:34.5 mem=1957.4M) ***
+*** Starting refinePlace (0:00:32.1 mem=1958.5M) ***
 Total net bbox length = 3.254e+05 (1.786e+05 1.468e+05) (ext = 4.864e+03)
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
@@ -378,7 +378,7 @@ Max route layer is changed from 127 to 3 because there is no routing track above
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
 Move report: Detail placement moves 2027 insts, mean move: 2.48 um, max move: 69.52 um 
 	Max move on inst (U96): (472.65, 351.07) --> (463.20, 291.00)
-	Runtime: CPU: 0:00:00.3 REAL: 0:00:01.0 MEM: 2041.4MB
+	Runtime: CPU: 0:00:00.3 REAL: 0:00:00.0 MEM: 2040.5MB
 Summary Report:
 Instances move: 2027 (out of 2027 movable)
 Instances flipped: 0
@@ -386,9 +386,9 @@ Mean displacement: 2.48 um
 Max displacement: 69.52 um (Instance: U96) (472.649, 351.067) -> (463.2, 291)
 	Length: 3 sites, height: 1 rows, site name: core, cell type: BUFX2
 Total net bbox length = 3.264e+05 (1.796e+05 1.468e+05) (ext = 4.872e+03)
-Runtime: CPU: 0:00:00.3 REAL: 0:00:01.0 MEM: 2041.4MB
-*** Finished refinePlace (0:00:34.8 mem=2041.4M) ***
-*** End of Placement (cpu=0:00:05.7, real=0:00:07.0, mem=2041.4M) ***
+Runtime: CPU: 0:00:00.3 REAL: 0:00:00.0 MEM: 2040.5MB
+*** Finished refinePlace (0:00:32.4 mem=2040.5M) ***
+*** End of Placement (cpu=0:00:05.8, real=0:00:07.0, mem=2040.5M) ***
 default core: bins with density > 0.750 =  0.00 % ( 0 / 16 )
 Density distribution unevenness ratio = 7.421%
 Starting IO pin assignment...
@@ -477,7 +477,7 @@ Max route layer is changed from 127 to 3 because there is no routing track above
 [NR-eGR] 
 [NR-eGR] Overflow after Early Global Route 1.93% H + 0.17% V
 [NR-eGR] Finished Early Global Route kernel ( CPU: 0.05 sec, Real: 0.05 sec, Curr Mem: 1.91 MB )
-Early Global Route congestion estimation runtime: 0.05 seconds, mem = 2059.4M
+Early Global Route congestion estimation runtime: 0.06 seconds, mem = 2058.5M
 Local HotSpot Analysis: normalized max congestion hotspot area = 1.00, normalized total congestion hotspot area = 1.00 (area is in unit of 4 std-cell row bins)
 Skipped repairing congestion.
 [NR-eGR] Connected 0 must-join pins/ports (post-process)
@@ -495,9 +495,9 @@ Skipped repairing congestion.
 [NR-eGR] Total length: 390630um, number of vias: 17190
 [NR-eGR] --------------------------------------------------------------------------
 Max route layer is changed from 127 to 3 because there is no routing track above this layer
-Early Global Route wiring runtime: 0.04 seconds, mem = 2075.4M
+Early Global Route wiring runtime: 0.04 seconds, mem = 2074.5M
 Tdgp not enabled or already been cleared! skip clearing
-End of congRepair (cpu=0:00:00.1, real=0:00:00.0)
+End of congRepair (cpu=0:00:00.1, real=0:00:01.0)
 <CMD> ::goMC::is_advanced_metrics_collection_running
 <CMD> ::goMC::is_advanced_metrics_collection_running
 <CMD> ::goMC::is_advanced_metrics_collection_running
@@ -514,7 +514,7 @@ End of congRepair (cpu=0:00:00.1, real=0:00:00.0)
 <CMD> getPlaceMode -tdgpDumpStageTiming -quiet
 *** Finishing placeDesign default flow ***
 <CMD> getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
-**placeDesign ... cpu = 0: 0: 6, real = 0: 0: 7, mem = 2075.4M **
+**placeDesign ... cpu = 0: 0: 6, real = 0: 0: 8, mem = 2074.5M **
 <CMD> getPlaceMode -trimView -quiet
 <CMD> getOptMode -quiet -viewOptPolishing
 <CMD> getOptMode -quiet -fastViewOpt
@@ -563,13 +563,13 @@ WARNING   IMPSP-9025           1  No scan chain specified/traced.
 <CMD> um::create_snapshot -name final -auto min
 <CMD> um::pop_snapshot_stack
 <CMD> um::create_snapshot -name place_design
-*** placeDesign #1 [finish] () : cpu/real = 0:00:06.0/0:00:07.6 (0.8), totSession cpu/real = 0:00:34.9/0:00:44.0 (0.8), mem = 2075.4M
+*** placeDesign #1 [finish] () : cpu/real = 0:00:06.1/0:00:07.3 (0.8), totSession cpu/real = 0:00:32.5/0:00:35.3 (0.9), mem = 2074.5M
 <CMD> getPlaceMode -exp_slack_driven -quiet
 <CMD> sroute -nets {vdd gnd}
-#% Begin sroute (date=04/18 10:11:17, mem=1836.9M)
-*** Begin SPECIAL ROUTE on Thu Apr 18 10:11:17 2024 ***
+#% Begin sroute (date=04/18 13:33:40, mem=1834.8M)
+*** Begin SPECIAL ROUTE on Thu Apr 18 13:33:40 2024 ***
 SPECIAL ROUTE ran on directory: /storage-home/l/ltr1/elec422/FinalProject/Innovus
-SPECIAL ROUTE ran on machine: opal.clear.rice.edu (Linux 4.18.0-513.9.1.el8_9.x86_64 Xeon 3.40Ghz)
+SPECIAL ROUTE ran on machine: cobalt.clear.rice.edu (Linux 4.18.0-513.9.1.el8_9.x86_64 Xeon 3.40Ghz)
 
 Begin option processing ...
 srouteConnectPowerBump set to false
@@ -581,7 +581,7 @@ srouteJogControl set to "preferWithChanges differentLayer"
 sroutePadPinAllPorts set to true
 sroutePreserveExistingRoutes set to true
 srouteRoutePowerBarPortOnBothDir set to true
-End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3595.00 megs.
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3594.00 megs.
 
 Reading DB technology information...
 Finished reading DB technology information.
@@ -616,7 +616,7 @@ CPU time for gnd FollowPin 0 seconds
   Number of Pad ports routed: 0
   Number of Power Bump ports routed: 0
   Number of Followpin connections: 34
-End power routing: cpu: 0:00:00, real: 0:00:00, peak: 3595.00 megs.
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 3594.00 megs.
 
 
 
@@ -631,43 +631,43 @@ ViaGen created 68 vias, deleted 0 via to avoid violation.
 | metal1 |       102      |       NA       |
 |   via  |       68       |        0       |
 +--------+----------------+----------------+
-#% End sroute (date=04/18 10:11:18, total cpu=0:00:00.1, real=0:00:01.0, peak res=1843.5M, current mem=1843.5M)
+#% End sroute (date=04/18 13:33:40, total cpu=0:00:00.1, real=0:00:00.0, peak res=1841.5M, current mem=1841.5M)
 <CMD> saveDesign top_module.enc
-#% Begin save design ... (date=04/18 10:11:18, mem=1843.5M)
-% Begin Save ccopt configuration ... (date=04/18 10:11:18, mem=1843.5M)
-% End Save ccopt configuration ... (date=04/18 10:11:18, total cpu=0:00:00.0, real=0:00:00.0, peak res=1843.7M, current mem=1843.7M)
-% Begin Save netlist data ... (date=04/18 10:11:18, mem=1843.7M)
+#% Begin save design ... (date=04/18 13:33:40, mem=1841.5M)
+% Begin Save ccopt configuration ... (date=04/18 13:33:40, mem=1841.5M)
+% End Save ccopt configuration ... (date=04/18 13:33:40, total cpu=0:00:00.0, real=0:00:00.0, peak res=1841.7M, current mem=1841.7M)
+% Begin Save netlist data ... (date=04/18 13:33:40, mem=1841.7M)
 Writing Binary DB to top_module.enc.dat.tmp/top_module.v.bin in single-threaded mode...
-% End Save netlist data ... (date=04/18 10:11:18, total cpu=0:00:00.0, real=0:00:00.0, peak res=1843.7M, current mem=1843.7M)
+% End Save netlist data ... (date=04/18 13:33:40, total cpu=0:00:00.0, real=0:00:00.0, peak res=1841.7M, current mem=1841.7M)
 Saving symbol-table file ...
 Saving congestion map file top_module.enc.dat.tmp/top_module.route.congmap.gz ...
-% Begin Save AAE data ... (date=04/18 10:11:19, mem=1843.8M)
+% Begin Save AAE data ... (date=04/18 13:33:40, mem=1841.7M)
 Saving AAE Data ...
-% End Save AAE data ... (date=04/18 10:11:19, total cpu=0:00:00.1, real=0:00:00.0, peak res=1843.8M, current mem=1843.6M)
+% End Save AAE data ... (date=04/18 13:33:40, total cpu=0:00:00.1, real=0:00:00.0, peak res=1842.0M, current mem=1842.0M)
 Saving preference file top_module.enc.dat.tmp/gui.pref.tcl ...
 Saving mode setting ...
 Saving global file ...
-% Begin Save floorplan data ... (date=04/18 10:11:21, mem=1844.5M)
+% Begin Save floorplan data ... (date=04/18 13:33:40, mem=1842.9M)
 Saving floorplan file ...
-% End Save floorplan data ... (date=04/18 10:11:21, total cpu=0:00:00.0, real=0:00:01.0, peak res=1844.5M, current mem=1844.5M)
-Saving PG file top_module.enc.dat.tmp/top_module.pg.gz, version#2, (Created by Innovus v22.14-s061_1 on Thu Apr 18 10:11:22 2024)
-*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2042.7M) ***
+% End Save floorplan data ... (date=04/18 13:33:41, total cpu=0:00:00.0, real=0:00:01.0, peak res=1842.9M, current mem=1842.9M)
+Saving PG file top_module.enc.dat.tmp/top_module.pg.gz, version#2, (Created by Innovus v22.14-s061_1 on Thu Apr 18 13:33:41 2024)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2043.8M) ***
 Saving Drc markers ...
 ... No Drc file written since there is no markers found.
-% Begin Save placement data ... (date=04/18 10:11:22, mem=1844.5M)
+% Begin Save placement data ... (date=04/18 13:33:41, mem=1842.9M)
 ** Saving stdCellPlacement_binary (version# 2) ...
 Save Adaptive View Pruning View Names to Binary file
-% End Save placement data ... (date=04/18 10:11:22, total cpu=0:00:00.0, real=0:00:00.0, peak res=1844.7M, current mem=1844.7M)
-% Begin Save routing data ... (date=04/18 10:11:22, mem=1844.7M)
+% End Save placement data ... (date=04/18 13:33:41, total cpu=0:00:00.0, real=0:00:00.0, peak res=1843.1M, current mem=1843.1M)
+% Begin Save routing data ... (date=04/18 13:33:41, mem=1843.1M)
 Saving route file ...
-*** Completed saveRoute (cpu=0:00:00.0 real=0:00:01.0 mem=2042.7M) ***
-% End Save routing data ... (date=04/18 10:11:23, total cpu=0:00:00.0, real=0:00:01.0, peak res=1844.7M, current mem=1844.7M)
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=2043.8M) ***
+% End Save routing data ... (date=04/18 13:33:41, total cpu=0:00:00.0, real=0:00:00.0, peak res=1843.1M, current mem=1843.1M)
 Saving property file top_module.enc.dat.tmp/top_module.prop
-*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2045.7M) ***
-% Begin Save power constraints data ... (date=04/18 10:11:23, mem=1844.7M)
-% End Save power constraints data ... (date=04/18 10:11:23, total cpu=0:00:00.0, real=0:00:00.0, peak res=1844.7M, current mem=1844.7M)
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2046.8M) ***
+% Begin Save power constraints data ... (date=04/18 13:33:41, mem=1843.1M)
+% End Save power constraints data ... (date=04/18 13:33:41, total cpu=0:00:00.0, real=0:00:00.0, peak res=1843.1M, current mem=1843.1M)
 Generated self-contained design top_module.enc.dat.tmp
-#% End save design ... (date=04/18 10:11:26, total cpu=0:00:00.7, real=0:00:08.0, peak res=1845.1M, current mem=1845.1M)
+#% End save design ... (date=04/18 13:33:41, total cpu=0:00:00.7, real=0:00:01.0, peak res=1843.5M, current mem=1843.5M)
 *** Message Summary: 0 warning(s), 0 error(s)
 
 <CMD> addFiller -cell FILL -prefix FILLER -markFixed
@@ -680,8 +680,8 @@ as 'FIXED'. If this was not intended, use deleteFiller command to undo.
 *INFO:   Added 5582 filler insts (cell FILL / prefix FILLER).
 *INFO: Total 5582 filler insts added - prefix FILLER (CPU: 0:00:00.1).
 For 5582 new insts, <CMD> routeDesign -globalDetail
-#% Begin routeDesign (date=04/18 10:11:26, mem=1847.8M)
-#routeDesign: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1847.79 (MB), peak = 1955.89 (MB)
+#% Begin routeDesign (date=04/18 13:33:41, mem=1847.5M)
+#routeDesign: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1847.52 (MB), peak = 1954.63 (MB)
 AAE_INFO: Pre Route call back at the beginning of routeDesign
 #**INFO: setDesignMode -flowEffort standard
 #**INFO: setDesignMode -powerEffort none
@@ -697,21 +697,21 @@ setDelayCalMode -ignoreNetLoad                          false
 #No active RC corner or QRC tech file is missing.
 #**INFO: multi-cut via swapping will not be performed after routing.
 #**INFO: All auto set options tuned by routeDesign will be restored to their original settings on command completion.
-Begin checking placement ... (start mem=2034.6M, init mem=2034.7M)
+Begin checking placement ... (start mem=2035.7M, init mem=2035.8M)
 *info: Placed = 7609           (Fixed = 5582)
 *info: Unplaced = 0           
 Placement Density:100.00%(600768/600768)
 Placement Density (including fixed std cells):100.00%(1002672/1002672)
-Finished checkPlace (total: cpu=0:00:00.1, real=0:00:01.0; vio checks: cpu=0:00:00.1, real=0:00:01.0; mem=2034.7M)
+Finished checkPlace (total: cpu=0:00:00.1, real=0:00:00.0; vio checks: cpu=0:00:00.1, real=0:00:00.0; mem=2035.8M)
 
 changeUseClockNetStatus Option :  -noFixedNetWires 
 *** Changed status on (0) nets in Clock.
-*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=2034.7M) ***
-% Begin globalDetailRoute (date=04/18 10:11:27, mem=1849.6M)
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=2035.8M) ***
+% Begin globalDetailRoute (date=04/18 13:33:42, mem=1849.2M)
 
 globalDetailRoute
 
-#Start globalDetailRoute on Thu Apr 18 10:11:27 2024
+#Start globalDetailRoute on Thu Apr 18 13:33:42 2024
 #
 #Generating timing data, please wait...
 #2035 total nets, 0 already routed, 0 will ignore in trialRoute
@@ -730,23 +730,23 @@ globalDetailRoute
 **WARN: (IMPEXT-2883):	The resistance extracted for a wire belonging to net board_out[23] is 0 ohms. Therefore, a small value of 0.1 ohms is assigned to it.
 **WARN: (IMPEXT-2883):	The resistance extracted for a wire belonging to net board_out[4] is 0 ohms. Therefore, a small value of 0.1 ohms is assigned to it.
 Total number of fetched objects 2035
-End delay calculation. (MEM=2448.46 CPU=0:00:00.2 REAL=0:00:00.0)
-#Generating timing data took: cpu time = 00:00:02, elapsed time = 00:00:02, memory = 1984.61 (MB), peak = 2002.73 (MB)
+End delay calculation. (MEM=2454.57 CPU=0:00:00.2 REAL=0:00:00.0)
+#Generating timing data took: cpu time = 00:00:02, elapsed time = 00:00:02, memory = 1980.09 (MB), peak = 1994.42 (MB)
 #Done generating timing data.
 #WARNING (NRIG-1303) The congestion map does not match the GCELL grid. Clearing the congestion map.
 #num needed restored net=0
 #need_extraction net=0 (total=2038)
-#Start reading timing information from file .timing_file_2061328.tif.gz ...
+#Start reading timing information from file .timing_file_2120119.tif.gz ...
 #WARNING (NRDB-194) 
 #No setup time constraints read in
-#Read in timing information for 37 ports, 2027 instances from timing file .timing_file_2061328.tif.gz.
+#Read in timing information for 37 ports, 2027 instances from timing file .timing_file_2120119.tif.gz.
 #NanoRoute Version 22.14-s061_1 NR231009-1305/22_14-UB
 #Total number of trivial nets (e.g. < 2 pins) = 3 (skipped).
 #Total number of routable nets = 2035.
 #Total number of nets in the design = 2038.
 #2035 routable nets do not have any wires.
 #2035 nets will be global routed.
-#Start routing data preparation on Thu Apr 18 10:11:29 2024
+#Start routing data preparation on Thu Apr 18 13:33:44 2024
 #
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
@@ -766,38 +766,38 @@ End delay calculation. (MEM=2448.46 CPU=0:00:00.2 REAL=0:00:00.0)
 #enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
 #enable_dpt_layer_shield=F
 #has_line_end_grid=F
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1999.55 (MB), peak = 2032.43 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1995.49 (MB), peak = 2028.07 (MB)
 #Regenerating Ggrids automatically.
 #Auto generating G-grids with size=20 tracks, using layer metal2's pitch = 2.4000.
 #Using automatically generated G-grids.
 #Done routing data preparation.
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2001.43 (MB), peak = 2032.43 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1997.43 (MB), peak = 2028.07 (MB)
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
 #Voltage range [0.000 - 3.300] has 2037 nets.
 #Voltage range [0.000 - 0.000] has 1 net.
 #
-#Finished routing data preparation on Thu Apr 18 10:11:30 2024
+#Finished routing data preparation on Thu Apr 18 13:33:44 2024
 #
 #Cpu time = 00:00:00
 #Elapsed time = 00:00:00
-#Increased memory = 8.93 (MB)
-#Total memory = 2001.43 (MB)
-#Peak memory = 2032.43 (MB)
+#Increased memory = 9.39 (MB)
+#Total memory = 1997.43 (MB)
+#Peak memory = 2028.07 (MB)
 #
 #
-#Start global routing on Thu Apr 18 10:11:30 2024
+#Start global routing on Thu Apr 18 13:33:44 2024
 #
 #
-#Start global routing initialization on Thu Apr 18 10:11:30 2024
+#Start global routing initialization on Thu Apr 18 13:33:44 2024
 #
 #Number of eco nets is 0
 #
-#Start global routing data preparation on Thu Apr 18 10:11:30 2024
+#Start global routing data preparation on Thu Apr 18 13:33:44 2024
 #
-#Start routing resource analysis on Thu Apr 18 10:11:30 2024
+#Start routing resource analysis on Thu Apr 18 13:33:44 2024
 #
-#Routing resource analysis is done on Thu Apr 18 10:11:30 2024
+#Routing resource analysis is done on Thu Apr 18 13:33:44 2024
 #
 #  Resource Analysis:
 #
@@ -813,26 +813,26 @@ End delay calculation. (MEM=2448.46 CPU=0:00:00.2 REAL=0:00:00.0)
 #
 #
 #
-#Global routing data preparation is done on Thu Apr 18 10:11:30 2024
+#Global routing data preparation is done on Thu Apr 18 13:33:44 2024
 #
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2001.43 (MB), peak = 2032.43 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1997.43 (MB), peak = 2028.07 (MB)
 #
 #
-#Global routing initialization is done on Thu Apr 18 10:11:30 2024
+#Global routing initialization is done on Thu Apr 18 13:33:44 2024
 #
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2001.43 (MB), peak = 2032.43 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1997.43 (MB), peak = 2028.07 (MB)
 #
 #start global routing iteration 1...
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2005.01 (MB), peak = 2195.41 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2002.46 (MB), peak = 2193.02 (MB)
 #
 #start global routing iteration 2...
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2005.78 (MB), peak = 2195.41 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2003.23 (MB), peak = 2193.02 (MB)
 #
 #start global routing iteration 3...
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2005.78 (MB), peak = 2195.41 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2003.23 (MB), peak = 2193.02 (MB)
 #
 #start global routing iteration 4...
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2005.78 (MB), peak = 2195.41 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2003.23 (MB), peak = 2193.02 (MB)
 #
 #
 #Total number of trivial nets (e.g. < 2 pins) = 3 (skipped).
@@ -916,11 +916,11 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #Global routing statistics:
 #Cpu time = 00:00:02
 #Elapsed time = 00:00:02
-#Increased memory = 5.72 (MB)
-#Total memory = 2007.16 (MB)
-#Peak memory = 2195.62 (MB)
+#Increased memory = 7.18 (MB)
+#Total memory = 2004.61 (MB)
+#Peak memory = 2193.04 (MB)
 #
-#Finished global routing on Thu Apr 18 10:11:31 2024
+#Finished global routing on Thu Apr 18 13:33:46 2024
 #
 #
 #Minimum voltage of a net in the design = 0.000.
@@ -931,7 +931,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #Maximum voltage of a net in the design = 3.300.
 #Voltage range [0.000 - 3.300] has 2037 nets.
 #Voltage range [0.000 - 0.000] has 1 net.
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2007.16 (MB), peak = 2195.62 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2004.61 (MB), peak = 2193.04 (MB)
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
 #Voltage range [0.000 - 3.300] has 2037 nets.
@@ -964,14 +964,14 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #-----------------------
 #                 10796 
 #
-#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2006.10 (MB), peak = 2195.62 (MB)
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2003.51 (MB), peak = 2193.04 (MB)
 #
 #Routing data preparation, pin analysis, global routing and track assignment statistics:
 #Cpu time = 00:00:03
 #Elapsed time = 00:00:03
-#Increased memory = 14.05 (MB)
-#Total memory = 2006.10 (MB)
-#Peak memory = 2195.62 (MB)
+#Increased memory = 15.47 (MB)
+#Total memory = 2003.51 (MB)
+#Peak memory = 2193.04 (MB)
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
 #Voltage range [0.000 - 3.300] has 2037 nets.
@@ -999,7 +999,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal2       60       60
 #	metal3        1        1
 #	Totals       68       68
-#cpu time = 00:00:15, elapsed time = 00:00:16, memory = 2071.88 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:16, elapsed time = 00:00:17, memory = 2069.42 (MB), peak = 2217.39 (MB)
 #start 1st optimization iteration ...
 #   number of violations = 8
 #
@@ -1008,7 +1008,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        1        1
 #	metal2        7        7
 #	Totals        8        8
-#cpu time = 00:00:02, elapsed time = 00:00:02, memory = 2069.58 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:02, elapsed time = 00:00:02, memory = 2066.71 (MB), peak = 2217.39 (MB)
 #start 2nd optimization iteration ...
 #   number of violations = 2
 #
@@ -1017,7 +1017,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        2        2
 #	Totals        2        2
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2068.73 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2065.70 (MB), peak = 2217.39 (MB)
 #start 3rd optimization iteration ...
 #   number of violations = 3
 #
@@ -1026,7 +1026,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        3        3
 #	Totals        3        3
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2068.80 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2065.45 (MB), peak = 2217.39 (MB)
 #start 4th optimization iteration ...
 #   number of violations = 1
 #
@@ -1035,7 +1035,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2067.50 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2064.58 (MB), peak = 2217.39 (MB)
 #start 5th optimization iteration ...
 #   number of violations = 1
 #
@@ -1044,7 +1044,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2067.47 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2063.68 (MB), peak = 2217.39 (MB)
 #start 6th optimization iteration ...
 #   number of violations = 2
 #
@@ -1053,7 +1053,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        2        2
 #	Totals        2        2
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2065.40 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2061.08 (MB), peak = 2217.39 (MB)
 #start 7th optimization iteration ...
 #   number of violations = 1
 #
@@ -1062,7 +1062,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2063.21 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2058.89 (MB), peak = 2217.39 (MB)
 #start 8th optimization iteration ...
 #   number of violations = 2
 #
@@ -1071,7 +1071,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        2        2
 #	Totals        2        2
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2063.28 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2058.70 (MB), peak = 2217.39 (MB)
 #start 9th optimization iteration ...
 #   number of violations = 1
 #
@@ -1080,7 +1080,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2063.44 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2059.11 (MB), peak = 2217.39 (MB)
 #start 10th optimization iteration ...
 #   number of violations = 1
 #
@@ -1089,7 +1089,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2063.16 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2058.83 (MB), peak = 2217.39 (MB)
 #start 11th optimization iteration ...
 #   number of violations = 1
 #
@@ -1098,7 +1098,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2062.61 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2057.97 (MB), peak = 2217.39 (MB)
 #start 12th optimization iteration ...
 #   number of violations = 1
 #
@@ -1107,10 +1107,10 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #	metal1        0        0
 #	metal2        1        1
 #	Totals        1        1
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2059.00 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2055.94 (MB), peak = 2217.39 (MB)
 #start 13th optimization iteration ...
 #   number of violations = 0
-#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2059.63 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2056.59 (MB), peak = 2217.39 (MB)
 #Complete Detail Routing.
 #Total wire length = 407190 um.
 #Total half perimeter of net bounding box = 331176 um.
@@ -1127,11 +1127,11 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #                 12998 
 #
 #Total number of DRC violations = 0
-#Cpu time = 00:00:20
-#Elapsed time = 00:00:20
-#Increased memory = 53.54 (MB)
-#Total memory = 2059.64 (MB)
-#Peak memory = 2219.42 (MB)
+#Cpu time = 00:00:21
+#Elapsed time = 00:00:21
+#Increased memory = 53.08 (MB)
+#Total memory = 2056.59 (MB)
+#Peak memory = 2217.39 (MB)
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
 #Voltage range [0.000 - 3.300] has 2037 nets.
@@ -1153,7 +1153,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #
 #Start DRC checking..
 #   number of violations = 0
-#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2053.68 (MB), peak = 2219.42 (MB)
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2051.77 (MB), peak = 2217.39 (MB)
 #CELL_VIEW top_module,init has no DRC violation.
 #Total number of DRC violations = 0
 #Minimum voltage of a net in the design = 0.000.
@@ -1167,7 +1167,7 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #
 #Start data preparation for wire spreading...
 #
-#Data preparation is done on Thu Apr 18 10:11:53 2024
+#Data preparation is done on Thu Apr 18 13:34:08 2024
 #
 #Minimum voltage of a net in the design = 0.000.
 #Maximum voltage of a net in the design = 3.300.
@@ -1203,11 +1203,11 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #
 #Start DRC checking..
 #   number of violations = 0
-#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2053.66 (MB), peak = 2242.95 (MB)
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2048.92 (MB), peak = 2235.98 (MB)
 #CELL_VIEW top_module,init has no DRC violation.
 #Total number of DRC violations = 0
 #   number of violations = 0
-#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2053.66 (MB), peak = 2242.95 (MB)
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2048.92 (MB), peak = 2235.98 (MB)
 #CELL_VIEW top_module,init has no DRC violation.
 #Total number of DRC violations = 0
 #Post Route wire spread is done.
@@ -1226,27 +1226,27 @@ Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total
 #                 12998 
 #
 #detailRoute Statistics:
-#Cpu time = 00:00:22
-#Elapsed time = 00:00:22
-#Increased memory = 47.55 (MB)
-#Total memory = 2053.66 (MB)
-#Peak memory = 2242.95 (MB)
+#Cpu time = 00:00:23
+#Elapsed time = 00:00:23
+#Increased memory = 45.41 (MB)
+#Total memory = 2048.92 (MB)
+#Peak memory = 2235.98 (MB)
 #
 #globalDetailRoute statistics:
-#Cpu time = 00:00:26
-#Elapsed time = 00:00:27
-#Increased memory = 212.17 (MB)
-#Total memory = 2062.33 (MB)
-#Peak memory = 2242.95 (MB)
+#Cpu time = 00:00:28
+#Elapsed time = 00:00:28
+#Increased memory = 207.23 (MB)
+#Total memory = 2057.02 (MB)
+#Peak memory = 2235.98 (MB)
 #Number of warnings = 2
 #Total number of warnings = 3
 #Number of fails = 0
 #Total number of fails = 0
-#Complete globalDetailRoute on Thu Apr 18 10:11:54 2024
+#Complete globalDetailRoute on Thu Apr 18 13:34:10 2024
 #
-% End globalDetailRoute (date=04/18 10:11:54, total cpu=0:00:26.2, real=0:00:27.0, peak res=2242.9M, current mem=2053.2M)
+% End globalDetailRoute (date=04/18 13:34:10, total cpu=0:00:27.7, real=0:00:28.0, peak res=2236.0M, current mem=2050.9M)
 AAE_INFO: Post Route call back at the end of routeDesign
-#routeDesign: cpu time = 00:00:26, elapsed time = 00:00:28, memory = 2031.37 (MB), peak = 2242.95 (MB)
+#routeDesign: cpu time = 00:00:28, elapsed time = 00:00:28, memory = 2029.07 (MB), peak = 2235.98 (MB)
 
 *** Summary of all messages that are not suppressed in this session:
 Severity  ID               Count  Summary                                  
@@ -1259,8 +1259,8 @@ WARNING   NRDB-194             1   No setup time constraints read in
 WARNING   NRIG-1303            1  The congestion map does not match the GC...
 *** Message Summary: 14 warning(s), 1 error(s)
 
-#% End routeDesign (date=04/18 10:11:54, total cpu=0:00:26.5, real=0:00:28.0, peak res=2242.9M, current mem=2031.4M)
- *** Starting Verify Geometry (MEM: 2279.2) ***
+#% End routeDesign (date=04/18 13:34:10, total cpu=0:00:27.9, real=0:00:29.0, peak res=2236.0M, current mem=2029.1M)
+ *** Starting Verify Geometry (MEM: 2285.7) ***
 
 **WARN: (IMPVFG-257):	setVerifyGeometryMode/verifyGeometry command is obsolete and should not be used any more. It still works in this release but will be removed in future release. You should change to use set_verify_drc_mode/verify_drc which is the replacement tool for verifyGeometry.
   VERIFY GEOMETRY ...... Starting Verification
@@ -1281,13 +1281,13 @@ End Summary
   Verification Complete : 0 Viols.  0 Wrngs.
 
 **********End: VERIFY GEOMETRY**********
- *** verify geometry (CPU: 0:00:00.6  MEM: 305.7M)
+ *** verify geometry (CPU: 0:00:00.6  MEM: 308.8M)
 
 <CMD> verifyConnectivity -type all -noAntenna
 VERIFY_CONNECTIVITY use new engine.
 
 ******** Start: VERIFY CONNECTIVITY ********
-Start Time: Thu Apr 18 10:11:56 2024
+Start Time: Thu Apr 18 13:34:11 2024
 
 Design Name: top_module
 Database Units: 1000
@@ -1299,7 +1299,7 @@ Begin Summary
   Found no problems or warnings.
 End Summary
 
-End Time: Thu Apr 18 10:11:56 2024
+End Time: Thu Apr 18 13:34:11 2024
 Time Elapsed: 0:00:00.0
 
 ******** End: VERIFY CONNECTIVITY ********
@@ -1396,67 +1396,57 @@ Merging GDS file /clear/apps/osu/soc/cadence/lib/source/gds2/osu05_stdcells.gds2
 <CMD> saveNetlist final.v
 Writing Netlist "final.v" ...
 <CMD> saveDesign top_module.enc
-#% Begin save design ... (date=04/18 10:11:56, mem=2036.4M)
-% Begin Save ccopt configuration ... (date=04/18 10:11:56, mem=2036.4M)
-% End Save ccopt configuration ... (date=04/18 10:11:56, total cpu=0:00:00.0, real=0:00:00.0, peak res=2036.7M, current mem=2036.7M)
-% Begin Save netlist data ... (date=04/18 10:11:56, mem=2036.7M)
+#% Begin save design ... (date=04/18 13:34:11, mem=2034.1M)
+% Begin Save ccopt configuration ... (date=04/18 13:34:11, mem=2034.1M)
+% End Save ccopt configuration ... (date=04/18 13:34:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=2034.4M, current mem=2034.4M)
+% Begin Save netlist data ... (date=04/18 13:34:11, mem=2034.4M)
 Writing Binary DB to top_module.enc.dat.tmp/top_module.v.bin in single-threaded mode...
-% End Save netlist data ... (date=04/18 10:11:56, total cpu=0:00:00.0, real=0:00:00.0, peak res=2036.8M, current mem=2036.8M)
+% End Save netlist data ... (date=04/18 13:34:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=2034.4M, current mem=2034.4M)
 Saving symbol-table file ...
 Saving congestion map file top_module.enc.dat.tmp/top_module.route.congmap.gz ...
-% Begin Save AAE data ... (date=04/18 10:11:57, mem=2037.3M)
+% Begin Save AAE data ... (date=04/18 13:34:11, mem=2034.9M)
 Saving AAE Data ...
-AAE DB initialization (MEM=4850.45 CPU=0:00:00.0 REAL=0:00:00.0) 
-% End Save AAE data ... (date=04/18 10:11:58, total cpu=0:00:00.6, real=0:00:01.0, peak res=2037.3M, current mem=2036.7M)
+AAE DB initialization (MEM=4857.97 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End Save AAE data ... (date=04/18 13:34:11, total cpu=0:00:00.1, real=0:00:00.0, peak res=2034.9M, current mem=2034.3M)
 Saving preference file top_module.enc.dat.tmp/gui.pref.tcl ...
 Saving mode setting ...
 Saving global file ...
-% Begin Save floorplan data ... (date=04/18 10:12:00, mem=2037.7M)
+% Begin Save floorplan data ... (date=04/18 13:34:11, mem=2035.3M)
 Saving floorplan file ...
-% End Save floorplan data ... (date=04/18 10:12:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=2037.7M, current mem=2037.7M)
-Saving PG file top_module.enc.dat.tmp/top_module.pg.gz, version#2, (Created by Innovus v22.14-s061_1 on Thu Apr 18 10:12:00 2024)
-*** Completed savePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=2266.4M) ***
+% End Save floorplan data ... (date=04/18 13:34:12, total cpu=0:00:00.1, real=0:00:01.0, peak res=2035.3M, current mem=2035.3M)
+Saving PG file top_module.enc.dat.tmp/top_module.pg.gz, version#2, (Created by Innovus v22.14-s061_1 on Thu Apr 18 13:34:12 2024)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2274.0M) ***
 Saving Drc markers ...
 ... No Drc file written since there is no markers found.
-% Begin Save placement data ... (date=04/18 10:12:01, mem=2037.7M)
+% Begin Save placement data ... (date=04/18 13:34:12, mem=2035.3M)
 ** Saving stdCellPlacement_binary (version# 2) ...
 Save Adaptive View Pruning View Names to Binary file
-% End Save placement data ... (date=04/18 10:12:01, total cpu=0:00:00.0, real=0:00:00.0, peak res=2037.8M, current mem=2037.8M)
-% Begin Save routing data ... (date=04/18 10:12:01, mem=2037.8M)
+% End Save placement data ... (date=04/18 13:34:12, total cpu=0:00:00.1, real=0:00:00.0, peak res=2035.4M, current mem=2035.4M)
+% Begin Save routing data ... (date=04/18 13:34:12, mem=2035.4M)
 Saving route file ...
-*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=2266.4M) ***
-% End Save routing data ... (date=04/18 10:12:01, total cpu=0:00:00.1, real=0:00:00.0, peak res=2037.9M, current mem=2037.9M)
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=2274.0M) ***
+% End Save routing data ... (date=04/18 13:34:12, total cpu=0:00:00.1, real=0:00:00.0, peak res=2035.6M, current mem=2035.6M)
 Saving property file top_module.enc.dat.tmp/top_module.prop
-*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2269.4M) ***
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2277.0M) ***
 #Saving pin access data to file top_module.enc.dat.tmp/top_module.apa ...
 #
-% Begin Save power constraints data ... (date=04/18 10:12:02, mem=2037.9M)
-% End Save power constraints data ... (date=04/18 10:12:02, total cpu=0:00:00.0, real=0:00:00.0, peak res=2037.9M, current mem=2037.9M)
+% Begin Save power constraints data ... (date=04/18 13:34:12, mem=2035.6M)
+% End Save power constraints data ... (date=04/18 13:34:12, total cpu=0:00:00.0, real=0:00:00.0, peak res=2035.6M, current mem=2035.6M)
 Generated self-contained design top_module.enc.dat.tmp
-#% End save design ... (date=04/18 10:12:05, total cpu=0:00:01.3, real=0:00:09.0, peak res=2040.2M, current mem=2038.1M)
+#% End save design ... (date=04/18 13:34:12, total cpu=0:00:00.8, real=0:00:01.0, peak res=2035.8M, current mem=2035.8M)
 *** Message Summary: 0 warning(s), 0 error(s)
 
 <CMD> set enc_check_rename_command_name 1
 <CMD> win
-<CMD> gui_select -rect {-4.96000 297.78000 26.93400 497.53500}
-<CMD> deselectAll
-<CMD> gui_select -rect {-6.63800 282.67300 -3.28100 240.70800}
-<CMD> gui_select -rect {233.40300 1034.69100 310.61900 1029.65500}
-<CMD> deselectAll
-<CMD> zoomBox -77.38500 254.71400 719.48400 968.08200
-<CMD> zoomBox -51.17600 528.62600 364.79500 901.00900
-<CMD> zoomBox -32.06600 671.64000 185.07500 866.02800
-<CMD> gui_select -rect {-0.04400 829.22900 3.60800 836.81400}
-<CMD> selectWire 111.1500 820.0500 112.0500 823.9500 2 n93
 
 --------------------------------------------------------------------------------
-Exiting Innovus on Thu Apr 18 10:13:28 2024
-  Total CPU time:     0:01:13
-  Total real time:    0:03:05
-  Peak memory (main): 2221.13MB
+Exiting Innovus on Thu Apr 18 13:35:18 2024
+  Total CPU time:     0:01:09
+  Total real time:    0:02:18
+  Peak memory (main): 2216.46MB
 
 
-*** Memory Usage v#1 (Current mem = 2698.824M, initial mem = 651.723M) ***
+*** Memory Usage v#1 (Current mem = 2706.348M, initial mem = 651.723M) ***
 *** Message Summary: 39 warning(s), 1 error(s)
 
---- Ending "Innovus" (totcpu=0:01:12, real=0:03:00, mem=2698.8M) ---
+--- Ending "Innovus" (totcpu=0:01:08, real=0:02:17, mem=2706.3M) ---
