@@ -129,7 +129,7 @@ in_clka = 0; in_clkb = 1; #10
 
 // Cycle 2
 in_curr_piece = 2'b01;
-in_board_in = 32'hEEEEEEE0;
+in_board_in = 32'hEEEEEE00;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;

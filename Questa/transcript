@@ -12,21 +12,17 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -debugDB -voptargs=""+acc"" game1_tb 
-# Start time: 10:02:23 on Apr 18,2024
+# vsim -debugDB -voptargs=""+acc"" top_clear_tb 
+# Start time: 14:43:34 on Apr 20,2024
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.game1_tb(fast)
-# Loading work.top_module(fast)
-# Loading work.dp(fast)
-# Loading work.rng(fast)
+# Loading work.top_clear_tb(fast)
 # Loading work.clear_redraw(fast)
-# Loading work.move_piece(fast)
-# Loading work.main_FSM(fast)
 # ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
-add wave -r /*
+add wave sim:/top_clear_tb/*
+
 run -all
-# ** Note: $stop    : testbench_game_1.v(458)
-#    Time: 2680 ns  Iteration: 0  Instance: /game1_tb
-# Break in Module game1_tb at testbench_game_1.v line 458
-# End time: 10:03:01 on Apr 18,2024, Elapsed time: 0:00:38
+# ** Note: $stop    : testbench_clear.v(546)
+#    Time: 2720 ns  Iteration: 0  Instance: /top_clear_tb
+# Break in Module top_clear_tb at testbench_clear.v line 546
+# End time: 14:48:53 on Apr 20,2024, Elapsed time: 0:05:19
 # Errors: 0, Warnings: 0
