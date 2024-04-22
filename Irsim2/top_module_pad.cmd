@@ -19,6 +19,7 @@ vector move p_in_move\[1\] p_in_move\[0\]
 logfile tetris.log
 ana p_in_clka p_in_clkb p_in_restart
 ana p_board_out\[31\] p_board_out\[30\] p_board_out\[29\] p_board_out\[28\] p_board_out\[27\] p_board_out\[26\] p_board_out\[25\] p_board_out\[24\] p_board_out\[23\] p_board_out\[22\] p_board_out\[21\] p_board_out\[20\] p_board_out\[19\] p_board_out\[18\] p_board_out\[17\] p_board_out\[16\] p_board_out\[15\] p_board_out\[14\] p_board_out\[13\] p_board_out\[12\] p_board_out\[11\] p_board_out\[10\] p_board_out\[9\] p_board_out\[8\] p_board_out\[7\] p_board_out\[6\] p_board_out\[5\] p_board_out\[4\] p_board_out\[3\] p_board_out\[2\] p_board_out\[1\] p_board_out\[0\] p_board_out
+ana p_in_move\[1\] p_in_move\[0\] move
 |
 |
 |   cycle                 1 2 3 4 5 6 7 8 9 101112131415161718192021222324
